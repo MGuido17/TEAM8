@@ -1,2 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+    <div class="buttons-landing">
+      <button class="button">
+        <%= link_to user_session_path, class: "no-link-style" do %>
+          <span>Login</span>
+        <% end %>
+      </button>
+      <button class="button">
+        <%= link_to new_user_registration_path, class: "no-link-style" do %>
+          <span>Sign-up</span>
+        <% end %>
+      </button>
+    </div>
+    <div class="content">
+      <h4>CONNECT, TRAIN, THRIVE</h4>
+      <h1>TEAM8</h1>
+      <p>WHERE YOUR JOURNEY TO WELLNESS FINDS ITS PERFECT MATCH</p>
+    </div>
+  </div>
