@@ -69,3 +69,7 @@ group :test do
 end
 
 gem 'simple_form'
+gem "devise"
+gem 'sassc-rails'
+gem 'bootstrap'
+gem 'font-awesome-sass'
