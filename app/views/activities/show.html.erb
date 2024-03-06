@@ -18,9 +18,7 @@
     <h5><%= @activity.location %></h5>
   </div>
 
-  <% if !@activity.attendees.exists?(user_id: current_user.id) %>
-    <%= button_to "Attend to this activity", activity_attendees_path(@activity), method: :post, class: "btn btn-primary" %>
-  <% end %>
+  <%= render partial: "/shared/button_attend_event", locals: { attend_text: "Attend to this event" } %>
 
 </div>
 
