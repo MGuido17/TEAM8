@@ -1,6 +1,6 @@
 <div class="footer-navbar">
   <nav class="app-navbar">
-    <%= link_to 'Home', user_path, class: 'navbar-item button-style search-button' %>
+    <%= link_to 'Home', user_path(current_user), class: 'navbar-item button-style search-button' %>
     <%= link_to 'Find a match', users_path, class: 'navbar-item button-style search-button' %>
     <a href="/search" class="navbar-item button-style search-button">Find an activity</a>
     <a href="/profile" class="navbar-item button-style">Profile</a>
