@@ -8,7 +8,7 @@ users = [
   { first_name: "Francisco", last_name: "Posada", email: "ciscotomaramo@gmail.com", password: "password", age: 30 },
   { first_name: "Valeria", last_name: "Lezcano",  email: "msvalerialg@gmail.com", password: "password", age: 30 },
   { first_name: "Martin", last_name: "Guido", email: "martin.guido.r17@gmail.com", password: "password", age: 30 },
-  { first_name: "Nicolas", last_name: "Otatti", email: "ottatinicolas91@gmail.com", password: "password", age: 30 },
+  { first_name: "Nicolas", last_name: "Otatti", email: "ottatinicolas91@gmail.com", password: "password", age: 30 }
 ]
 
 created_users = []

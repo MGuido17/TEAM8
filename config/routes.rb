@@ -14,4 +14,6 @@ Rails.application.routes.draw do
     resources :invites, only: [:create, :update] # For inviting users
     resources :attendees, only: [:create] # For joining activities
   end
+
+  resources :profiles, except: [:index]
 end
