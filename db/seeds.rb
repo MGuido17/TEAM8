@@ -9,6 +9,7 @@
 #   end
 
 # Create users arrays
+
 users = [
   { email: "ciscotomaramo@gmail.com", password: "password" },
   { email: "msvalerialg@gmail.com", password: "password" },
@@ -19,14 +20,13 @@ users = [
 
 created_users = []
 users.each do |user|
-  User.create(
+  created_user = User.create!(
     first_name: user[:first_name],
     last_name: user[:last_name],
     email: user[:email],
     password: user[:password]
   )
-  created_users << user
-  created_users.save!
+  created_users << created_user
 end
 
 # Create an array of medical conditions

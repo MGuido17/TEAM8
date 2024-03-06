@@ -1,20 +1,33 @@
 <div class="container">
-  <h1>Welcome to your dashboard</h1>
-    <div class="activity-list">
-      <p>Here are the activities you have booked</p>
-      <ol>
-        <li>Yoga</li>
-        <li>Weight Session</li>
-        <li>Social Walk</li>
-      </ol>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= asset_path('') %>);">
+    <div class="container">
+      <h1><strong>TEAM8</strong></h1>
+      <p>CONNECT, TRAIN, THRIVE</p>
     </div>
-  <div class="footer-navbar">
-      <nav class="app-navbar">
-        <a href="/home" class="navbar-item button-style">Home</a>
-        <a href="/match" class="navbar-item button-style match-button">Match</a>
-        <a href="/search" class="navbar-item button-style search-button">Find an activity</a>
-        <a href="/profile" class="navbar-item button-style">Profile</a>
-    </nav>
   </div>
-<%= button_to 'Sign Out', destroy_user_session_path, method: :delete %>
+  <div class="user-flex-container">
+    <div class="user-card">
+    <h1>Welcome to your dashboard</h1>
+    <img src="https://cdn-icons-png.freepik.com/512/6676/6676023.png" alt="avatar" class="user-photo" />
+    </div>
+    <div class="user-card">
+        <div class="activity-list">
+          <h1>Here are the activities you have booked</h1>
+          <ol>
+            <li>Yoga</li>
+            <li>Weight Session</li>
+            <li>Social Walk</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+<div class="footer-navbar">
+  <nav class="app-navbar">
+    <a href="/home" class="navbar-item button-style">Home</a>
+    <a href="/match" class="navbar-item button-style match-button">Match</a>
+    <a href="/search" class="navbar-item button-style search-button">Find an activity</a>
+    <a href="/profile" class="navbar-item button-style">Profile</a>
+    <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'navbar-item button-style sign-out-button' %>
+  </nav>
+</div>
 </div>
