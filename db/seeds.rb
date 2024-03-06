@@ -9,17 +9,17 @@
 #   end
 
 # Create users arrays
-# users = [
-#   { email: "ciscotomaramo@gmail.com", password: "password" },
-#   { email: "msvalerialg@gmail.com", password: "password" },
-#   { email: "martin.guido.r17@gmail.com", password: "password" },
-#   { email: "ottatinicolas91@gmail.com", password: "password" }
+users = [
+  { email: "ciscotomaramo@gmail.com", password: "password" },
+  { email: "msvalerialg@gmail.com", password: "password" },
+  { email: "martin.guido.r17@gmail.com", password: "password" },
+  { email: "ottatinicolas91@gmail.com", password: "password" }
 
-# ]
+]
 
 created_users = []
 users.each do |user|
-  User.create!(
+  User.create(
     first_name: user[:first_name],
     last_name: user[:last_name],
     email: user[:email],

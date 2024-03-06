@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Welcome to your dashboard</h1>
+    <div class="activity-list">
+      <p>Here are the activities you have booked</p>
+      <ol>
+        <li>Yoga</li>
+        <li>Weight Session</li>
+        <li>Social Walk</li>
+      </ol>
+    </div>
+  <div class="footer-navbar">
+      <nav class="app-navbar">
+        <a href="/home" class="navbar-item button-style">Home</a>
+        <a href="/match" class="navbar-item button-style match-button">Match</a>
+        <a href="/search" class="navbar-item button-style search-button">Find an activity</a>
+        <a href="/profile" class="navbar-item button-style">Profile</a>
+    </nav>
+  </div>
+<%= button_to 'Sign Out', destroy_user_session_path, method: :delete %>
+</div>
