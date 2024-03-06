@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :email, presence: true
   validates :age, numericality: { greater_than: 16, messsage: "You must to be over 16" }
-  # serialize :medical_conditions, Array
+  validates :first_name, presence: true
+  validates :last_name, presence: true
   has_many :sent_invites, class_name: "Invite", foreign_key: :user_one_id
   has_many :received_invites, class_name: "Invite", foreign_key: :user_two_id
   has_many :reviews
