@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
-  @user
 
   def index
-    @activities = Activity.all
   end
 
   def show
