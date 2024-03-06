@@ -1,0 +1,7 @@
+<!-- <%= button_to attend_text, activity_attendees_path(@activity), method: :post, class: "btn btn-primary" %> -->
+
+  <% if @activity.attendees.exists?(user_id: current_user.id) %>
+    <%= button_to "Remove assistance", activity_attendee_path(@activity, @activity.attendees.find_by(user_id: current_user.id)), method: :delete, class: "btn btn-outline-secondary" %>
+  <% else %>
+    <%= button_to "Confirm assistance", activity_attendees_path(@activity), method: :post, class: "btn btn-primary" %>
+  <% end %>

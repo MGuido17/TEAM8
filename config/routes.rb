@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   # root "posts#index"
   root to: "pages#home"
   resources :activities, only: [:index, :show] do
-    resources :invites, only: [:create, :update] # For inviting users
-    resources :attendees, only: [:create] # For joining activities
+    resources :invites, only: [:create, :update] # Para invitar usuarios
+    resources :attendees, only: [:create, :destroy] # Para unirse a actividades
   end
 
   resources :profiles, except: [:index]

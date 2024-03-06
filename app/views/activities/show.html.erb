@@ -18,7 +18,7 @@
     <h5><%= @activity.location %></h5>
   </div>
 
-  <button class="attend-large">Attend to this activity</button>
+  <%= render partial: "/shared/button_attend_event", locals: { attend_text: "Attend to this event" } %>
 
 </div>
 
