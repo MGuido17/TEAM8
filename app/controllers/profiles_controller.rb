@@ -15,6 +15,10 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:gender, :blood_type, :allergies, :medical_conditions, :contact_phone_number, :contact_address, :preferred_comunication_language, :emergency_contact_name, :emergency_contact_phone, :emergency_contact_relationship, :user_id)
+    params.require(:profile).permit(
+      :gender, :blood_type, :allergies, :medical_condition, :mentalh_health_condition,
+      :contact_phone_number, :contact_address, :preferred_comunication_language,
+      :emergency_contact_name, :emergency_contact_phone, :emergency_contact_relationship, :user_id
+    )
   end
 end

@@ -1,46 +1,69 @@
 <h1>Create a New Profile</h1>
 
 <%= form_with(model: @profile, url: profiles_path, local: true) do |form| %>
-
-<div>
-  <%= form.label :gender %>
-  <%= form.select :gender, options_for_select(["Male", "Female", "Prefer not to say"]) %>
-</div>
-
-<div>
-  <%= form.label :blood_type %>
-  <%= form.select :blood_type, options_for_select(["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"]) %>
-</div>
-
+  <h2>General information</h2>
   <div>
-    <%= form.label :allergies %>
-    <%= form.text_field :allergies %>
+    <%= form.label :gender %>
+    <%= form.select :gender, options_for_select(["Male", "Female", "Prefer not to say"]) %>
   </div>
-
-<p> Meddical condition:</p>
-  <div>
-    <%= form.label :medical_conditions %>
-    <%= form.select :medical_conditions, options_for_select(["Alzheimer's Disease", "Arthritis", "Asthma", "Cancer", "Cardiovascular Disease", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "COPD (Chronic Obstructive Pulmonary Disease)", "Crohn's Disease", "Diabetes", "Epilepsy", "Fibromyalgia", "Hypertension (High Blood Pressure)", "Hyperthyroidism", "Hypothyroidism", "Insomnia", "Multiple Sclerosis", "Obesity", "Osteoporosis", "Parkinson's Disease", "Rheumatoid Arthritis", "Stroke", "Ulcerative Colitis"])  %>
-  </div>
-  <p> Mental Health condition:</p>
-  <div>
-    <%= form.label :medical_conditions %>
-    <%= form.select :medical_conditions, options_for_select(["Anxiety Disorders", "Bipolar Disorder", "Depression", "Post-Traumatic Stress Disorder (PTSD)", "Schizophrenia" ]) %>
-  </div>
-
 
   <div>
     <%= form.label :contact_phone_number %>
     <%= form.text_field :contact_phone_number %>
   </div>
 
+  <div>
+    <%= form.label :contact_address %>
+    <%= form.text_field :contact_address %>
+  </div>
 
+  <h2>Medical information</h2>
+  <div>
+    <%= form.label :blood_type %>
+    <%= form.select :blood_type, options_for_select(["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"]) %>
+  </div>
 
+  <div>
+    <%= form.label :allergies %>
+    <%= form.text_field :allergies %>
+  </div>
+
+  <h3>Medical conditions</h3>
+  <% Profile::MEDICAL_CONDITION.each do |condition| %>
+    <div>
+      <%= form.check_box :medical_condition, { multiple: true }, condition, nil %>
+      <%= form.label condition %>
+    </div>
+  <% end %>
+
+  <h3>Mental Health conditions</h3>
+  <% Profile::MENTAL_HEALTH_CONDITION.each do |condition| %>
+    <div>
+      <%= form.check_box :mental_health_condition, { multiple: true }, condition, nil %>
+      <%= form.label condition %>
+    </div>
+  <% end %>
+
+  <h2>Emergency Contact info</h2>
   <div>
     <%= form.label :emergency_contact_name %>
     <%= form.text_field :emergency_contact_name %>
   </div>
 
+  <div>
+    <%= form.label :emergency_contact_relationship %>
+    <%= form.text_field :emergency_contact_relationship %>
+  </div>
+
+  <div>
+    <%= form.label :emergency_contact_phone %>
+    <%= form.text_field :emergency_contact_phone %>
+  </div>
+
+  <div>
+    <%= form.label :preferred_comunication_language %>
+    <%= form.select :preferred_comunication_language, options_for_select(["Spanish", "English", "French", "German","Italian", "Japanese", "Mandarin", "Portuguese", "Russian", "Swedish"]) %>
+  </div>
 
   <div>
     <%= form.submit "Create Profile" %>

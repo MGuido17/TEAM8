@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_06_132238) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_06_154652) do
   create_table "activities", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -86,7 +86,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_06_132238) do
     t.string "gender"
     t.string "blood_type"
     t.string "allergies"
-    t.string "medical_conditions"
     t.string "contact_phone_number"
     t.string "contact_address"
     t.string "preferred_comunication_language"
@@ -96,6 +95,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_06_132238) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "medical_condition"
+    t.text "mentalh_health_condition"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
