@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :profiles
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -11,4 +12,10 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # User routes defined
   resources :users, only: [:show, :index]
+  resources :activities do
+    resources :invites, only: [:create, :update] # For inviting users
+    resources :attendees, only: [:create] # For joining activities
+  end
+
+  resources :profiles, except: [:index]
 end
