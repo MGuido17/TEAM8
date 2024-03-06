@@ -18,6 +18,8 @@
     <h5><%= @activity.location %></h5>
   </div>
 
+  <%= render partial: "/shared/attendee_counter" %>
+
   <%= render partial: "/shared/button_attend_event", locals: { attend_text: "Attend to this event" } %>
 
 </div>
