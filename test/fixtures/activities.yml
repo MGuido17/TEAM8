@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  date: 2024-03-05 12:22:01
+  organiser: MyString
+  attendees: 1
+  spaces: 1
+  recommeded_conditions: MyText
+  not_recommended_conditions: MyText
+  private: false
+  user: one
+
+two:
+  name: MyString
+  description: MyText
+  date: 2024-03-05 12:22:01
+  organiser: MyString
+  attendees: 1
+  spaces: 1
+  recommeded_conditions: MyText
+  not_recommended_conditions: MyText
+  private: false
+  user: two

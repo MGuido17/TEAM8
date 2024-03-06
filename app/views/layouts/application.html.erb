@@ -7,9 +7,14 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
   </head>
 
   <body>
+  <div class="container-app">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
+    </div>
   </body>
 </html>
