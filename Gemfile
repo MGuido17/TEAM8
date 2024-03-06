@@ -73,3 +73,4 @@ gem "devise"
 gem 'sassc-rails'
 gem 'bootstrap'
 gem 'font-awesome-sass'
+gem "pundit"
