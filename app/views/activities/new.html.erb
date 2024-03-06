@@ -1,62 +1,67 @@
-<!-- app/views/activities/new.html.erb -->
-<h1>Create New Activity</h1>
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;">
+  <div style="margin-bottom: 20px;">
+  </div>
+  <h1>Create New Activity</h1>
 
-<%= form_with(model: @activity, local: true) do |form| %>
-  <% if @activity.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+  <%= simple_form_for(@activity, local: true) do |f| %>
+    <%= f.error_notification %>
 
-      <ul>
-        <% @activity.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+    <div class="field">
+      <%= f.input :name, label: 'Name', input_html: { id: :activity_name } %>
+    </div>
+
+    <div class="field">
+      <%= f.input :description, label: 'Description', as: :string, input_html: { id: :activity_description } %>
+    </div>
+
+    <div class="field">
+      <%= f.input :address, label: 'Address', as: :string, input_html: { id: :activity_address } %>
+    </div>
+
+    <div class="field">
+      <%= f.input :location, label: 'Location Detail', as: :string, input_html: { id: :activity_location } %>
+    </div>
+
+    <div class="field">
+      <%= f.input :date, label: 'Date', as: :string, input_html: { type: 'datetime-local', id: :activity_date, value: @activity.date&.strftime('%Y-%m-%dT%H:%M') } %>
+    </div>
+
+    <div class="field">
+      <%= f.input :time, label: 'Time', as: :string, input_html: { type: 'time', id: :activity_time, value: @activity.date&.strftime('%H:%M') } %>
+    </div>
+
+    <div class="field">
+      <%= f.input :spaces, label: 'Spaces', input_html: { id: :activity_spaces } %>
+    </div>
+
+  <% medical_conditions = ["Alzheimer's Disease", "Anxiety Disorders", "Arthritis", "Asthma", "Bipolar Disorder", "Cancer", "Cardiovascular Disease", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "COPD (Chronic Obstructive Pulmonary Disease)", "Crohn's Disease", "Depression", "Diabetes", "Epilepsy", "Fibromyalgia", "Hypertension (High Blood Pressure)", "Hyperthyroidism", "Hypothyroidism", "Insomnia", "Multiple Sclerosis", "Obesity", "Osteoporosis", "Parkinson's Disease", "Post-Traumatic Stress Disorder (PTSD)", "Rheumatoid Arthritis", "Schizophrenia", "Stroke", "Ulcerative Colitis"] %>
+
+  <div class="field">
+    <%= f.input :recommended_conditions,
+                label: 'Recommended Conditions',
+                as: :check_boxes,
+                collection: medical_conditions,
+                input_html: { multiple: true, size: 10 },
+                include_blank: false %>
+  </div>
+
+  <div class="field">
+    <%= f.input :not_recommended_conditions,
+                label: 'Not Recommended Conditions',
+                as: :check_boxes,
+                collection: medical_conditions,
+                input_html: { multiple: true, size: 10 },
+                include_blank: false %>
+  </div>
+
+    <div class="field">
+      <%= f.input :private, label: 'Is this activity private?', as: :boolean, boolean_style: :inline %>
+    </div>
+
+    <div class="actions">
+      <%= f.button :submit, "Create Activity" %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :activity_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :activity_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.datetime_local_field :date, id: :activity_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :spaces %>
-    <%= form.number_field :spaces, id: :activity_spaces %>
-  </div>
-
-  <div class="field">
-    <%= form.label :recommended_conditions %>
-    <%= form.text_area :recommended_conditions, id: :activity_recommended_conditions %>
-  </div>
-
-  <div class="field">
-    <%= form.label :not_recommended_conditions %>
-    <%= form.text_area :not_recommended_conditions, id: :activity_not_recommended_conditions %>
-  </div>
-
-  <div class="field">
-    <%= form.label :neutral_conditions %>
-    <%= form.text_area :neutral_conditions, id: :activity_neutral_conditions %>
-  </div>
-
-  <div class="field">
-    <%= form.label :private, 'Is this activity private?' %>
-    <%= form.check_box :private, id: :activity_private %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Create Activity" %>
-  </div>
-<% end %>
-
-<%= link_to 'Back', activities_path %>
+  <%= link_to 'Back', activities_path %>
+</div>

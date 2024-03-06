@@ -54,7 +54,10 @@ Activity.create!(
   recommended_conditions: [],
   not_recommended_conditions: ["Rheumatoid Arthritis", "Cancer", "Chronic Fatigue Syndrome", "Cardiovascular Disease", "Arthritis", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Chronic Kidney Disease", "Schizophrenia", "Fibromyalgia", "Epilepsy"],
   neutral_conditions: medical_conditions - not_recommended_conditions,
-  user: created_users.sample
+  user: created_users.sample,
+  address: "Carrer de Arago 224",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -62,7 +65,10 @@ Activity.create!(
   recommended_conditions: [],
   not_recommended: ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"],
   neutral_conditions: medical_conditions - not_recommended_conditions,
-  user: created_users.sample
+  user: created_users.sample,
+  address: "Passeig de Gracia",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -70,7 +76,10 @@ Activity.create!(
   recommended_conditions: [],
   not_recommended: ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"],
   neutral_conditions: medical_conditions - not_recommended_conditions,
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -78,7 +87,10 @@ Activity.create!(
   recommended_conditions: [],
   not_recommended: ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"],
   neutral_conditions: medical_conditions - not_recommended_conditions,
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -86,7 +98,10 @@ Activity.create!(
   recommended_conditions: [],
   not_recommended: ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"],
   neutral_conditions: medical_conditions - not_recommended_conditions,
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -94,7 +109,10 @@ Activity.create!(
   recommended_conditions: [],
   not_recommended: ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"],
   neutral_conditions: medical_conditions - not_recommended_conditions,
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -102,7 +120,10 @@ Activity.create!(
   recommended_conditions: [],
   not_recommended: ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"],
   neutral_conditions: medical_conditions - not_recommended_conditions,
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -110,7 +131,10 @@ Activity.create!(
   recommended_conditions: ["COPD (Chronic Obstructive Pulmonary Disease)", "Multiple Sclerosis", "Chronic Kidney Disease", "Rheumatoid Arthritis", "Crohn's Disease", "Ulcerative Colitis", "Chronic Pain Syndromes", "Fibromyalgia", "Diabetes", "Obesity", "Parkinson's Disease", "Hyperthyroidism", "Hypothyroidism", "Cancer", "Anxiety Disorders", "Bipolar Disorder", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Alzheimer's Disease", "Insomnia", "Cancer"],
   neutral_conditions: medical_conditions - recommended_conditions,
   not_recommended: [],
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -118,7 +142,10 @@ Activity.create!(
   recommended_conditions: ["COPD (Chronic Obstructive Pulmonary Disease)", "Multiple Sclerosis", "Chronic Kidney Disease", "Rheumatoid Arthritis", "Crohn's Disease", "Ulcerative Colitis", "Chronic Pain Syndromes", "Fibromyalgia", "Diabetes", "Obesity", "Parkinson's Disease", "Hyperthyroidism", "Hypothyroidism", "Cancer", "Anxiety Disorders", "Bipolar Disorder", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Alzheimer's Disease", "Insomnia"],
   neutral_conditions: medical_conditions - recommended_conditions,
   not_recommended: [],
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -126,14 +153,20 @@ Activity.create!(
   recommended_conditions: ["Cardiovascular Disease", "Osteoporosis", "Asthma", "Chronic Pain Syndromes", "COPD (Chronic Obstructive Pulmonary Disease)", "Fibromyalgia", "Hypertension (High Blood Pressure)", "Schizophrenia", "Alzheimer's Disease", "Epilepsy", "Chronic Kidney Disease", "Chronic Fatigue Syndrome", "Crohn's Disease", "Ulcerative Colitis", "Insomnia", "Cancer"],
   neutral_conditions: medical_conditions - recommended_conditions,
   not_recommended_conditions: [],
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 Activity.create!(
   name: "Dancing",
   recommended_conditions: ["Osteoporosis", "Depression", "Osteoporosis", "Diabetes", "Obesity", "Parkinson's Disease", "Hyperthyroidism", "Hypothyroidism", "Cancer", "Anxiety Disorders", "Bipolar Disorder", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Alzheimer's Disease", "Insomnia"],
   neutral_conditions: medical_conditions - recommended_conditions,
   not_recommended: [],
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -141,7 +174,10 @@ Activity.create!(
   recommended_conditions: ["Diabetes", "Obesity", "Parkinson's Disease", "Hyperthyroidism", "Hypothyroidism", "Cancer", "Anxiety Disorders", "Bipolar Disorder", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Alzheimer's Disease", "Insomnia"],
   neutral_conditions: medical_conditions - recommended_conditions,
   not_recommended: [],
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -149,7 +185,10 @@ Activity.create!(
   recommended_conditions: ["Diabetes", "Obesity", "Parkinson's Disease", "Hyperthyroidism", "Hypothyroidism", "Cancer", "Anxiety Disorders", "Bipolar Disorder", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Alzheimer's Disease", "Insomnia"],
   neutral_conditions: medical_conditions - recommended_conditions,
   not_recommended: [],
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -157,7 +196,10 @@ Activity.create!(
   recommended_conditions: ["Diabetes", "Obesity", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Cardiovascular Disease", "Cancer", "Bipolar Disorder", "Arthritis", "Asthma", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"],
   neutral_conditions: medical_conditions - recommended_conditions,
   not_recommended_conditions: [],
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -165,7 +207,10 @@ Activity.create!(
   recommended_conditions: ["Diabetes", "Obesity", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Cardiovascular Disease", "Cancer", "Bipolar Disorder", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Epilepsy", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"],
   neutral_conditions: medical_conditions - recommended_conditions,
   not_recommended_conditions: [],
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -173,7 +218,10 @@ Activity.create!(
   recommended_conditions: ["Diabetes", "Arthritis", "Depression", "Chronic Kidney Disease", "Obesity", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Cardiovascular Disease", "Cancer", "Bipolar Disorder", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Epilepsy", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"],
   neutral_conditions: medical_conditions - recommended_conditions,
   not_recommended_conditions: [],
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -181,7 +229,10 @@ Activity.create!(
   recommended_conditions: ["Diabetes", "Depression", "Chronic Kidney Disease", "Obesity", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Cardiovascular Disease", "Cancer", "Bipolar Disorder", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Epilepsy", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"],
   not_recommended_conditions: ["Arthritis", "Rheumatoid Arthritis"],
   neutral_conditions: medical_conditions - recommended_conditions - not_recommended_conditions,
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -189,7 +240,10 @@ Activity.create!(
   recommended_conditions:["Depression", "Bipolar Disorder", "Anxiety Disorders", "Post-Traumatic Stress Disorder (PTSD)", "Epilepsy", "Insomnia", "Rheumatoid Arthritis", "Fibromyalgia", "Chronic Pain Syndromes", "Parkinson's Disease", "Multiple Sclerosis", "Alzheimer's Disease", "Depression", "Anxiety Disorders", "Post-Traumatic Stress Disorder (PTSD)", "Chronic Pain Syndromes", "Stroke", "Chronic Kidney Disease", "Hypothyroidism"],
   not_recommended_conditions: ["Arthritis", "Rheumatoid Arthritis", "Osteoporosis", "Schizophrenia", "Cardiovascular Disease", "Hypertension (High Blood Pressure)", "Chronic Fatigue Syndrome", "Epilepsy"],
   neutral_conditions: medical_conditions - recommended_conditions - not_recommended_conditions,
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -197,7 +251,10 @@ Activity.create!(
   recommended_conditions: ["Diabetes", "Depression", "Hypothyroidism", "Hyperthyroidism", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Post-Traumatic Stress Disorder (PTSD)", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"],
   not_recommended_conditions: ["Arthritis", "Rheumatoid Arthritis", "Osteoporosis"],
   neutral_conditions: medical_conditions - recommended_conditions - not_recommended_conditions,
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -205,7 +262,10 @@ Activity.create!(
   recommended_conditions: ["Diabetes", "Depression", "Hypothyroidism", "Hyperthyroidism", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Post-Traumatic Stress Disorder (PTSD)", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"],
   not_recommended_conditions: ["Arthritis", "Rheumatoid Arthritis", "Osteoporosis"],
   neutral_conditions: medical_conditions - recommended_conditions - not_recommended_conditions,
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -213,7 +273,10 @@ Activity.create!(
   recommended_conditions: ["Diabetes", "Osteoporosis", "Chronic Pain Syndrome", "Obesity", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Cancer", "Alzheimer's Disease", "Rheumatoid Arthritis"],
   not_recommended_conditions: ["Epilepsy"],
   neutral_conditions: medical_conditions - recommended_conditions - not_recommended_conditions,
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -221,7 +284,10 @@ Activity.create!(
   recommended_conditions: ["Obesity", "Hypertension (High Blood Pressure)"],
   not_recommended_conditions: ["Epilepsy", "Osteoporosis", "Diabetes", "Asthma", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Anxiety Disorders", "Bipolar Disorder",  "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Alzheimer's Disease", "Stroke", "Chronic Pain Syndrome", "Chronic Kidney Disease", "Rheumatoid Arthritis", "Chronic Fatigue Syndrome", "Crohn's Disease", "Ulcerative Colitis", "Fibromyalgia", "Chronic Fatigue Syndrome"],
   neutral_conditions: medical_conditions - recommended_conditions - not_recommended_conditions,
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -229,7 +295,10 @@ Activity.create!(
   recommended_conditions: ["Depression", "Fibromyalgia", "Anxiety Disorders", "Bipolar Disorder", "Post-Traumatic Stress Disorder (PTSD)", "Chronic Fatigue Syndrome", "Ulcerative Colitis", "Insonmia"],
   neutral_conditions: medical_conditions - recommended_conditions,
   not_recommended_conditions: [],
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
 
 Activity.create!(
@@ -237,5 +306,8 @@ Activity.create!(
   recommended_conditions: ["Depression", "Fibromyalgia", "Anxiety Disorders", "Bipolar Disorder", "Post-Traumatic Stress Disorder (PTSD)", "Chronic Fatigue Syndrome", "Ulcerative Colitis", "Insonmia"],
   neutral_conditions: medical_conditions - recommended_conditions,
   not_recommended_conditions: [],
-  user: created_users.sample
+  user: created_users.sample,
+  address: "La Rambla",
+  location: "Barcelona, España",
+  time: "18:30 a 19:30"
 )
