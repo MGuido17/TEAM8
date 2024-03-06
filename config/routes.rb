@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   root to: "pages#home"
   # User routes defined
-  resources :users, only: [:show]
+  resources :users, only: [:show, :index]
 end
