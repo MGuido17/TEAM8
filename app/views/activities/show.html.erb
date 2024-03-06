@@ -18,7 +18,9 @@
     <h5><%= @activity.location %></h5>
   </div>
 
-  <button class="attend-large">Attend to this activity</button>
+  <% if !@activity.attendees.exists?(user_id: current_user.id) %>
+    <%= button_to "Attend to this activity", activity_attendees_path(@activity), method: :post, class: "btn btn-primary" %>
+  <% end %>
 
 </div>
 
