@@ -1,6 +1,6 @@
 puts "Cleaning database..."
-User.destroy_all
 Activity.destroy_all
+User.destroy_all
 puts "Creating users..."
 
 # Create users arrays
@@ -90,7 +90,7 @@ Activity.create!(
   recommended_conditions: [],
   not_recommended_conditions: ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"],
   neutral_conditions: neutral_conditions,
-  user: created_users.sample
+  user: created_users.sample,
 )
 
 neutral_conditions = medical_conditions - ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"]

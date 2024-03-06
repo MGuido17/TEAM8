@@ -1,8 +1,8 @@
-<h1>Create a New Profile</h1>
+<h1>Edit Profile</h1>
 
-<%= form_with(model: @profile, url: profiles_path, local: true) do |form| %>
+<%= form_with(model: @profile, url: profile_path(@profile), method: :patch, local: true) do |form| %>
   <h2>General information</h2>
-  <div>
+    <div>
     <%= form.label :gender %>
     <%= form.select :gender, options_for_select(["Male", "Female", "Prefer not to say"]) %>
   </div>
@@ -66,6 +66,10 @@
   </div>
 
   <div>
-    <%= form.submit "Create Profile" %>
+    <%= form.submit "Update Profile" %>
   </div>
 <% end %>
+
+
+
+<!-- esto va para el show page del profile <%= link_to 'Edit', edit_profile_path(@profile) %> -->
