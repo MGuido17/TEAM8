@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  resources :users, only: :show do
-    resources :activities, only: [:index, :show, :new, :create]
-  end
-  
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -17,4 +13,6 @@ Rails.application.routes.draw do
     resources :invites, only: [:create, :update] # For inviting users
     resources :attendees, only: [:create] # For joining activities
   end
+
+  resources :profiles, except: [:index]
 end
