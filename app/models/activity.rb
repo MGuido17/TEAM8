@@ -10,8 +10,6 @@ class Activity < ApplicationRecord
   validates :description, presence: true
   validates :date, presence: true
   validates :spaces, presence: true
-  validates :recommended_conditions, presence: true
-  validates :not_recommended_conditions, presence: true
   validates :address, presence: true
   validates :location, presence: true
 end
