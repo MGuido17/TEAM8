@@ -1,5 +1,6 @@
 class Profile < ApplicationRecord
   belongs_to :user
+  has_one_attached :photo
   serialize :medical_condition, type: Array, coder: JSON
   serialize :mentalh_health_condition, type: Array, coder: JSON
 

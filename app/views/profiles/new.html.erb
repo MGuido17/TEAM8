@@ -1,6 +1,7 @@
 <h1>Create a New Profile</h1>
 
-<%= form_with(model: @profile, url: profiles_path, local: true) do |form| %>
+<%= form_with(model: @profile, url: profiles_path, local: true, html: { multipart: true }) do |form| %>
+
   <h2>General information</h2>
   <div>
     <%= form.label :gender %>
@@ -16,6 +17,11 @@
     <%= form.label :contact_address %>
     <%= form.text_field :contact_address %>
   </div>
+
+  <div>
+  <%= form.label :profile_picture %>
+  <%= form.file_field :profile_picture %>
+</div>
 
   <h2>Medical information</h2>
   <div>

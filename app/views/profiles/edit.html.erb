@@ -1,8 +1,8 @@
 <h1>Edit Profile</h1>
 
 <%= form_with(model: @profile, url: profile_path(@profile), method: :patch, local: true) do |form| %>
-  <h2>General information</h2>
-    <div>
+   <h2>General information</h2>
+  <div>
     <%= form.label :gender %>
     <%= form.select :gender, options_for_select(["Male", "Female", "Prefer not to say"]) %>
   </div>
@@ -16,6 +16,11 @@
     <%= form.label :contact_address %>
     <%= form.text_field :contact_address %>
   </div>
+
+  <div>
+  <%= form.label :profile_picture %>
+  <%= form.file_field :profile_picture %>
+</div>
 
   <h2>Medical information</h2>
   <div>
@@ -64,7 +69,7 @@
     <%= form.label :preferred_comunication_language %>
     <%= form.select :preferred_comunication_language, options_for_select(["Spanish", "English", "French", "German","Italian", "Japanese", "Mandarin", "Portuguese", "Russian", "Swedish"]) %>
   </div>
-
+  
   <div>
     <%= form.submit "Update Profile" %>
   </div>
