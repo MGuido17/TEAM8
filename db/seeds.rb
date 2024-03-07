@@ -1,6 +1,6 @@
 puts "Cleaning database..."
-User.destroy_all
 Activity.destroy_all
+User.destroy_all
 puts "Creating users..."
 
 # Create users arrays

@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
-
-  def index
+  def show
+    @user = User.find(params[:id])
+    @activities = @user.activities
   end
 
-  def show
+  def index
+    @users = User.all
   end
 
   def new
@@ -11,5 +13,6 @@ class UsersController < ApplicationController
 
   def create
   end
+
 
 end

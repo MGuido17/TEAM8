@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root to: "pages#home"
+  # User routes defined
+  resources :users, only: [:show, :index]
+
   resources :activities, only: [:index, :show] do
     resources :invites, only: [:create, :update] # Para invitar usuarios
     resources :attendees, only: [:create, :destroy] # Para unirse a actividades
