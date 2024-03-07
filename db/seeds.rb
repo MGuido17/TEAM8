@@ -21,6 +21,7 @@ users.each do |user|
     password: user[:password],
     age: user[:age]
   )
+  
   created_users << new_user
 end
 
