@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   root to: "pages#home"
   # User routes defined
-  resources :users, only: [:show, :index]
+  # resources :users, only: [:show, :index]
 
   resources :activities do
     resources :invites, only: [:create, :update] # Para invitar usuarios
