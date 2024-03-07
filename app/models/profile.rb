@@ -8,4 +8,5 @@ class Profile < ApplicationRecord
 
   MENTAL_HEALTH_CONDITION = ["Anxiety Disorders", "Bipolar Disorder", "Depression", "Post-Traumatic Stress Disorder (PTSD)", "Schizophrenia"]
 
+  belongs_to :user, dependent: :destroy
 end

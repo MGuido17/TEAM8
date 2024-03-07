@@ -1,0 +1,5 @@
+<% if @activity.attendees.any? %>
+  <p><%= pluralize(@activity.attendees.count, 'user') %> attending this activity</p>
+<% else %>
+  <p>No users are currently attending this activity</p>
+<% end %>
