@@ -16,3 +16,7 @@ input.login-btn{
   border-radius: 15px;
   transition: background-color 0.3s ease;
 }
+
+.form-inputs [required]::after {
+  content: none !important;
+}

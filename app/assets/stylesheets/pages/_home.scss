@@ -1,4 +1,10 @@
  // Home Styling goes here
+.header{
+  background-color: #0047AB; /* Deep blue background */
+  color: white; /* White text color for contrast */
+  padding: 20px 0; /* Top and bottom padding */
+}
+
  .container {
   display: flex;
   flex-direction: column;
