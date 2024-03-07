@@ -12,9 +12,28 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def show
+    @profile = Profile.find(params[:id])
+  end
+
+  def edit
+    @profile = Profile.find(params[:id])
+  end
+
+  def update
+    @profile = Profile.find(params[:id])
+    if @profile.update(profile_params)
+      redirect_to @profile, notice: 'Profile was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
   private
 
   def profile_params
-    params.require(:profile).permit(:gender, :blood_type, :allergies, :medical_conditions, :contact_phone_number, :contact_address, :preferred_comunication_language, :emergency_contact_name, :emergency_contact_phone, :emergency_contact_relationship, :user_id)
+    params.require(:profile).permit(
+      :gender, :contact_phone_number, :contact_address, :profile_picture, :blood_type, :allergies, :medical_condition, :mentalh_health_condition, :preferred_comunication_language, :emergency_contact_name, :emergency_contact_phone, :emergency_contact_relationship, :user_id
+    )
   end
 end

@@ -15,4 +15,5 @@ class User < ApplicationRecord
   has_many :bookmarks
   has_many :match_user
   has_many :attendees
+  has_one :profile
 end

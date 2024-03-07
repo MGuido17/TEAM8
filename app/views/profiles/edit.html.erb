@@ -1,8 +1,7 @@
-<h1>Create a New Profile</h1>
+<h1>Edit Profile</h1>
 
-<%= form_with(model: @profile, url: profiles_path, local: true, html: { multipart: true }) do |form| %>
-
-  <h2>General information</h2>
+<%= form_with(model: @profile, url: profile_path(@profile), method: :patch, local: true) do |form| %>
+   <h2>General information</h2>
   <div>
     <%= form.label :gender %>
     <%= form.select :gender, options_for_select(["Male", "Female", "Prefer not to say"]) %>
@@ -70,8 +69,12 @@
     <%= form.label :preferred_comunication_language %>
     <%= form.select :preferred_comunication_language, options_for_select(["Spanish", "English", "French", "German","Italian", "Japanese", "Mandarin", "Portuguese", "Russian", "Swedish"]) %>
   </div>
-
+  
   <div>
-    <%= form.submit "Create Profile" %>
+    <%= form.submit "Update Profile" %>
   </div>
 <% end %>
+
+
+
+<!-- esto va para el show page del profile <%= link_to 'Edit', edit_profile_path(@profile) %> -->
