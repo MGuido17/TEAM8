@@ -287,7 +287,7 @@ Activity.create!(
   recommended_conditions: ["Diabetes", "Depression", "Hypothyroidism", "Hyperthyroidism", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Post-Traumatic Stress Disorder (PTSD)", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"],
   not_recommended_conditions: ["Arthritis", "Rheumatoid Arthritis", "Osteoporosis"],
   neutral_conditions: neutral_conditions,
-  user: created_users.sample
+  user: created_users.sample,
   address: "La Rambla",
   location: "Barcelona, España",
   time: "18:30 a 19:30"
@@ -300,7 +300,7 @@ Activity.create!(
   recommended_conditions: ["Diabetes", "Depression", "Hypothyroidism", "Hyperthyroidism", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Post-Traumatic Stress Disorder (PTSD)", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"],
   not_recommended_conditions: ["Arthritis", "Rheumatoid Arthritis", "Osteoporosis"],
   neutral_conditions: neutral_conditions,
-  user: created_users.sample
+  user: created_users.sample,
   address: "La Rambla",
   location: "Barcelona, España",
   time: "18:30 a 19:30"
@@ -313,7 +313,7 @@ Activity.create!(
   recommended_conditions: ["Diabetes", "Osteoporosis", "Chronic Pain Syndrome", "Obesity", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Cancer", "Alzheimer's Disease", "Rheumatoid Arthritis"],
   not_recommended_conditions: ["Epilepsy"],
   neutral_conditions: neutral_conditions,
-  user: created_users.sample
+  user: created_users.sample,
   address: "La Rambla",
   location: "Barcelona, España",
   time: "18:30 a 19:30"
@@ -326,7 +326,7 @@ Activity.create!(
   recommended_conditions: ["Obesity", "Hypertension (High Blood Pressure)"],
   not_recommended_conditions: ["Epilepsy", "Osteoporosis", "Diabetes", "Asthma", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Anxiety Disorders", "Bipolar Disorder",  "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Alzheimer's Disease", "Stroke", "Chronic Pain Syndrome", "Chronic Kidney Disease", "Rheumatoid Arthritis", "Chronic Fatigue Syndrome", "Crohn's Disease", "Ulcerative Colitis", "Fibromyalgia", "Chronic Fatigue Syndrome"],
   neutral_conditions: neutral_conditions,
-  user: created_users.sample
+  user: created_users.sample,
   address: "La Rambla",
   location: "Barcelona, España",
   time: "18:30 a 19:30"
