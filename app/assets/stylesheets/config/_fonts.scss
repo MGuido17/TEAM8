@@ -15,3 +15,52 @@ $headers-font: "Montserrat", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headers-font;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 19px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+p.large {
+  font-size: 16px;
+  .regular {
+    font-weight: 400;
+  }
+  .medium {
+    font-weight: 500;
+  }
+}
+
+p.small-regular {
+  font-size: 14px;
+  .regular {
+    font-weight: 400;
+  }
+  .medium {
+    font-weight: 500;
+  }
+}
