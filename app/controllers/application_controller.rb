@@ -1,11 +1,16 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+
   protected
 
   def after_sign_in_path_for(resource)
-    user_path(resource)
+    profile_path(resource)
   end
-  # Directs user to their show page after login
+
+  def after_sign_up_path_for(resource)
+    new_profile_path(resource)
+  end
+  # Directs user to their show page after loginw
   # before_action :authenticate_user!
   # include Pundit::Authorization
 
