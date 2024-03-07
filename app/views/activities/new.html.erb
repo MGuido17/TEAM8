@@ -3,7 +3,7 @@
   </div>
   <h1>Create New Activity</h1>
 
-  <%= simple_form_for(@activity, local: true) do |f| %>
+  <%= simple_form_for(@activity) do |f| %>
     <%= f.error_notification %>
 
     <div class="field">
@@ -24,10 +24,6 @@
 
     <div class="field">
       <%= f.input :date, label: 'Date', as: :string, input_html: { type: 'datetime-local', id: :activity_date, value: @activity.date&.strftime('%Y-%m-%dT%H:%M') } %>
-    </div>
-
-    <div class="field">
-      <%= f.input :time, label: 'Time', as: :string, input_html: { type: 'time', id: :activity_time, value: @activity.date&.strftime('%H:%M') } %>
     </div>
 
     <div class="field">

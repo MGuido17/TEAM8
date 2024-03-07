@@ -1,5 +1,4 @@
 class ActivitiesController < ApplicationController
-
   def new
     @activity = Activity.new
   end
@@ -8,15 +7,16 @@ class ActivitiesController < ApplicationController
     @activity = current_user.activities.build(activity_params)
     @activity.organiser = current_user
     if @activity.save
-      redirect_to @activity, notice: "The activity has successfully been created!"
+      redirect_to activity_path(@activity), notice: "The activity has successfully been created!"
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-private
+  private
 
   def activity_params
-    params.require(:activity).permit(:name, :address, :description, :location, :date, :spaces, :recommended_conditions, :not_recommended_conditions, :private)
+    params.require(:activity).permit(:name, :address, :description, :location, :date, :spaces,
+                                    :private, recommended_conditions: [], not_recommended_conditions: [])
   end
 end

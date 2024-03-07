@@ -6,7 +6,6 @@ class Activity < ApplicationRecord
   serialize :recommended_conditions, type: Array, coder: JSON
   serialize :neutral_conditions, type: Array, coder: JSON
   serialize :not_recommended_conditions, type: Array, coder: JSON
-
   validates :name, presence: true
   validates :description, presence: true
   validates :date, presence: true
