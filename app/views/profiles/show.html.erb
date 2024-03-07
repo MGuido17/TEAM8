@@ -1,0 +1,12 @@
+<h1>Welcome, TEAM8!</h1>
+
+<% if @profile.user == current_user %>
+  <p>First Name: <%= @profile.user.first_name %></p>
+  <p>Last Name: <%= @profile.user.last_name %></p>
+<% end %>
+
+<% if @profile.profile_picture.present? %>
+  <%= image_tag @profile.profile_picture.url %>
+<% end %>
+
+<!-- agregar los atributes que hacen falta -->
