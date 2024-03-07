@@ -13,3 +13,7 @@
 @import "pages/index";
 @import "pages/user_show";
 @import "pages/sign_in";
+
+body {
+  background-color: $body-background;
+}
