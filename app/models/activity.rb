@@ -14,5 +14,4 @@ class Activity < ApplicationRecord
   validates :not_recommended_conditions, presence: true
   validates :address, presence: true
   validates :location, presence: true
-  validates :time, presence: true
 end
