@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= asset_path('') %>);">
+    <div class="container">
+      <h1><strong>TEAM8</strong></h1>
+      <p>CONNECT, TRAIN, THRIVE</p>
+    </div>
+  </div>
+  <div class="user-flex-container">
+    <div class="user-card">
+    <h1>Welcome to your dashboard <%=@user.first_name%></h1>
+    <img src="https://cdn-icons-png.freepik.com/512/6676/6676023.png" alt="avatar" class="user-photo" />
+    </div>
+    <div class="user-card">
+        <div class="activity-list">
+          <h1>Here are the activities you have booked</h1>
+          <% @activities.each do |activity| %>
+            <div class="card" style="width: 18rem; margin-bottom: 20px;">
+              <div class="card-body">
+                <h5 class="card-title"><%= activity.name %></h5>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>

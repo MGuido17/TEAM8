@@ -14,7 +14,11 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  private
+  def show
+    @activity = Activity.find(params[:id])
+  end
+
+private
 
   def activity_params
     params.require(:activity).permit(:name, :address, :description, :location, :date, :spaces, :private).tap do |whitelisted|

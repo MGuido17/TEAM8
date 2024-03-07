@@ -1,0 +1,9 @@
+<h1><%= activity.name %></h1>
+
+<h3><%= activity.address %></h3>
+<h3><%= activity.location %></h3>
+
+<div>
+  <%= render partial: "shared/_activity_attendees_preview", collection: @atendees, as: :atendee %>
+  <button type="submit" class="btn btn-primary">Attend</button>
+</div>
