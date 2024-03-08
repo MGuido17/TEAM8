@@ -58,7 +58,7 @@ class ActivitiesController < ApplicationController
     redirect_to activities_path, notice: "The activity has been deleted."
   end
 
-private
+  private
 
   def activity_params
     params.require(:activity).permit(:name, :address, :description, :location, :date, :spaces, :private).tap do |whitelisted|
@@ -67,16 +67,15 @@ private
     end
   end
 
-
   def set_activity
     @activity = Activity.find(params[:id])
   end
 
   def check_authorization
     redirect_to root_path, alert: "Not authorized" unless @activity.organiser == current_user
+  end
 
   def set_user
     @user = current_user
-
   end
 end
