@@ -1,3 +1,5 @@
+<!-- 
+
 <h1><%= activity.name %></h1>
 
 <h3><%= activity.address %></h3>
@@ -6,4 +8,18 @@
 <div>
   <%= render partial: "shared/_activity_attendees_preview", collection: @atendees, as: :atendee %>
   <button type="submit" class="btn btn-primary">Attend</button>
+</div>
+
+-->
+<div>
+  <i class="fa-solid fa-person-running"></i>
+  <h1><%= link_to activity.name, activity %></h1>
+  <div>
+    <h6><%= activity.address %></h6>
+    <p class="large-regular"><%= activity.location %></p>
+  </div>
+  <div>
+    <%= render partial: "/shared/activity_attendees_preview", collection: @atendees, as: :atendee %>
+    <%= render partial: "/shared/button_attend_event", locals: { attend_text: "Attend" } %>
+  </div>
 </div>
