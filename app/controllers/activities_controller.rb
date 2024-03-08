@@ -74,6 +74,7 @@ private
 
   def check_authorization
     redirect_to root_path, alert: "Not authorized" unless @activity.organiser == current_user
+  end
 
   def set_user
     @user = current_user
