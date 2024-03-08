@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  has_one :profile
   def show
     @user = User.find(params[:id])
+    @profile = @user.profile
     @activities = @user.activities
   end
 

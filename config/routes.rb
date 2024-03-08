@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   end
 
   resources :profiles, except: [:index, :destroy]
+  resources :users, only: [:index]
 end
