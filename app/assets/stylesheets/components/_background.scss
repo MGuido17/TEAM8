@@ -1,0 +1,27 @@
+/* Style for input fields */
+.input-style {
+  background-color: white; /* Set background to white */
+  border: 2px solid #007BFF; /* Bluish border */
+  border-radius: 15px; /* More rounded corners */
+  padding: 0.5rem; /* Add some padding inside the inputs */
+  font-size: 1rem; /* Adjust font size as needed */
+}
+
+/* Apply the input style to all inputs, textareas, and selects within .field class */
+.field input,
+.field textarea,
+.field select {
+  background-color: white; /* White background */
+  border: 2px solid #007BFF; /* Bluish border, adjust the color as you like */
+  border-radius: 15px; /* Rounded borders */
+  padding: 10px; /* Padding inside the input fields */
+  font-size: 16px; /* Adjust the font size according to your design */
+}
+
+/* Adjust the focus state for a better user experience */
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  border-color: #0056b3; /* Darker blue on focus */
+  outline: none; /* Removes the default focus outline */
+}

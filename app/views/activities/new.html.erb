@@ -1,4 +1,4 @@
-<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;">
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 10% ">
   <div style="margin-bottom: 20px;">
   </div>
   <h1>Create a new activity</h1>
@@ -35,7 +35,7 @@
   <div class="field">
     <%= f.input :recommended_conditions,
                 label: 'Recommended Conditions',
-                as: :check_boxes,
+                as: :select,
                 collection: medical_conditions,
                 input_html: { multiple: true, size: 10 },
                 include_blank: false %>
@@ -44,7 +44,7 @@
   <div class="field">
     <%= f.input :not_recommended_conditions,
                 label: 'Not Recommended Conditions',
-                as: :check_boxes,
+                as: :select,
                 collection: medical_conditions,
                 input_html: { multiple: true, size: 10 },
                 include_blank: false %>
@@ -55,9 +55,8 @@
     </div>
 
       <div class="actions">
+      <div class="button-container">
         <%= f.button :submit, "Create Activity", class: "btn-blue-primary" %>
       </div>
     <% end %>
-
-  <%= link_to 'Back', activities_path %>
 </div>
