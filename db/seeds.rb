@@ -237,7 +237,7 @@ Activity.create!(
   user: created_users.sample,
   address: "La Rambla",
   location: "Barcelona, España",
-  description: "Dynamic and energetic workouts that combine rhythmic movements with music.",
+  description: "Dynamic and energetic workouts that combine rhythmic movements with music. Involves cardiovascular improvement",
   date: "2024-04-15",
   spaces: 20
 )
