@@ -1,4 +1,9 @@
 class ProfilesController < ApplicationController
+
+  def index
+    @users = User.all
+  end
+
   def new
     @profile = Profile.new
   end

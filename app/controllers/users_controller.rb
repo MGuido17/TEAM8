@@ -5,9 +5,7 @@ class UsersController < ApplicationController
     @activities = @user.activities
   end
 
-  def index
-    @users = User.all
-  end
+
 
   def new
   end
