@@ -1,0 +1,9 @@
+<h1>Available Activities</h1>
+
+<ul>
+  <% @activities.each do |activity| %>
+    <h2><%= link_to activity.name, activity %></h2>
+    <p><%= activity.description %></p>
+  <% end %>
+</ul>
+<%# render partial: "/shared/activity_card", collection: @activities, as: :activity %>

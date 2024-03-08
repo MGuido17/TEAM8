@@ -1,5 +1,5 @@
 <h1>Create a New Profile</h1>
-
+<div class="profile-form">
 <%= form_with(model: @profile, url: profiles_path, local: true, html: { multipart: true }) do |form| %>
 
   <h2>General information</h2>
@@ -75,3 +75,5 @@
     <%= form.submit "Create Profile" %>
   </div>
 <% end %>
+
+</div>

@@ -13,3 +13,8 @@
 @import "pages/index";
 @import "pages/user_show";
 @import "pages/sign_in";
+
+body {
+  color: $font-dark;
+  background-color: $body-background;
+}
