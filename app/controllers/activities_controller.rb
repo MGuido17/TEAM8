@@ -62,7 +62,7 @@ class ActivitiesController < ApplicationController
     redirect_to activities_path, notice: "The activity has been deleted."
   end
 
-private
+  private
 
   def activity_params
     params.require(:activity).permit(:name, :address, :description, :location, :date, :spaces, :private).tap do |whitelisted|
@@ -70,7 +70,6 @@ private
       whitelisted[:not_recommended_conditions] = params[:activity][:not_recommended_conditions].reject(&:blank?)
     end
   end
-
 
   def set_activity
     @activity = Activity.find(params[:id])
@@ -82,6 +81,5 @@ private
 
   def set_user
     @user = current_user
-
   end
 end
