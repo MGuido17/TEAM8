@@ -1,9 +1,42 @@
-<div class="footer-navbar">
-  <nav class="app-navbar">
-    <%# <%= link_to 'Home', profile_path(current_user.profile), class: 'navbar-item button-style search-button' %>
-    <%# <%= link_to 'Find a match', users_path, class: 'navbar-item button-style search-button' %> 
-    <a href="/search" class="navbar-item button-style search-button">Find an activity</a>
-    <a href="/profile" class="navbar-item button-style">Profile</a>
-    <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'navbar-item button-style sign-out-button' %>
-  </nav>
+<%# <div class="footer-navbar"> %>
+  <%# <nav class="app-navbar"> %>
+    <%# <%= link_to 'Home', profile_path(current_user.profile), class: 'navbar-item button-style search-button' %> %>
+    <%# <%= link_to 'Find a match', users_path, class: 'navbar-item button-style search-button' %> %>
+    <%# <a href="/search" class="navbar-item button-style search-button">Find an activity</a> %>
+    <%# <a href="/profile" class="navbar-item button-style">Profile</a> %>
+    <%# <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'navbar-item button-style sign-out-button' %> %>
+  <%# </nav> %>
+<%# </div> %>
+
+<div class="navbar fixed-bottom">
+  <div class="button-column">
+    <i class="fa-solid fa-house"></i>
+    <%= link_to root_path, class: "no-link-style" do %>
+      <%# <span>Home</span> %>
+    <% end %>
+  </div>
+  <div class="button-column">
+    <i class="fa-solid fa-person-running"></i>
+    <%= link_to root_path, class: "no-link-style" do %>
+      <%# <span>Activities</span> %>
+    <% end %>
+  </div>
+    <div class="button-column">
+    <i class="fa-solid fa-dumbbell"></i>
+    <%= link_to root_path, class: "no-link-style" do %>
+      <%# <span>TM8</span> %>
+    <% end %>
+  </div>
+  <div class="button-column">
+    <i class="fa-solid fa-comments"></i>
+    <%= link_to root_path, class: "no-link-style" do %>
+      <%# <span>DMS</span> %>
+    <% end %>
+  </div>
+    <div class="button-column">
+    <i class="fa-brands fa-x-twitter"></i>
+    <%= link_to root_path, class: "no-link-style" do %>
+      <%# <span>Community</span> %>
+    <% end %>
+  </div>
 </div>
