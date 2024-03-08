@@ -1,0 +1,25 @@
+.color-overlay {
+  width: 430px;
+  height: 932px;
+  background-color: $brand-06;
+  background-size: cover;
+}
+
+.section-header {
+  // display: flex;
+  // flex-direction: column;
+  color: $white;
+  .top-header-section {
+    a.back-button {
+      color: $white;
+    }
+  .bottom-header-section {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 94px;
+    position: relative;
+  }
+  }
+}
