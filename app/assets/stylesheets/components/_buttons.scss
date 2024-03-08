@@ -12,3 +12,20 @@
   gap: 1rem;
   align-items: center;
 }
+
+.btn-plus {
+  background-color: #0047AB;
+  border: none;
+  color: white;
+  display: inline-flex; // changed from flex to inline-flex for better control
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  cursor: pointer;
+  border-radius: 15px;
+  font-size: 16px; // Adjusted for better visibility
+  padding: 0.75rem 1.5rem; // Adjusted to accommodate longer text
+  // width and height removed to allow the button to grow with its content
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}

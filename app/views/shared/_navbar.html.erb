@@ -1,4 +1,5 @@
 
+
 <div class="navbar fixed-bottom">
   <div class="button-column">
     <i class="fa-solid fa-house"></i>
@@ -24,10 +25,11 @@
       <span>DMS</span>
     <% end %>
   </div>
-    <div class="button-column">
-    <i class="fa-brands fa-x-twitter"></i>
-    <%= link_to root_path, class: "no-link-style" do %>
-      <span>Community</span>
+  
+  <div class="button-column">
+    <%= button_to destroy_user_session_path, method: :delete, class: "no-link-style" do %>
+      <i class="fa-brands fa-x-twitter"></i>
+      <%# <span>Community</span> %>
     <% end %>
   </div>
 </div>
