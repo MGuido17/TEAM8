@@ -16,5 +16,6 @@ Rails.application.routes.draw do
     resources :attendees, only: [:create, :destroy] # Para unirse a actividades
   end
 
-  resources :profiles, except: [:index, :destroy]
+  resources :profiles, except: [:destroy]
+  # resources :users, only: [:index]
 end

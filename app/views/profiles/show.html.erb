@@ -1,6 +1,37 @@
+<div class="profile-index-container">
 <h1>Welcome, TEAM8!</h1>
-
 <% if @profile.user == current_user %>
-  <p>First Name: <%= @profile.user.first_name %></p>
-  <p>Last Name: <%= @profile.user.last_name %></p>
+  <p><%= @profile.user.first_name %> <%= @profile.user.last_name %> we've selected<br>these activities just for you!</p>
 <% end %>
+
+<% if @activities.present? %>
+  <div class="row">
+    <% @activities.each do |activity| %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= activity.name %></h5>
+            <p class="card-text">Address: <%= activity.address %></p>
+            <p class="card-text">Location: <%= activity.location %></p>
+            <p class="card-text">Spaces available: <%= activity.spaces %></p>
+            <%= link_to 'Reserve a space', activity_path(activity), class: "btn btn-plus" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>No activities found.</p>
+<% end %>
+
+
+<% if @activities.present? %>
+  <% @activities.each do |activity| %>
+    <div>
+      <%= activity.name %>
+    </div>
+  <% end %>
+<% else %>
+  <p>No activities found.</p>
+<% end %>
+</div>

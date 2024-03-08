@@ -1,4 +1,9 @@
 class ProfilesController < ApplicationController
+
+  def index
+    @users = User.all
+  end
+
   def new
     @profile = Profile.new
   end
@@ -17,6 +22,8 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
+    @profile.user = current_user
+    @activities = filter_activities_by_conditions
   end
 
   def edit
@@ -33,6 +40,21 @@ class ProfilesController < ApplicationController
   end
 
   private
+
+  def user_conditions
+    @user = current_user
+    mental_health_condition = @user.profile.mental_health_condition
+    medical_condition = @user.profile.medical_condition
+    mental_health_condition + medical_condition
+  end
+
+  def filter_activities_by_conditions
+    conditions = user_conditions
+    Activity.all.filter do |activity|
+      recommended_conditions = activity.recommended_conditions.any? { |condition| conditions.include?(condition) }
+      recommended_conditions
+    end
+  end
 
   def profile_params
     params.require(:profile).permit(

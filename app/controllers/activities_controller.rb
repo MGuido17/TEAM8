@@ -7,19 +7,8 @@ class ActivitiesController < ApplicationController
 
   def index
     if @user
-      mental_health_condition = @user.profile.mental_health_condition
-      medical_condition = @user.profile.medical_condition
-      conditions = mental_health_condition + medical_condition
-
-      @activities = Activity.all.filter do |activity|
-        recommended_conditions = activity.recommended_conditions.any? {|condition| conditions.include?(condition)}
-        not_recommended_conditions = activity.not_recommended_conditions.any? {|condition| conditions.include?(condition)}
-        neutral_conditions = activity.neutral_conditions.any? {|condition| conditions.include?(condition)}
-        recommended_conditions && !not_recommended_conditions && neutral_conditions
-      end
-
+      @activities = filter_activities_by_conditions
     else
-      # Handle the case when @user is nil
       @activities = Activity.all
     end
   end
@@ -81,5 +70,20 @@ class ActivitiesController < ApplicationController
 
   def set_user
     @user = current_user
+  end
+
+  def filter_activities_by_conditions
+    conditions = user_conditions
+    Activity.all.filter do |activity|
+      recommended_conditions = activity.recommended_conditions.any? { |condition| conditions.include?(condition) }
+      neutral_conditions = activity.neutral_conditions.any? { |condition| conditions.include?(condition) }
+      recommended_conditions || neutral_conditions
+    end
+  end
+
+  def user_conditions
+    mental_health_condition = @user.profile.mental_health_condition
+    medical_condition = @user.profile.medical_condition
+    mental_health_condition + medical_condition
   end
 end
