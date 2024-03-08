@@ -9,13 +9,14 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
 
   </head>
+  <%# wtvr %>
 
   <body>
   <div class="container-app">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-    <%= render "shared/navbar" if current_user && !(action_name == 'pages')%>
+    <%= render "shared/navbar" if current_user && !(action_name == 'x')%>
     </div>
   </body>
 </html>
