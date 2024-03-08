@@ -4,7 +4,11 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(resource)
-    profile_path(resource)
+    if resource.profile
+      profile_path(resource)
+    else
+      new_profile_path(resource)
+    end
   end
 
   def after_sign_up_path_for(resource)
