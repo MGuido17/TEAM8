@@ -7,13 +7,17 @@ class ActivitiesController < ApplicationController
 
   def index
     if @user
-      recommended_conditions = @user.profiles.pluck(:recommended_conditions).flatten
-      neutral_conditions = @user.profiles.pluck(:neutral_conditions).flatten
-      not_recommended_conditions = @user.profiles.pluck(:not_recommended_conditions).flatten
+      mental_health_condition = @user.profile.mental_health_condition
+      medical_condition = @user.profile.medical_condition
+      conditions = mental_health_condition + medical_condition
 
-      @activities = Activity.includes(:profiles).where.not(profiles: { not_recommended_conditions: not_recommended_conditions })
-                            .or(Activity.includes(:profiles).where(profiles: { recommended_conditions: recommended_conditions }))
-                            .or(Activity.includes(:profiles).where(profiles: { neutral_conditions: neutral_conditions }))
+      @activities = Activity.all.filter do |activity|
+        recommended_conditions = activity.recommended_conditions.any? {|condition| conditions.include?(condition)}
+        not_recommended_conditions = activity.not_recommended_conditions.any? {|condition| conditions.include?(condition)}
+        neutral_conditions = activity.neutral_conditions.any? {|condition| conditions.include?(condition)}
+        recommended_conditions && !not_recommended_conditions && neutral_conditions
+      end
+
     else
       # Handle the case when @user is nil
       @activities = Activity.all
