@@ -1,22 +1,29 @@
-<div class="activity-header">
-  <%= link_to :back, class: 'back-button' do %> <!-- link_to 'prefix selected_items' -->
-    <i class="fa-solid fa-arrow-left"></i>
-  <% end %>
-  <h1><%= @activity.name %></h1>
-  <h5>By <%= @activity.organiser %></h5>
-</div>
-
-<div class="activity-info">
-
-  <div class="date">
-    <h4><%= @activity.date %></h4>
+<div class="color-overlay">
+  <div class="section-header">
+    <div class="top-header-section">
+      <%= link_to :back, class: 'back-button' do %>
+        <i class="fa-solid fa-arrow-left"></i>
+      <% end %>
+    </div>
+    <div class="bottom-header-section">
+      <h1><%= @activity.name %></h1>
+      <h5>By <%= @activity.organiser %></h5>
+    </div>
   </div>
 
-  <div class="place">
-    <h4><%= @activity.address %></h4>
-    <h5><%= @activity.location %></h5>
-  </div>
+  <div class="activity-detail">
 
-  <%= render partial: "/shared/attendee_counter" %>
-  <%= render partial: "/shared/button_attend_event", locals: { attend_text: "Attend to this event" } %>
+    <div class="date">
+      <h4><%= @activity.date %></h4>
+    </div>
+
+    <div class="place">
+      <h4><%= @activity.address %></h4>
+      <h5><%= @activity.location %></h5>
+    </div>
+
+    <%= render partial: "/shared/attendee_counter" %>
+    <%= render partial: "/shared/button_attend_event", locals: { attend_text: "Attend to this event" } %>
+  </div>
 </div>
+
