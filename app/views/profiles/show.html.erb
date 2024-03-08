@@ -5,4 +5,12 @@
   <p>Last Name: <%= @profile.user.last_name %></p>
 <% end %>
 
-
+<% if @activities.present? %>
+  <% @activities.each do |activity| %>
+    <div>
+      <%= activity.name %>
+    </div>
+  <% end %>
+<% else %>
+  <p>No activities found.</p>
+<% end %>
