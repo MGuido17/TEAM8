@@ -9,8 +9,7 @@
 <div class="activity-info">
 
   <div class="date">
-    <h4><%= @activity.date %></h4>  
-    <h5><%= @activity.time %></h5>
+    <h4><%= @activity.date %></h4>
   </div>
 
   <div class="place">
@@ -19,9 +18,5 @@
   </div>
 
   <%= render partial: "/shared/attendee_counter" %>
-
   <%= render partial: "/shared/button_attend_event", locals: { attend_text: "Attend to this event" } %>
-
 </div>
-
-
