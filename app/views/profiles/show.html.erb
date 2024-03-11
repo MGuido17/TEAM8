@@ -1,9 +1,8 @@
 <div class="profile-index-container">
 <h1>Welcome, TEAM8!</h1>
 <% if @profile.user == current_user %>
-  <p><%= @profile.user.first_name %> <%= @profile.user.last_name %> we've selected<br>these activities just for you!</p>
+<p><%= @profile.user.first_name %> <%= @profile.user.last_name %>, TEAM8 algorithms have been working hard to find the activities best suited to your needs. Please find your recommended activities below, or browse the comprehensive list of activities <%= link_to 'here', activities_path %>.</p>
 <% end %>
-
 <% if @activities.present? %>
   <div class="row">
     <% @activities.each do |activity| %>
@@ -21,17 +20,6 @@
     <% end %>
   </div>
 <% else %>
-  <p>No activities found.</p>
-<% end %>
-
-
-<% if @activities.present? %>
-  <% @activities.each do |activity| %>
-    <div>
-      <%= activity.name %>
-    </div>
-  <% end %>
-<% else %>
-  <p>No activities found.</p>
+  <p>No activities found. Configure your preferences so we know which activities to match you with!</p>
 <% end %>
 </div>

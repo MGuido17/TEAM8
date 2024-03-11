@@ -1,12 +1,19 @@
 <div class="profile-index-container">
-  <h1>TEAM8 algorithms have worked hard to find profiles that match your interests </h1>
-  <% @users.each do |user| %>
-    <div class="user-card">
-<img src="https://api.dicebear.com/7.x/avataaars/<%= URI.encode_www_form_component(user.first_name) %>.svg" alt="User Avatar" class="user-avatar">
-      <div class="card-body">
-        <h5 class="card-title"><%= user.first_name %> <%= user.last_name %></h5>
-        <p class="card-text">Age: <%= user.age %></p>
+  <h1>Find your TEAM8 today</h1>
+  <p>TEAM8 algorithms have worked hard to find profiles that match your interests<br><br>Start swiping to find your perfect TEAM8 and book your first activity together </p>
+  <div class="row">
+    <% @users.each do |user| %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="avatar">
+          <img src="https://api.dicebear.com/7.x/avataaars/<%= URI.encode_www_form_component(user.first_name) %>.svg" alt="User Avatar" class="avatar">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= user.first_name %> <%= user.last_name %></h5>
+            <p class="card-text">Age: <%= user.age %></p>
+          </div>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

@@ -25,15 +25,15 @@
 </div>
 
  <h3>Medical conditions</h3>
-<%= form.label :medical_conditions, "Select medical conditions" %>
-<%= form.select :medical_conditions,
+<%= form.label :medical_condition, "Select medical conditions" %>
+<%= form.select :medical_condition,
                 options_for_select(Profile::MEDICAL_CONDITION),
                 {},
                 { multiple: true, size: 5, class: 'multi-select' } %>
 
   <h3>Mental Health conditions</h3>
-  <%= form.label :mental_health_conditions, "Select mental health conditions" %>
-  <%= form.select :mental_health_conditions,
+  <%= form.label :mental_health_condition, "Select mental health conditions" %>
+  <%= form.select :mental_health_condition,
                   options_for_select(Profile::MENTAL_HEALTH_CONDITION),
                   {},
                   { multiple: true, size: 5, class: 'multi-select' } %>
