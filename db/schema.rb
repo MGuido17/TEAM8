@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_03_07_152133) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -49,7 +52,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_07_152133) do
     t.text "not_recommended_conditions"
     t.text "neutral_conditions"
     t.boolean "private"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "address"
@@ -58,8 +61,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_07_152133) do
   end
 
   create_table "attendees", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "activity_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "activity_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["activity_id"], name: "index_attendees_on_activity_id"
@@ -67,8 +70,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_07_152133) do
   end
 
   create_table "bookmarks", force: :cascade do |t|
-    t.integer "activity_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "activity_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["activity_id"], name: "index_bookmarks_on_activity_id"
@@ -77,8 +80,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_07_152133) do
 
   create_table "invites", force: :cascade do |t|
     t.boolean "status"
-    t.integer "user_one_id", null: false
-    t.integer "user_two_id", null: false
+    t.bigint "user_one_id", null: false
+    t.bigint "user_two_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_one_id"], name: "index_invites_on_user_one_id"
@@ -86,8 +89,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_07_152133) do
   end
 
   create_table "match_users", force: :cascade do |t|
-    t.integer "match_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "match_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["match_id"], name: "index_match_users_on_match_id"
@@ -100,8 +103,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_07_152133) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "match_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "match_id", null: false
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -119,7 +122,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_07_152133) do
     t.string "emergency_contact_name"
     t.string "emergency_contact_phone"
     t.string "emergency_contact_relationship"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "medical_condition"
@@ -130,8 +133,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_07_152133) do
   create_table "reviews", force: :cascade do |t|
     t.text "description"
     t.integer "rating"
-    t.integer "user_id", null: false
-    t.integer "activity_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "activity_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["activity_id"], name: "index_reviews_on_activity_id"
