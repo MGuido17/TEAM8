@@ -5,18 +5,27 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-
   </head>
-
-
-  <body>
-  <div class="team8-container">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-    <%= render "shared/navbar" if current_user && !(action_name == 'home')%>
+    <body>
+    <div class="team8-container">
+    <div  class="header">
+    <div class="content">
+      <div class="content-inner">
+        <h1 class="team-title">TEAM8</h1>
+        <div class="divider"></div>
+        <ul class="features-list">
+          <li>CONNECT</li>
+          <li>TRAIN</li>
+          <li>THRIVE</li>
+        </ul>
+      </div>
     </div>
-  </body>
+  </div>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+      <%= render "shared/navbar" if current_user && !(action_name == 'home')%>
+      </div>
+    </body>
 </html>

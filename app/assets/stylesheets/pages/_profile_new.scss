@@ -1,7 +1,7 @@
 .profile-form {
   max-width: 600px; /* Set a max width for the form */
-  margin: 20px auto; /* Center the form with automatic margins */
-  padding: 20px; /* Add some padding inside the form container */
+  margin: 40px auto; /* Center the form with automatic margins */
+  padding: 40px; /* Add some padding inside the form container */
   background-color: #f8f8f8; /* Light background color for the form area */
   border-radius: 8px; /* Slightly rounded corners for the form container */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -34,19 +34,7 @@
   text-align: right; /* Align the submit button to the right */
 }
 
-.profile-form .btn {
-  background-color: #0047AB; /* Your application's button color */
-  color: white; /* White text on buttons */
-  padding: 10px 20px; /* Padding inside buttons */
-  border: none; /* Remove default button border */
-  border-radius: 5px; /* Rounded corners for buttons */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}
 
-.profile-form .btn:hover {
-  background-color: #003885; /* Darker shade on hover for buttons */
-}
 
 /* Adjustments for smaller screens */
 @media (max-width: 576px) {
@@ -58,4 +46,8 @@
   .profile-form .form-actions {
     text-align: center; /* Center the submit button on small screens */
   }
+}
+
+.form-step.active-step {
+  display: block; /* Only the active step is displayed */
 }
