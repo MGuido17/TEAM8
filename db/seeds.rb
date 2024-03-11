@@ -16,7 +16,6 @@ users = [
   { first_name: "Nicolas", last_name: "Otatti", email: "ottatinicolas91@gmail.com", password: "password", age: 30 }
 ]
 
-
 created_users = []
 genders = ["Male", "Female"]
 contact_phone_numbers = ["37648746587", "7654873465786348", "4657836478653"]
