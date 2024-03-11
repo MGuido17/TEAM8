@@ -1,8 +1,25 @@
 <div class="profile-index-container">
-<h1>Welcome, TEAM8!</h1>
-<% if @profile.user == current_user %>
-<p><%= @profile.user.first_name %> <%= @profile.user.last_name %>, TEAM8 algorithms have been working hard to find the activities best suited to your needs. Please find your recommended activities below, or browse the comprehensive list of activities <%= link_to 'here', activities_path %>.</p>
+
+  <h1>Welcome, TEAM8!</h1>
+  <% if @profile.user == current_user %>
+    <p><%= @profile.user.first_name %> <%= @profile.user.last_name %> we've selected<br>these activities just for you!</p>
+  <% end %>
+</div>
+
+
+<% @invites.each do |invite| %>
+  <div class="user-card text-center" style="width: 18rem; margin: 0 auto 20px;">
+    <div class="card-body">
+      <%= link_to "#{invite.user_one.first_name}", profile_path(invite.user_one.profile) %><p>wants to be your TEAM8</p>
+    </div>
+    <div class="button-row" style="display: flex; justify-content: space-between;">
+      <%= button_to "Reject", reject_invite_path(invite, status: false), method: :patch, data: { turbo: false }, class: "btn btn-danger" %>
+      <%= button_to "Accept", accept_invite_path(invite, status: true), method: :patch, data: { turbo: false }, class: "btn btn-success" %>
+    </div>
+  </div>
 <% end %>
+
+
 <% if @activities.present? %>
   <div class="row">
     <% @activities.each do |activity| %>
@@ -20,6 +37,8 @@
     <% end %>
   </div>
 <% else %>
+
   <p>No activities found. Configure your preferences so we know which activities to match you with!</p>
 <% end %>
 </div>
+
