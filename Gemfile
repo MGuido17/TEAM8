@@ -76,3 +76,4 @@ gem 'bootstrap'
 gem 'font-awesome-sass'
 gem "pundit"
 gem "cloudinary"
+gem "pg"

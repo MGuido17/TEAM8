@@ -7,12 +7,12 @@ class ApplicationController < ActionController::Base
     if resource.profile
       profile_path(resource)
     else
-      new_profile_path(resource)
+      new_profile_path
     end
   end
 
   def after_sign_up_path_for(resource)
-    new_profile_path(resource)
+    new_profile_path
   end
 
   # def after_sign_out_path_for(resource)
