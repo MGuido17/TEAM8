@@ -14,8 +14,10 @@ Rails.application.routes.draw do
   resources :activities do
     resources :invites, only: [:create, :update] # Para invitar usuarios
     resources :attendees, only: [:create, :destroy] # Para unirse a actividades
+    resources :bookmarks, only: [:create, :destroy]
   end
 
+  resources :bookmarks, only: [:index]
   resources :profiles, except: [:destroy]
   # resources :users, only: [:index]
 end

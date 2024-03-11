@@ -1,6 +1,18 @@
 <div class="profile-index-container">
   <h1>Activites</h1>
-  <p>Browse your comprehensive list of available activites</p>
+  <p>Browse your comprehensive list of available activites, or press <%= link_to "here", bookmarks_path%> for bookmarks</p>
+  <div class="search-bar text-center">
+    <%= form_with url: activities_path, method: :get, class: "search-form" do %>
+      <div class="input-wrapper">
+        <%= text_field_tag :query,
+              params[:query],
+              class: "search-input form-control",
+              placeholder: "Search for a specific activity"
+          %>
+        <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    <% end %>
+  </div>
   <div class="row">
     <% @activities.each do |activity| %>
       <div class="col-md-4 mb-4">
@@ -11,6 +23,7 @@
             <p class="card-text">Location: <%= activity.location %></p>
             <p class="card-text">Spaces available: <%= activity.spaces %></p>
             <%= link_to 'Reserve a space', activity_path(activity), class: "btn btn-plus" %>
+            <%= button_to 'Bookmark this event', activity_bookmarks_path(activity_id: activity.id), data: { turbo_method: :post }, class: "btn btn-plus" %>
           </div>
         </div>
       </div>
