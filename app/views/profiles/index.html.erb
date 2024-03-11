@@ -1,11 +1,13 @@
 <div class="profile-index-container">
 <h1>Browse profiles with similar interests to you</h1>
+
  <% @users.each do |user| %>
   <div class="user-card" style="width: 18rem; margin-bottom: 20px;">
     <div class="card-body">
       <h5 class="card-title"><%= user.first_name %> <%= user.last_name %></h5>
       <p class="card-text">Age: <%= user.age %></p>
     </div>
+        <%= button_to "match", invites_path(user_two_id: user.id), data: {turbo_method: :post} %>
   </div>
 <% end %>
 </div>

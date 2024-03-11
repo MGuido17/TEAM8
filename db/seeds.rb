@@ -1,11 +1,12 @@
 puts "Cleaning database..."
+Invite.destroy_all
+User.destroy_all
 Attendee.destroy_all
 Bookmark.destroy_all
 MatchUser.destroy_all
 Profile.destroy_all
 Review.destroy_all
 Activity.destroy_all
-User.destroy_all
 puts "Creating users..."
 
 # Create users arrays
