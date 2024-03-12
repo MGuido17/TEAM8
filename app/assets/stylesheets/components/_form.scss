@@ -1,0 +1,33 @@
+body {
+  background-color: $body-background;
+  margin: 0;
+  line-height: normal;
+}
+
+.field {
+  position: absolute;
+  top: calc(50% - 12px);
+  left: 0%;
+
+}
+
+.actions {
+  background: linear-gradient(44.46deg, #0047ab, #3388ff);
+  height: 100%;
+  flex: 1;
+  width: 100%;
+  position: relative;
+  border-radius: 100px;
+  background: linear-gradient(44.46deg, #0047ab, #3388ff);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 24px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 16px;
+  font-family: Montserrat;
+}
