@@ -1,44 +1,52 @@
-<div class="profile-index-container">
-
-  <h1>Welcome, TEAM8!</h1>
-  <% if @profile.user == current_user %>
-    <p><%= @profile.user.first_name %> <%= @profile.user.last_name %> we've selected<br>these activities just for you!</p>
-  <% end %>
-</div>
-
-
-<% @invites.each do |invite| %>
-  <div class="user-card text-center" style="width: 18rem; margin: 0 auto 20px;">
-    <div class="card-body">
-      <%= link_to "#{invite.user_one.first_name}", profile_path(invite.user_one.profile) %><p>wants to be your TEAM8</p>
-    </div>
-    <div class="button-row" style="display: flex; justify-content: space-between;">
-      <%= button_to "Reject", reject_invite_path(invite, status: false), method: :patch, data: { turbo: false }, class: "btn btn-danger" %>
-      <%= button_to "Accept", accept_invite_path(invite, status: true), method: :patch, data: { turbo: false }, class: "btn btn-success" %>
-    </div>
+<body class="profile-show-page">
+  <div class="profile-index-container">
+    <h1 class="profile-h2-show">Welcome TEAM8</h1>
+    <% if @profile.user == current_user %>
+      <p class="profile-h2-show"><%= @profile.user.first_name %> <%= @profile.user.last_name %>, we've selected<br>these activities just for you!</p>
+    <% end %>
   </div>
-<% end %>
-
-
-<% if @activities.present? %>
-  <div class="row">
-    <% @activities.each do |activity| %>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><%= activity.name %></h5>
-            <p class="card-text">Address: <%= activity.address %></p>
-            <p class="card-text">Location: <%= activity.location %></p>
-            <p class="card-text">Spaces available: <%= activity.spaces %></p>
-            <%= link_to 'Reserve a space', activity_path(activity), class: "btn btn-plus" %>
-          </div>
-        </div>
+  <% @invites.each do |invite| %>
+    <div class="user-card text-center" style="width: 18rem; margin: 0 auto 20px;">
+      <div class="card-body">
+        <%= link_to "#{invite.user_one.first_name}", profile_path(invite.user_one.profile) %><p>wants to be your TEAM8</p>
+      </div>
+      <div class="button-row" style="display: flex; justify-content: space-between;">
+        <%= button_to "Reject", reject_invite_path(invite, status: false), method: :patch, data: { turbo: false }, class: "btn btn-danger" %>
+        <%= button_to "Accept", accept_invite_path(invite, status: true), method: :patch, data: { turbo: false }, class: "btn btn-success" %>
+      </div>
+    </div>
+  <% end %>
+  <div class="input-field">
+    <%= form_with url: activities_path, method: :get, class: "search-form" do %>
+      <div class="input-wrapper">
+        <%= text_field_tag :query,
+              params[:query],
+              class: "search-input form-control",
+              placeholder: "Search for a specific activity"
+          %>
+        <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
     <% end %>
   </div>
-<% else %>
+  <h2 class="profile-h2-show">Reccomended activites</h2>
+<div class="container-lhs-curve">
+  <% if @activities.present? %>
+    <div class="row">
+      <% @activities.each do |activity| %>
+        <div class="col-md-4 mb-4">
+          <div class="profile-show-activity-card">
+            <div class="card-body">
+              <p class="card-text-lhs"><strong><%= activity.name %></strong></p>
+              <p class="card-text-lhs">Available spaces: <%= activity.spaces %></p>
+              <%= link_to 'Attend', activity_path(activity), class: "card-button" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
 
-  <p>No activities found. Configure your preferences so we know which activities to match you with!</p>
-<% end %>
-</div>
-
+    <p>No activities found. Configure your preferences so we know which activities to match you with!</p>
+  <% end %>
+  </div>
+</body>
