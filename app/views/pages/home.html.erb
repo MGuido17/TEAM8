@@ -1,14 +1,10 @@
-<div class="container text-center">
-  <div class="buttons-landing">
-    <button class="btn btn-lg login-btn">
-      <%= link_to new_user_session_path, class: "undecorated-link"  do %>
-        <span>Login</span>
-      <% end %>
-    </button>
-    <button class="btn btn-lg signup-btn">
-      <%= link_to new_user_registration_path, class: "undecorated-link" do %>
-        <span>Sign-up</span>
-      <% end %>
-    </button>
+<body class="profile-home-page">
+  <div class="main-container-home">
+      <h1 class="brand-title">TEAM8</h1>
+      <p class="brand-subtitle">Your journey to wellness starts here</p>
+    <div class="action-buttons">
+      <%= link_to "Login", new_user_session_path, class: "card-button" %>
+      <%= link_to "Sign-up", new_user_registration_path, class: "card-button" %>
+    </div>
   </div>
-</div>
+</body>
