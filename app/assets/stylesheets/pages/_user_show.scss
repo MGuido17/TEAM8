@@ -49,15 +49,6 @@ body {
 
 }
 
-.button-style, .match-button, .search-button {
-}
-
-.match-button {
-}
-
-.search-button {
-}
-
 .sign-out-button {
   background: none;
   border: none;
@@ -75,8 +66,4 @@ body {
   border: none;
   cursor: pointer;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Match the navbar item font */
-}
-
-.sign-out-button input:hover {
-  background-color: #e7e7e7; /* Slightly lighter grey on hover for feedback */
 }

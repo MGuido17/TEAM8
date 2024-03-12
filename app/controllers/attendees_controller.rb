@@ -1,8 +1,9 @@
 class AttendeesController < ApplicationController
-  
+
   def create
     @activity = Activity.find(params[:activity_id])
     @attendee = @activity.attendees.build(user: current_user)
+    @activity.update(spaces: (@activity.spaces -= 1))
 
     if @attendee.save
       redirect_to @activity, notice: "Asistance confirmed!"
@@ -14,7 +15,7 @@ class AttendeesController < ApplicationController
   def destroy
     @activity = Activity.find(params[:activity_id])
     @attendee = @activity.attendees.find_by(user_id: current_user.id)
-    
+
     if @attendee.destroy
       redirect_to @activity, notice: "Asistance removed"
     else
