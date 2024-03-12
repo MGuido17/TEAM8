@@ -5,8 +5,6 @@ class UsersController < ApplicationController
     @activities = @user.activities
   end
 
-
-
   def new
   end
 

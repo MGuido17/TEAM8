@@ -1,11 +1,12 @@
 puts "Cleaning database..."
+Invite.destroy_all
+User.destroy_all
 Attendee.destroy_all
 Bookmark.destroy_all
 MatchUser.destroy_all
 Profile.destroy_all
 Review.destroy_all
 Activity.destroy_all
-User.destroy_all
 puts "Creating users..."
 
 # Create users arrays
@@ -15,7 +16,6 @@ users = [
   { first_name: "Martin", last_name: "Guido", email: "martin.guido.r17@gmail.com", password: "password", age: 30 },
   { first_name: "Nicolas", last_name: "Otatti", email: "ottatinicolas91@gmail.com", password: "password", age: 30 }
 ]
-
 
 created_users = []
 genders = ["Male", "Female"]

@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
   def create
     @user = current_user
     @profile = Profile.new(profile_params)
-    @profile.user = @user  # Associate the profile with the user
+    @profile.user = @user # Associate the profile with the user
 
     if @profile.save
       redirect_to profile_path(@profile), notice: 'Profile was successfully created.'  # Use the profile_path helper
@@ -24,6 +24,8 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
     @profile.user = current_user
     @activities = filter_activities_by_conditions
+    @invites = Invite.where(user_two: current_user)
+
   end
 
   def edit
