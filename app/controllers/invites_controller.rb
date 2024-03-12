@@ -49,7 +49,7 @@ class InvitesController < ApplicationController
   # end
 
   def create_match(user_one, user_two)
-    match = Match.create
+    match = Match.create!
     MatchUser.create(match: match, user: user_one)
     MatchUser.create(match: match, user: user_two)
   end
