@@ -1,8 +1,6 @@
 class ActivitiesController < ApplicationController
-
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
   before_action :check_authorization, only: [:edit, :update, :destroy]
-
   before_action :set_user, only: :index
 
   def index
@@ -19,7 +17,7 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = current_user.activities.build(activity_params)
-    @activity.organiser = @user
+    @activity.organiser = current_user.first_name
     logger.debug @activity.errors.full_messages.to_sentence if @activity.invalid?
     if @activity.save
       redirect_to activity_path(@activity), notice: "The activity has successfully been created!"
@@ -54,7 +52,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :address, :description, :location, :date, :spaces, :private).tap do |whitelisted|
+    params.require(:activity).permit(:name, :address, :description, :location, :date, :spaces, :private, :organiser).tap do |whitelisted|
       whitelisted[:recommended_conditions] = params[:activity][:recommended_conditions].reject(&:blank?)
       whitelisted[:not_recommended_conditions] = params[:activity][:not_recommended_conditions].reject(&:blank?)
     end
@@ -65,7 +63,7 @@ class ActivitiesController < ApplicationController
   end
 
   def check_authorization
-    redirect_to root_path, alert: "Not authorized" unless @activity.organiser == current_user
+    redirect_to root_path, alert: "Not authorized" unless @activity.organiser == current_user.first_name
   end
 
   def set_user
