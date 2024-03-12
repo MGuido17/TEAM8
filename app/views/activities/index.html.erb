@@ -6,19 +6,19 @@
 <div class="container-lhs-curve">
   <div class="row">
     <% @activities.each do |activity| %>
-      <div class="col-md-4 mb-4">
-          <div class="profile-show-activity-card">
-            <div class="card-body">
-            <p class="activity-h2-show"><%= link_to activity.name, activity %></h5>
-            <p class="activity-h2-show">Address: <%= activity.address %></p>
-            <p class="activity-h2-show">Location: <%= activity.location %></p>
-            <p class="activity-h2-show">Spaces available: <%= activity.spaces %></p>
-            <%= button_to 'Reserve a space', activity_path(activity), class: "card-button" %>
-            <%= button_to 'Bookmark this event', activity_bookmarks_path(activity_id: activity.id), data: { turbo_method: :post }, class: "card-button" %>
-          </div>
-        </div>
+  <div class="col-md-4 mb-4">
+    <div class="profile-show-activity-card">
+      <div class="card-body">
+        <p class="activity-h2-show"><%= link_to activity.name, activity %></p>
+        <p class="activity-h2-show"><i class="fas fa-map-marker-alt"></i> Address: <%= activity.address %></p>
+        <p class="activity-h2-show"><i class="fas fa-location-arrow"></i> Location: <%= activity.location %></p>
+        <p class="activity-h2-show"><i class="fas fa-users"></i> Spaces available: <%= activity.spaces %></p>
+        <%= link_to 'Reserve a space', activity_path(activity), class: "card-button-index" %>
+        <%= link_to 'Bookmark this event', activity_bookmarks_path(activity_id: activity.id), data: { turbo_method: :post }, class: "card-button-index" %>
       </div>
-    <% end %>
+    </div>
+  </div>
+<% end %>
   </div>
   <%= button_to 'Add new activity', new_activity_path, class: "card-button" %>
 </div>
