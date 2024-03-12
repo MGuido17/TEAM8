@@ -11,10 +11,10 @@ class User < ApplicationRecord
   has_many :received_invites, class_name: "Invite", foreign_key: :user_two_id
   has_many :match_user
   has_many :reviews
-  has_many :activities
+  has_many :activities, dependent: :destroy
   has_many :messages
   has_many :bookmarks
   has_many :attendees
-  has_one :profile
+  has_one :profile, dependent: :destroy
   has_many :invites
 end
