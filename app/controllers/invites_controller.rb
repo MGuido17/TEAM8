@@ -28,7 +28,7 @@ class InvitesController < ApplicationController
     if invite.update(status: true)
       create_match(invite.user_one, invite.user_two)
       # should be redirect to chatroom
-      redirect_to profile_path(current_user.profile)
+      redirect_to match_path(@match_id)
     else
       render "/profiles/show"
     end
@@ -49,7 +49,8 @@ class InvitesController < ApplicationController
   # end
 
   def create_match(user_one, user_two)
-    match = Match.create
+    match = Match.create!
+    @match_id = match.id
     MatchUser.create(match: match, user: user_one)
     MatchUser.create(match: match, user: user_two)
   end
