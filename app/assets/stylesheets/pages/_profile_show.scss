@@ -1,17 +1,26 @@
-@keyframes bounceIn {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  60% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
+.profile-show-page{
+  background-color: #00B488;
 }
 
-.bounce {
-  animation: bounceIn 0.8s;
+.container-lhs-curve{
+  background-color: #D6E7FF;
+  border-radius: 150px 0 0 0;
+  padding: 20px
+}
+
+.profile-show-activity-card{
+  padding:0;
+}
+
+.profile-show-activity-card{
+  border-radius: 50px ;
+  background-color: #F2F2F2 ;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.profile-h2-show{
+  color: white;
+  margin-left: 0;
+  font-family: Montserrat;
 }
