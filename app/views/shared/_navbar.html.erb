@@ -1,44 +1,39 @@
 <div class="navbar">
   <div class="buttons">
     <%= link_to profile_path(current_user), class: "no-link-style" do %>
-    <div class="icon-home">
-      <div class="icon-home1">
-        <i class="fa-solid fa-house">
-        </i>
+      <div class="icon-home">
+        <div class="icon-home1">
+          <i class="fa-solid fa-house"></i>
+        </div>
       </div>
-    </div>
-      <% end %>
-                <%= link_to activities_path, class: "no-link-style" do %>
-    <div class="icon-activities">
-      <div class="heart-outline">
-        <i class="fa-regular fa-heart">
-        </i>
+    <% end %>
+    <%= link_to activities_path, class: "no-link-style" do %>
+      <div class="icon-activities">
+        <div class="heart-outline">
+          <i class="fa-regular fa-heart"></i>
+        </div>
       </div>
-    </div>
-  <% end %>
-        <%= link_to profiles_path, class: "no-link-style" do %>
-    <div class="icon-team8">
-      <div class="icon-team81">
-        <i class="fa-solid fa-dumbbell">
-        </i>
+    <% end %>
+    <%= link_to profiles_path, class: "no-link-style" do %>
+      <div class="icon-team8">
+        <div class="icon-team81">
+          <i class="fa-solid fa-dumbbell"></i>
+        </div>
       </div>
-    </div>
-          <% end %>
-            <%= link_to root_path, class: "no-link-style" do %>
-    <div class="icon-home">
-      <div class="icon-message1">
-        <i class="fa-regular fa-comment">
-        </i>
+    <% end %>
+    <%= link_to root_path, class: "no-link-style" do %>
+      <div class="icon-home">
+        <div class="icon-message1">
+          <i class="fa-regular fa-comment"></i>
+        </div>
       </div>
-    </div>
-      <% end %>
-      <%= button_to destroy_user_session_path, method: :delete, class: "no-link-style" do %>
-    <div class="icon-home">
-      <div class="icon-user1">
-        <i class="fa-regular fa-user">
-        </i>
+    <% end %>
+    <%= link_to destroy_user_session_path, method: :delete, class: "no-link-style" do %>
+      <div class="icon-home">
+        <div class="icon-user1">
+          <i class="fa-regular fa-user"></i>
+        </div>
       </div>
-    </div>
     <% end %>
   </div>
 </div>
