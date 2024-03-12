@@ -1,4 +1,5 @@
 <div class="profile-index-container">
+
   <h1>Welcome, TEAM8!</h1>
   <% if @profile.user == current_user %>
     <p><%= @profile.user.first_name %> <%= @profile.user.last_name %> we've selected<br>these activities just for you!</p>
@@ -36,5 +37,8 @@
     <% end %>
   </div>
 <% else %>
-  <p>No activities found.</p>
+
+  <p>No activities found. Configure your preferences so we know which activities to match you with!</p>
 <% end %>
+</div>
+

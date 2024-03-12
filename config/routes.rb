@@ -14,11 +14,16 @@ Rails.application.routes.draw do
   resources :activities do
     # resources :invites, only: [:create, :update] # Para invitar usuarios
     resources :attendees, only: [:create, :destroy] # Para unirse a actividades
+    resources :bookmarks, only: [:create, :destroy]
   end
+
+
+  resources :bookmarks, only: [:index]
 
   post '/invites', to: 'invites#create'
   patch '/invites/:id/accept', to: 'invites#accept_invite', as: 'accept_invite'
   patch 'invites/:id/reject', to: 'invites#reject_invite', as: 'reject_invite'
+
 
   resources :profiles, except: [:destroy]
 
