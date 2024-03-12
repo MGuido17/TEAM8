@@ -21,5 +21,9 @@ Rails.application.routes.draw do
   patch 'invites/:id/reject', to: 'invites#reject_invite', as: 'reject_invite'
 
   resources :profiles, except: [:destroy]
+
+  resources :matches, only: :show do
+    resources :messages, only: :create
+  end
   # resources :users, only: [:index]
 end
