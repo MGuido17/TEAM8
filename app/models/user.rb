@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   has_many :sent_invites, class_name: "Invite", foreign_key: :user_one_id
   has_many :received_invites, class_name: "Invite", foreign_key: :user_two_id
-  has_many :match_user
+  has_many :match_users
   has_many :reviews
   has_many :activities, dependent: :destroy
   has_many :messages
