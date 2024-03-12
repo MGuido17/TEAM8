@@ -1,8 +1,8 @@
 <body class="profile-show-page">
   <div class="profile-index-container">
-    <h1 class="profile-h2-show">Welcome, TEAM8!</h1>
+    <h1 class="profile-h2-show">Welcome TEAM8</h1>
     <% if @profile.user == current_user %>
-      <p><%= @profile.user.first_name %> <%= @profile.user.last_name %> we've selected<br>these activities just for you!</p>
+      <p class="profile-h2-show"><%= @profile.user.first_name %> <%= @profile.user.last_name %>, we've selected<br>these activities just for you!</p>
     <% end %>
   </div>
   <% @invites.each do |invite| %>
@@ -16,7 +16,19 @@
       </div>
     </div>
   <% end %>
-  <h2 class="profile-h2-show">Discover activites</h2>
+  <div class="input-field">
+    <%= form_with url: activities_path, method: :get, class: "search-form" do %>
+      <div class="input-wrapper">
+        <%= text_field_tag :query,
+              params[:query],
+              class: "search-input form-control",
+              placeholder: "Search for a specific activity"
+          %>
+        <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    <% end %>
+  </div>
+  <h2 class="profile-h2-show">Reccomended activites</h2>
 <div class="container-lhs-curve">
   <% if @activities.present? %>
     <div class="row">
@@ -24,11 +36,9 @@
         <div class="col-md-4 mb-4">
           <div class="profile-show-activity-card">
             <div class="card-body">
-              <h5 class="card-title"><%= activity.name %></h5>
-              <p class="card-text">Address: <%= activity.address %></p>
-              <p class="card-text">Location: <%= activity.location %></p>
-              <p class="card-text">Spaces available: <%= activity.spaces %></p>
-              <%= link_to 'Reserve a space', activity_path(activity), class: "btn btn-plus" %>
+              <p class="card-text-lhs"><strong><%= activity.name %></strong></p>
+              <p class="card-text-lhs">Available spaces: <%= activity.spaces %></p>
+              <%= link_to 'Attend', activity_path(activity), class: "card-button" %>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ class BookmarksController < ApplicationController
   before_action :set_activity, except: :index
 
   def index
-    @bookmarks = Bookmark.where(user: current_user)
+    @activities = current_user.bookmarks.includes(:activity).map(&:activity).uniq
   end
 
   def new
