@@ -1,16 +1,15 @@
 <h1>My Bookmarked Activities</h1>
 <div class="bookmarks-index">
   <% if @bookmarks.any? %>
-    <ul>
+    <div class="profile-show-activity-card">
       <% @bookmarks.each do |bookmark| %>
-        <li>
-          <h2><%= link_to bookmark.activity.name, activity_path(bookmark.activity) %></h2>
+          <%= link_to bookmark.activity.name, activity_path(bookmark.activity) %></h2>
           <p>Address: <%= bookmark.activity.address %></p>
           <p>Location: <%= bookmark.activity.location %></p>
-        </li>
       <% end %>
-    </ul>
+  </div>
   <% else %>
     <p>You have not bookmarked any activities yet.</p>
+
   <% end %>
 </div>
