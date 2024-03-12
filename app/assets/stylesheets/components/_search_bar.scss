@@ -8,8 +8,9 @@
 .search-form {
   display: inline-flex;
   align-items: center;
-  margin-bottom: 0;
+  margin-bottom: 15px;
 }
+
 
 .search-input {
   padding-right: 0;
@@ -19,6 +20,12 @@
   height: 45px;
   width: 378px;
   flex: 1;
+  background-color: white;
+}
+
+.search-input::placeholder {
+  color: #888; /* Example placeholder text color */
+  /* Additional placeholder styles as needed */
 }
 
 .search-button {
@@ -27,13 +34,13 @@
   right: 0;
   bottom: 0;
   width: 40px;
-  background-color: transparent;
+  background-color: white;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
 }
 
 .search-bar {
-  position: sticky;
   top: 0;
   padding: 10px 0;
   width: 100%;

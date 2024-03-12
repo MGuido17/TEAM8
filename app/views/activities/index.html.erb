@@ -1,34 +1,25 @@
-<div class="profile-index-container">
-  <h1>Activites</h1>
-  <p>Browse your comprehensive list of available activites, or press <%= link_to "here", bookmarks_path%> for bookmarks</p>
-  <div class="search-bar text-center">
-    <%= form_with url: activities_path, method: :get, class: "search-form" do %>
-      <div class="input-wrapper">
-        <%= text_field_tag :query,
-              params[:query],
-              class: "search-input form-control",
-              placeholder: "Search for a specific activity"
-          %>
-        <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </div>
-    <% end %>
-  </div>
+<body class="profile-show-page">
+  <div class="profile-index-container">
+  <h1 class="profile-h2-show">Activities</h1>
+  <p class="profile-h2-show">Browse your comprehensive list of available activites, or press <%= link_to "here", bookmarks_path%> for bookmarks</p>
+</div>
+<div class="container-lhs-curve">
   <div class="row">
     <% @activities.each do |activity| %>
       <div class="col-md-4 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><%= link_to activity.name, activity %></h5>
-            <p class="card-text">Address: <%= activity.address %></p>
-            <p class="card-text">Location: <%= activity.location %></p>
-            <p class="card-text">Spaces available: <%= activity.spaces %></p>
-            <%= link_to 'Reserve a space', activity_path(activity), class: "btn btn-plus" %>
-            <%= button_to 'Bookmark this event', activity_bookmarks_path(activity_id: activity.id), data: { turbo_method: :post }, class: "btn btn-plus" %>
+          <div class="profile-show-activity-card">
+            <div class="card-body">
+            <p class="activity-h2-show"><%= link_to activity.name, activity %></h5>
+            <p class="activity-h2-show">Address: <%= activity.address %></p>
+            <p class="activity-h2-show">Location: <%= activity.location %></p>
+            <p class="activity-h2-show">Spaces available: <%= activity.spaces %></p>
+            <%= button_to 'Reserve a space', activity_path(activity), class: "card-button" %>
+            <%= button_to 'Bookmark this event', activity_bookmarks_path(activity_id: activity.id), data: { turbo_method: :post }, class: "card-button" %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
+  <%= button_to 'Add new activity', new_activity_path, class: "card-button" %>
 </div>
-
-<%= link_to 'Add new activity', new_activity_path, class: "btn btn-plus" %>
+</body>

@@ -1,15 +1,28 @@
-<h1>My Bookmarked Activities</h1>
+<body class="bookmark-show-page">
+<div class="profile-index-container">
+<h1>Bookmarks</h1>
 <div class="bookmarks-index">
-  <% if @bookmarks.any? %>
-    <div class="profile-show-activity-card">
-      <% @bookmarks.each do |bookmark| %>
-          <%= link_to bookmark.activity.name, activity_path(bookmark.activity) %></h2>
-          <p>Address: <%= bookmark.activity.address %></p>
-          <p>Location: <%= bookmark.activity.location %></p>
+  <% if @activities.any? %>
+  <div class="container-lhs-curve">
+
+    <div class="row">
+      <% @activities.each do |activity| %>
+        <div class="col-md-4 mb-4">
+          <div class="profile-show-activity-card">
+            <div class="card-body">
+              <%= link_to activity.name, activity_path(activity) %>
+              <p>Address: <strong><%= activity.address %></strong></p>
+              <p>Location: <%= activity.location %></p>
+              <p><%= activity.spaces %> slots available</p>
+            </div>
+          </div>
+        </div>
       <% end %>
-  </div>
+    </div>
   <% else %>
     <p>You have not bookmarked any activities yet.</p>
-
   <% end %>
 </div>
+</div>
+</div>
+</body>
