@@ -1,3 +1,4 @@
+/*
 .navbar {
   width: 100%;
   height: 100px;
@@ -73,3 +74,141 @@
 .button-column .fa-solid.fa-dumbbell {
   font-size: 35px;
 }
+*/
+
+.fa-house {
+  width: 18px;
+  position: relative;
+  height: 20px;
+}
+.icon-home1 {
+  position: absolute;
+  top: calc(50% - 12px);
+  left: calc(50% - 12px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 3px;
+}
+.icon-home {
+  width: 40px;
+  position: relative;
+  border-radius: 100px;
+  backdrop-filter: blur(4px);
+  height: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.fa-heart {
+  width: 20px;
+  position: relative;
+  height: 18px;
+}
+.heart-outline {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 2px;
+}
+.icon-activities {
+  border-radius: 100px;
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+.fa-dumbbell {
+  width: 24px;
+  position: relative;
+  height: 16.8px;
+}
+.icon-team81 {
+  position: absolute;
+  top: calc(50% - 11px);
+  left: calc(50% - 10px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0px;
+}
+.icon-team8 {
+  width: 40px;
+  position: relative;
+  border-radius: 100px;
+  background: linear-gradient(44.46deg, #0047ab, #3388ff);
+  height: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.fa-comment {
+  width: 18px;
+  position: relative;
+  height: 18px;
+}
+.icon-message1 {
+  position: absolute;
+  width: 60%;
+  top: calc(50% - 12px);
+  right: 21.25%;
+  left: 18.75%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  box-sizing: border-box;
+}
+.fa-user {
+  width: 16px;
+  position: relative;
+  height: 18px;
+}
+.icon-user1 {
+  position: absolute;
+  top: calc(50% - 12px);
+  left: calc(50% - 12px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 4px;
+}
+.buttons {
+  flex: 1;
+  border-radius: 40px;
+  background-color: $white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(24px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+}
+.navbar {
+  width: 100%;
+  position: fixed; /* Cambiado a posicionamiento fijo */
+  bottom: 0; /* Coloca la barra de navegación en la parte inferior */
+  background: linear-gradient(180deg, rgba(254, 254, 254, 0), #fff 76%);
+  height: 106px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0px 24px;
+  box-sizing: border-box;
+  z-index: 1000; /* Asegura que esté por encima del contenido */
+}
+
+

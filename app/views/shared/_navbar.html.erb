@@ -1,33 +1,45 @@
-<div class="navbar fixed-bottom">
-  <div class="button-column">
-    <i class="fa-solid fa-house"></i>
-    <%= link_to profile_path(current_user), class: "no-link-style" do %>
-      <span>Home</span>
-    <% end %>
-  </div>
-  <div class="button-column">
-    <i class="fa-solid fa-person-running"></i>
-    <%= link_to activities_path, class: "no-link-style" do %>
-      <span>Activities</span>
-    <% end %>
-  </div>
-    <div class="button-column">
-    <i class="fa-solid fa-dumbbell"></i>
-    <%= link_to profiles_path, class: "no-link-style" do %>
-      <span>TM8</span>
-    <% end %>
-  </div>
-  <div class="button-column">
-    <i class="fa-solid fa-comments"></i>
-    <%= link_to root_path, class: "no-link-style" do %>
-      <span>DMS</span>
-    <% end %>
-  </div>
-
-  <div class="button-column">
-    <%= button_to destroy_user_session_path, method: :delete, class: "no-link-style" do %>
-      <i class="fa-brands fa-x-twitter"></i>
-      <%# <span>Community</span> %>
-    <% end %>
+<div class="navbar">
+  <div class="buttons">
+    <div class="icon-home">
+      <div class="icon-home1">
+        <i class="fa-solid fa-house">
+          <%= link_to profile_path(current_user), class: "no-link-style" do %>
+          <% end %>
+        </i>
+      </div>
+    </div>
+    <div class="icon-activities">
+      <div class="heart-outline">
+        <i class="fa-regular fa-heart">
+          <%= link_to activities_path, class: "no-link-style" do %>
+          <% end %>
+        </i>
+      </div>
+    </div>
+    <div class="icon-team8">
+      <div class="icon-team81">
+        <i class="fa-solid fa-dumbbell">
+          <%= link_to profiles_path, class: "no-link-style" do %>
+          <% end %>
+        </i>
+      </div>
+    </div>
+    <div class="icon-home">
+      <div class="icon-message1">
+        <i class="fa-regular fa-comment">
+          <%= link_to root_path, class: "no-link-style" do %>
+          <% end %>
+        </i>
+      </div>
+    </div>
+    <div class="icon-home">
+      <div class="icon-user1">
+        <i class="fa-regular fa-user">
+          <%= button_to destroy_user_session_path, method: :delete, class: "no-link-style" do %>
+          <% end %>
+        </i>
+      </div>
+    </div>
   </div>
 </div>
+
