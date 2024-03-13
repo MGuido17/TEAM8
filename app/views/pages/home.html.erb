@@ -1,24 +1,40 @@
-<body class="profile-show-page">
-  <div class="profile-index-container">
-  <div class="icon-title">
-  <h1 class="profile-h2-show">TEAM8</h1>
-  <i class="fa-solid fa-dumbbell"></i>
-</div>
-  <h3 class="profile-h2-show">Using state of the art technology, TEAM8 finds you the perfect workout partner</h3>
-  </div>
-  <div class="container-lhs-curve-home">
-    <div class="row">
-        <div class="icons-home">
-        <i class="fa-solid fa-user-group"></i>
-        <p class="profile-h2-show-home"><strong>Connect</strong></p>
-        <i class="fa-solid fa-heart-circle-bolt"></i>
-        <p class="profile-h2-show-home"><strong>Train</strong></p>
-        <i class="fa-brands fa-superpowers"></i>
-        <p class="profile-h2-show-home"><strong>Thrive</strong><p>
-      <div class="home-buttons">
-      <%= link_to "Login", new_user_session_path, class: "card-button-index-home" %>
-      <%= link_to "Sign-up", new_user_registration_path, class: "card-button-index-home" %>
+<body class="home-login">
+  <div class="top-layer">
+    <div class="color-layer"></div>
+    <div class="logo">
+      <div class="team8">Team8</div>
+      <div class="connect-train-thrive">connect, train, thrive.</div>
     </div>
   </div>
+  <div class="button-section">
+    <div class="local-options">
+      <div class="button0">
+        <div class="login">
+          <%= link_to "Login", new_user_session_path, class: "login-button"%>
+        </div>
+      </div>
+      <div class="button1">
+        <div class="register">
+          <%= link_to "Register", new_user_registration_path, class: "register-button" %>
+        </div>
+      </div>
+    </div>
+    <div class="section-divider">
+      <div class="section-divider-child"></div>
+      <div class="or-login-with-wrapper">
+        <div class="or-login-with">Or login with</div>
+      </div>
+      <div class="section-divider-child"></div>
+    </div>
+    <div class="socials">
+      <div class="button2">
+        <div class="google">Google</div>
+        <%= image_tag "icons/icon-google.png", class: "social-icon"%>
+      </div>
+      <div class="button3">
+        <div class="facebook">Facebook</div>
+        <%= image_tag "icons/icon-facebook-white.png", class: "social-icon"%>
+      </div>
+    </div>
   </div>
 </body>
