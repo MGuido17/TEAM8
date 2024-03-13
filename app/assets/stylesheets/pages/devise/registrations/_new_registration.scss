@@ -1,3 +1,16 @@
+// Navigation
+.new-registration {
+  width: 100%;
+  position: fixed; /* Cambiado a posicionamiento fijo */
+  top: 0; /* Fija el contenedor en la parte superior */
+  left: 0; /* Fija el contenedor a la izquierda */
+  height: 100vh; /* Establece la altura al 100% de la ventana visible */
+  overflow-y: auto;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  font-family: Montserrat;
+}
 .left-action-icon {
   width: 40px;
   height: 40px;
@@ -159,7 +172,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  margin: 47px 0px 0px;
+  // margin: 47px 0px 0px;
   padding: 47px 0px 0px;
   box-sizing: border-box;
   text-align: left;
@@ -168,3 +181,152 @@
   font-family: Montserrat;
 }
 
+// FORM
+
+.form-sign-in {
+  width: 430px;
+  position: relative;
+  height: 100%;
+  // overflow: hidden;
+  text-align: left;
+  font-size: 16px;
+  color: #0047ab;
+  font-family: Montserrat;
+}
+.form {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  // left: calc(50% - 171px);
+  padding: 0px 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px 0px;
+  }
+.mb-3.string.required.user_first_name,
+.mb-3.string.required.user_last_name {
+  margin-bottom: 0px !important;
+  width: 100%;
+}
+.mb-3.integer.required.user_age {
+  margin-bottom: 0px !important;
+  width: 100%;
+}
+.mb-3.email.required.user_email {
+  margin-bottom: 0px !important;
+  width: 100%;
+}
+.mb-3.password.required.user_password {
+  margin-bottom: 0px !important;
+  width: 100%;
+}
+.mb-3.password.required.user_password_confirmation {
+  margin-bottom: 0px !important;
+  width: 100%;
+}
+  
+  input#user_first_name,
+  input#user_last_name,
+  input#user_age,
+  input#user_email,
+  input#user_password,
+  input#user_password_confirmation {
+    width: 100%;
+    position: relative;
+    color: $font-dark;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1.5px solid #0047ab;
+    box-sizing: border-box;
+    height: 49.5px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 16px;
+    font-family: Montserrat;
+  }
+
+// .form input[type="text"],
+// .form input[type="email"],
+// .form input[type="password"],
+// .form input[type="number"] {
+//   width: 160%;
+//   position: relative;
+//   border-radius: 10px;
+//   background-color: #fff;
+//   color: $font-dark;
+//   border: 1.5px solid #0047ab;
+//   box-sizing: border-box;
+//   height: 49.5px;
+//   overflow: hidden;
+//   flex-shrink: 0;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: flex-start;
+//   padding: 12px 16px;
+//   text-align: left;
+//   font-size: 16px;
+//   font-family: Montserrat;
+
+//   &::placeholder {
+//     color: #0047ab; /* Color del placeholder */
+//   }
+
+//   &::placeholder-shown + label,
+//   &:focus + label {
+//     /* Estilos cuando el placeholder está visible o el input está enfocado */
+//     position: absolute;
+//     top: 0;
+//     left: 16px;
+//     font-size: 14px;
+//     color: #0047ab; /* Color del texto del label */
+//     transition: all 0.3s ease-in-out; /* Transición suave */
+//     pointer-events: none; /* Evita que el label interfiera con los clics en el input */
+//   }
+// }
+
+// BUTTONS
+.form-actions {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+} a {
+  color: #0047ab;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: Montserrat;
+  font-weight: 700;
+}
+.card-button {
+  height: 100%;
+  flex: 1;
+  width: 70%;
+  position: relative;
+  border-radius: 100px;
+  background: linear-gradient(44.46deg, #0047ab, #3388ff);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 24px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 16px;
+  font-family: Montserrat;
+  }
