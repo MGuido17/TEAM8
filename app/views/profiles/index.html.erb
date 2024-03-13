@@ -1,4 +1,3 @@
-<% if false %>
 <body class="profile-show-page">
   <div class="profile-index-container">
   <h1 class="profile-h2-show">Find your TEAM8 today</h1>
@@ -20,32 +19,3 @@
   </div>
 </div>
 </body>
-<%end%>
-
-<div class="navigation-container">
-  <div class="back-button">
-    <%= link_to :back, class: 'back-button' do %>
-    <i class="fa-solid fa-arrow-left-long"></i>
-<% end %>
-  </div>
-
-    <%# Reccomended Activities p%>
-    <h2>Find your next TEAM8</h2>
-</div>
-<%# Curved div container to store activities card%>
-<div class="container-activites-index">
-  <%# <div class="activity-index-card"> %>
-    <div class="activity-index-information">
-    <% @users.each do |user| %>
-      <div class="col-md-4 mb-4">
-        <div class="profile-show-activity-card">
-          <div class="card-body">
-            <h5 class="activity-h2-show"><%= user.first_name %> <%= user.last_name %></h5>
-            <p class="activity-h2-show">Age: <%= user.age %></p>
-            <%= link_to "Match", invites_path(user_two_id: user.id), data: { turbo_method: :post }, class: "btn btn-primary" %> <!-- Add match button with appropriate styling -->
-          </div>
-        </div>
-      </div>
-    <% end %>
-    </div>
-</div>
