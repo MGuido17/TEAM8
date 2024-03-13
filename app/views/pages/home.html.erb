@@ -1,10 +1,56 @@
-<body class="profile-home-page">
-  <div class="main-container-home">
-      <h1 class="brand-title">TEAM8</h1>
-      <p class="brand-subtitle">Your journey to wellness starts here</p>
-    <div class="action-buttons">
-      <%= link_to "Login", new_user_session_path, class: "card-button" %>
-      <%= link_to "Sign-up", new_user_registration_path, class: "card-button" %>
+<body class="home-login">
+  <div class="top-section">
+    <div class="color-layer"></div>
+    <div class="logo">
+      <div class="team8">Team8</div>
+      <div class="connect-train-thrive">connect, train, thrive.</div>
+    </div>
+  </div>
+  <div class="button-section">
+    <div class="local-options">
+      <div class="button0">
+        <div class="login">
+          <%= link_to "Login", new_user_session_path, class: "login-button"%>
+        </div>
+      </div>
+      <div class="button1">
+        <div class="register">
+          <%= link_to "Register", new_user_registration_path, class: "register-button" %>
+        </div>
+      </div>
+    </div>
+    <div class="section-divider">
+      <div class="section-divider-child"></div>
+      <div class="or-login-with-wrapper">
+        <div class="or-login-with">Or login with</div>
+      </div>
+      <div class="section-divider-child"></div>
+    </div>
+    <div class="socials">
+      <div class="button2">
+        <div class="google">Google</div>
+        <%= image_tag "icons/icon-google.png", class: "social-icon"%>
+      </div>
+      <div class="button3">
+        <div class="facebook">Facebook</div>
+        <%= image_tag "icons/icon-facebook-white.png", class: "social-icon"%>
+      </div>
     </div>
   </div>
 </body>
+
+
+
+<%#  
+      <h1 class="brand-title">TEAM8</h1>
+      <p class="brand-subtitle">Your journey to wellness starts here</p>
+    <div class="action-buttons">
+%>
+      <%# link_to "Login", new_user_session_path, class: "card-button" %>
+      <%# link_to "Sign-up", new_user_registration_path, class: "card-button" %>
+    
+    <%#
+    </div>
+    %> 
+
+
