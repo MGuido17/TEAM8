@@ -1,14 +1,24 @@
-<div class="container text-center">
-  <div class="buttons-landing">
-    <button class="btn btn-lg login-btn">
-      <%= link_to new_user_session_path, class: "undecorated-link"  do %>
-        <span>Login</span>
-      <% end %>
-    </button>
-    <button class="btn btn-lg signup-btn">
-      <%= link_to new_user_registration_path, class: "undecorated-link" do %>
-        <span>Sign-up</span>
-      <% end %>
-    </button>
-  </div>
+<body class="profile-show-page">
+  <div class="profile-index-container">
+  <div class="icon-title">
+  <h1 class="profile-h2-show">TEAM8</h1>
+  <i class="fa-solid fa-dumbbell"></i>
 </div>
+  <h3 class="profile-h2-show">Using state of the art technology, TEAM8 finds you the perfect workout partner</h3>
+  </div>
+  <div class="container-lhs-curve-home">
+    <div class="row">
+        <div class="icons-home">
+        <i class="fa-solid fa-user-group"></i>
+        <p class="profile-h2-show-home"><strong>Connect</strong></p>
+        <i class="fa-solid fa-heart-circle-bolt"></i>
+        <p class="profile-h2-show-home"><strong>Train</strong></p>
+        <i class="fa-brands fa-superpowers"></i>
+        <p class="profile-h2-show-home"><strong>Thrive</strong><p>
+      <div class="home-buttons">
+      <%= link_to "Login", new_user_session_path, class: "card-button-index-home" %>
+      <%= link_to "Sign-up", new_user_registration_path, class: "card-button-index-home" %>
+    </div>
+  </div>
+  </div>
+</body>

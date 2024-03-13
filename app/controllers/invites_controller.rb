@@ -1,5 +1,11 @@
 class InvitesController < ApplicationController
   def create
+    existing_invite = Invite.where(user_one: current_user, user_two_id: params[:user_two_id], status: false).first
+    if existing_invite.present?
+      flash[:alert] = "You have already sent an invite to this user."
+      redirect_to profiles_path
+      return
+    end
     invite = Invite.new()
     invite.user_one = current_user
     invite.user_two = User.find(params[:user_two_id])
@@ -12,23 +18,12 @@ class InvitesController < ApplicationController
     end
   end
 
-  # def update
-  #   invite = Invite.find(params[:id])
-  #   raise
-  #   if invite.update(status: true)
-  #     create_match(invite.user_one, invite.user_two)
-  #     flash[:notice] = "You are now Team8!"
-  #   else
-  #     flash[:notice] = "Don't worry you'll find a Team8"
-  #   end
-  # end
-
   def accept_invite
     invite = Invite.find(params[:id])
     if invite.update(status: true)
       create_match(invite.user_one, invite.user_two)
-      # should be redirect to chatroom
-      redirect_to profile_path(current_user.profile)
+      invite.destroy
+      redirect_to match_path(@match_id)
     else
       render "/profiles/show"
     end
@@ -38,18 +33,17 @@ class InvitesController < ApplicationController
     invite = Invite.find(params[:id])
     if invite.update(status: false)
       invite.destroy
-    end
+      redirect_to profile_path(current_user.profile)
+    else
     render "profiles/show"
+    end
   end
 
   private
 
-  # def invite_params
-  #   # params.require(:invite).permit(:user_two_id, :status)
-  # end
-
   def create_match(user_one, user_two)
     match = Match.create!
+    @match_id = match.id
     MatchUser.create(match: match, user: user_one)
     MatchUser.create(match: match, user: user_two)
   end

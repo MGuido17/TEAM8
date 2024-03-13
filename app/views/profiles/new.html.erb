@@ -1,3 +1,4 @@
+  <div class="main-container-home">
 <h1>Create a New Profile</h1>
 <div class="profile-form">
 <%= form_with(model: @profile, url: profiles_path, local: true, html: { multipart: true }) do |form| %>
@@ -59,9 +60,10 @@
     <%= form.select :preferred_comunication_language, options_for_select(["Spanish", "English", "French", "German","Italian", "Japanese", "Mandarin", "Portuguese", "Russian", "Swedish"]) %>
   </div>
 
-  <div>
-    <%= form.submit "Create Profile", class: "button login-btn" %>
+  <div class="button-submit">
+    <%=form.submit "Create Profile", class: "card-button" %>
   </div>
 <% end %>
 
+</div>
 </div>

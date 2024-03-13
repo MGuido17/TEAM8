@@ -1,8 +1,7 @@
-<div class="container text-center">
-<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;">
-  <div style="margin-bottom: 20px;">
-  </div>
+<body class="profile-home-page">
+  <div class="main-container-home">
 <h2>Create your account</h2>
+<p>Tell us a bit about yourself</p>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -34,11 +33,11 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up", class: "btn btn-lg login-btn" %>
+    <%= f.button :submit, "Sign up", class: "card-button" %>
   </div>
 <% end %>
 <%= "Already have an account? " %>
 <%= link_to "Log in", new_user_session_path %>
 </div>
-
+</body>
 <%# REDIRECT TO USER FORM -- USER PROFILE %>
