@@ -1,69 +1,68 @@
-  <div class="main-container-home">
-<h1>Create a New Profile</h1>
-<div class="profile-form">
-<%= form_with(model: @profile, url: profiles_path, local: true, html: { multipart: true }) do |form| %>
-  <h2>General information</h2>
-  <div>
-    <%= form.label :gender %>
-    <%= form.select :gender, options_for_select(["Male", "Female", "Prefer not to say"]) %>
-  </div>
-  <div>
-    <%= form.label :contact_phone_number %>
-    <%= form.text_field :contact_phone_number %>
-  </div>
-  <div>
-    <%= form.label :contact_address %>
-    <%= form.text_field :contact_address %>
-  </div>
-  <h2>Medical information</h2>
-  <div>
-    <%= form.label :blood_type %>
-    <%= form.select :blood_type, options_for_select(["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"]) %>
-  </div>
-<div>
-  <%= form.label :allergies %>
-  <%= form.text_field :allergies %>
-</div>
+  <div class="new-profile">
+    <h1>Create a New Profile</h1>
+    <div class="profile-form">
+      <%= form_with(model: @profile, url: profiles_path, local: true, html: { multipart: true }) do |form| %>
+        <h2>General information</h2>
+        <div>
+          <%= form.label :gender %>
+          <%= form.select :gender, options_for_select(["Male", "Female", "Prefer not to say"]) %>
+        </div>
+        <div>
+          <%= form.label :contact_phone_number %>
+          <%= form.text_field :contact_phone_number %>
+        </div>
+        <div>
+          <%= form.label :contact_address %>
+          <%= form.text_field :contact_address %>
+        </div>
+        <h2>Medical information</h2>
+        <div>
+          <%= form.label :blood_type %>
+          <%= form.select :blood_type, options_for_select(["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"]) %>
+        </div>
+        <div>
+          <%= form.label :allergies %>
+          <%= form.text_field :allergies %>
+        </div>
 
- <h3>Medical conditions</h3>
-<%= form.label :medical_condition, "Select medical conditions" %>
-<%= form.select :medical_condition,
-                options_for_select(Profile::MEDICAL_CONDITION),
-                {},
-                { multiple: true, size: 5, class: 'multi-select' } %>
+        <h3>Medical conditions</h3>
+        <%= form.label :medical_condition, "Select medical conditions" %>
+        <%= form.select :medical_condition,
+                        options_for_select(Profile::MEDICAL_CONDITION),
+                        {},
+                        { multiple: true, size: 5, class: 'multi-select' } %>
 
-  <h3>Mental Health conditions</h3>
-  <%= form.label :mental_health_condition, "Select mental health conditions" %>
-  <%= form.select :mental_health_condition,
-                  options_for_select(Profile::MENTAL_HEALTH_CONDITION),
-                  {},
-                  { multiple: true, size: 5, class: 'multi-select' } %>
+        <h3>Mental Health conditions</h3>
+        <%= form.label :mental_health_condition, "Select mental health conditions" %>
+        <%= form.select :mental_health_condition,
+                        options_for_select(Profile::MENTAL_HEALTH_CONDITION),
+                        {},
+                        { multiple: true, size: 5, class: 'multi-select' } %>
 
-  <h2>Emergency Contact info</h2>
-  <div>
-    <%= form.label :emergency_contact_name %>
-    <%= form.text_field :emergency_contact_name %>
+        <h2>Emergency Contact info</h2>
+        <div>
+          <%= form.label :emergency_contact_name %>
+          <%= form.text_field :emergency_contact_name %>
+        </div>
+
+        <div>
+          <%= form.label :emergency_contact_relationship %>
+          <%= form.text_field :emergency_contact_relationship %>
+        </div>
+
+        <div>
+          <%= form.label :emergency_contact_phone %>
+          <%= form.text_field :emergency_contact_phone %>
+        </div>
+
+        <div>
+          <%= form.label :preferred_comunication_language %>
+          <%= form.select :preferred_comunication_language, options_for_select(["Spanish", "English", "French", "German","Italian", "Japanese", "Mandarin", "Portuguese", "Russian", "Swedish"]) %>
+        </div>
+
+        <div class="button-submit">
+          <%= form.submit "Create Profile", class: "card-button" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <div>
-    <%= form.label :emergency_contact_relationship %>
-    <%= form.text_field :emergency_contact_relationship %>
-  </div>
-
-  <div>
-    <%= form.label :emergency_contact_phone %>
-    <%= form.text_field :emergency_contact_phone %>
-  </div>
-
-  <div>
-    <%= form.label :preferred_comunication_language %>
-    <%= form.select :preferred_comunication_language, options_for_select(["Spanish", "English", "French", "German","Italian", "Japanese", "Mandarin", "Portuguese", "Russian", "Swedish"]) %>
-  </div>
-
-  <div class="button-submit">
-    <%=form.submit "Create Profile", class: "card-button" %>
-  </div>
-<% end %>
-
-</div>
-</div>
