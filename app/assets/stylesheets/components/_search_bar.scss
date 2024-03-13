@@ -8,7 +8,7 @@
 .search-form {
   display: inline-flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 40px;
 }
 
 
@@ -29,13 +29,10 @@
 }
 
 .search-button {
+  left: 0;
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
   width: 40px;
   background-color: white;
-  border-radius: 10px;
   border: none;
   cursor: pointer;
 }
