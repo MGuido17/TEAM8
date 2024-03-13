@@ -14,7 +14,7 @@
 
 .search-input {
   padding-right: 0;
-  padding-left: 15px;
+  padding-left: 40px;
   border-radius: 10px;
   border: 0;
   height: 45px;
@@ -29,13 +29,10 @@
 }
 
 .search-button {
+left: 0;
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
   width: 40px;
   background-color: white;
-  border-radius: 10px;
   border: none;
   cursor: pointer;
 }
