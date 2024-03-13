@@ -1,7 +1,53 @@
-<body class="profile-home-page">
-  <div class="main-container-home">
-<h2>Create your account</h2>
-<p>Tell us a bit about yourself</p>
+
+  <div class="navigation">
+    <div class="top-section">
+      <div class="left-action-icon">
+        <%= link_to :back, class: 'arrow-left-icon' do %>
+          <i class="fa-solid fa-arrow-left"></i>
+        <% end %>
+      </div>
+      <div class="progress-bar">
+        <div class="indicator">
+        </div>
+      </div>
+      <div class="right-action">
+        <div class="button"><p class="skip-action">Skip</p></div>
+      </div>
+    </div>
+    <div class="lower-section">
+      <div class="large-title-grp">
+        <div class="page-title">Create your account</div>
+      </div>
+    </div>
+    <div class="tab-bar">
+      <div class="tab-grp">
+        <div class="tab">
+          <div class="section">Section </div>
+        </div>
+        <div class="tab1">
+          <div class="section1">Section </div>
+        </div>
+        <div class="tab1">
+          <div class="section1">Section </div>
+        </div>
+        <div class="tab1">
+          <div class="section1">Section </div>
+        </div>
+        <div class="tab1">
+          <div class="section1">Section </div>
+        </div>
+        <div class="tab1">
+          <div class="section1">Section </div>
+        </div>
+        <div class="tab1">
+          <div class="section1">Section </div>
+        </div>
+        <div class="tab1">
+          <div class="section1">Section </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -39,5 +85,5 @@
 <%= "Already have an account? " %>
 <%= link_to "Log in", new_user_session_path %>
 </div>
-</body>
+
 <%# REDIRECT TO USER FORM -- USER PROFILE %>
