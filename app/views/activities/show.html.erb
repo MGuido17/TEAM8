@@ -26,6 +26,7 @@
         <p>Created by: <%= @review.user.name %></p>
         <p>On: <%= @review.created_at.strftime("%B %d, %Y") %></p>
       <% end %>
+<%= link_to 'Add a review', new_activity_review_path(activity_id: @activity.id), class: "card-button" %>
 
 <%# <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 10%">
   <div style="margin-bottom: 20px;">

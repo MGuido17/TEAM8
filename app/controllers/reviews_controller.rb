@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
   end
 
   def index
-    @reviews = @activity.reviews.build
+    @reviews = @activity.reviews.all
   end
 
   def create
