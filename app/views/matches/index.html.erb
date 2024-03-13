@@ -1,0 +1,19 @@
+<h1>Your Matches</h1>
+
+<% @matches_with_users.each do |match_with_users| %>
+  <% @match_user_one = match_with_users[:match_user_one].first_name %>
+  <% @match_user_two = match_with_users[:match_user_two].first_name %>
+  <% @matches.each do |match| %>
+    <% match.messages.each do |message| %>
+      <hr>
+      <a href="<%= match_path(match) %>">
+      <%= @match_user_two %>
+      <% if @match_user_one %>
+        <li><strong>You:</strong> <%= message.content %></li>
+      <% else %>
+        <li><strong><%= @match_user_two.first_name %>:</strong> <%= message.content %></li>
+      <% end %>
+    </a>
+    <% end %>
+  <% end %>
+<% end %>

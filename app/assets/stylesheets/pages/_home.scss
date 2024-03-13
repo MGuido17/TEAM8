@@ -1,5 +1,5 @@
 body.profile-home-page {
-  background: linear-gradient(44.46deg, #85B8FF 0%, #ADCFFF 100%);
+  background: linear-gradient(44.46deg, $brand-03 0%, $brand-04 35%, $brand-05 100%);
   color: white;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   height: 100vh;
@@ -14,16 +14,9 @@ body.profile-home-page {
   padding: 30px;
   color: black;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-  margin: 0;
 }
 
-.main-container-login{
-  background-color: #D6E7FF;
-  border-radius: 80px 0 0 0;
-  padding: 30px;
-  color: black;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-}
+
 
 .action-buttons {
   display: flex;
@@ -38,3 +31,65 @@ body.profile-home-page {
   align-items: center;
   justify-content: center;
 }
+
+.container-lhs-curve-home{
+  background-color: #D6E7FF;
+  border-radius: 150px 0 0 0;
+  padding: 20px;
+  box-shadow:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: 100vh;
+  margin-top: 50px;
+}
+
+.fa-dumbbell{
+  font-size: 3em;
+  color: white;
+  text-align: center;
+  margin-right: 27px
+}
+
+.fa-user-group, .fa-heart-circle-bolt, .fa-superpowers{
+  font-size: 3em;
+  color: white;
+  text-align: left;
+}
+
+.icon-title{
+padding: 50px;
+}
+
+.profile-h2-show-home{
+    color: $font-mid;
+    margin-left: 0;
+    font-family: Montserrat;
+    text-decoration: none;
+    font-size: 25px;
+  }
+
+  .icons-home{
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .card-button-index-home{
+    width: 250px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 100px;
+    background: linear-gradient(44.46deg, #0047AB 0%, #3388FF 100%);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    margin-left: 70px;
+    padding: 30px;
+  }
+
+  .home-buttons{
+  text-align:center;
+  }

@@ -78,3 +78,8 @@ gem "pundit"
 gem "cloudinary"
 gem "pg"
 
+gem "geocoder"
+
+gem 'webpacker'
+
+
