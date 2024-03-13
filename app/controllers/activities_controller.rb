@@ -4,11 +4,9 @@ class ActivitiesController < ApplicationController
   before_action :set_user, only: :index
 
   def index
-    if params[:query].present?
-      # This searches in the 'name' column of the 'activities' table. Adjust if necessary.
-      @activities = Activity.where("name ILIKE ?", "%#{params[:query]}%")
+    if @user
+      @activities = filter_activities_by_conditions
     else
-      # Your default @activities logic here
       @activities = Activity.all
     end
   end
