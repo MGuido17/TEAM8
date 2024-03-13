@@ -5,6 +5,10 @@ class ReviewsController < ApplicationController
     @review = @activity.reviews.build
   end
 
+  def show
+    @review = Review.includes(:user).find(params[:id])
+  end
+
   def index
     @reviews = @activity.reviews.build
   end
