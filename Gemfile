@@ -76,10 +76,9 @@ gem 'bootstrap'
 gem 'font-awesome-sass'
 gem "pundit"
 gem "cloudinary"
+gem 'activestorage-cloudinary-service'
 gem "pg"
 
 gem "geocoder"
 
 gem 'webpacker'
-
-
