@@ -1,3 +1,4 @@
+<% if false %>
 <div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
     <% @invites.each_with_index do |invite, index| %>
@@ -25,7 +26,6 @@
     </button>
   <% end %>
 </div>
-
 <body class="profile-show-page">
   <div class="profile-index-container">
     <h1 class="profile-h2-show">Welcome TEAM8</h1>
@@ -33,7 +33,8 @@
       <p class="profile-h2-show"><%= @profile.user.first_name %> <%= @profile.user.last_name %>, we've selected<br>these activities just for you!</p>
     <% end %>
   </div>
- 
+
+
   <div class="input-field">
     <%= form_with url: activities_path, method: :get, class: "search-form" do %>
       <div class="input-wrapper">
@@ -63,8 +64,68 @@
       <% end %>
     </div>
   <% else %>
-
     <p>No activities found. Configure your preferences so we know which activities to match you with!</p>
   <% end %>
   </div>
 </body>
+</body>
+<% end %>
+<%# Navigation div containing back button and search bar %>
+<div class="navigation-container">
+<div class="profile-show-information">
+<h1 class="profile-h2-show">Welcome TEAM8</h1>
+    <% if @profile.user == current_user %>
+      <p class="profile-h2-show"><%= @profile.user.first_name %> <%= @profile.user.last_name %>, we've selected<br>these activities just for you!</p>
+    <% end %>
+  </div>
+</div>
+
+<%# Carousel for matches%>
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <% @invites.each_with_index do |invite, index| %>
+      <div class="carousel-item <%= 'active' if index.zero? %>">
+        <div class="user-card text-center" style="width: 18rem; margin: 0 auto 20px;">
+          <div class="card-body">
+            <%= link_to "#{invite.user_one.first_name}", profile_path(invite.user_one.profile) %><p>wants to be your TEAM8</p>
+          </div>
+          <div class="button-row" style="display: flex; justify-content: space-between;">
+            <%= button_to "Reject", reject_invite_path(invite, status: false), method: :patch, data: { turbo: false }, class: "btn btn-danger" %>
+            <%= button_to "Accept", accept_invite_path(invite, status: true), method: :patch, data: { turbo: false }, class: "btn btn-success" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <% if @invites.length > 1 %>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  <% end %>
+</div>
+<%# Curved div container to store activities card%>
+<div class="container-activites-index">
+  <%# <div class="activity-index-card"> %>
+    <div class="activity-index-information">
+    <% @activities.each do |activity| %>
+  <div class="col-md-4 mb-4">
+    <div class="activity-index-cards">
+      <div class="card-body">
+        <p class="activity-h2-show"><%= link_to activity.name, activity %></p>
+        <p class="activity-h2-show"><i class="fas fa-users"></i> Spaces available: <%= activity.spaces %></p>
+        <%= link_to 'Attend', activity_path(activity), class: "card-button-index" %>
+      </div>
+      <div class="activity-index-photo">
+        <%= cl_image_tag activity.photo.key, crop: :fill, width: 200, height: 200 %>
+        </div>
+    </div>
+  </div>
+<% end %>
+    </div>
+<%# </div> %>
+<div>

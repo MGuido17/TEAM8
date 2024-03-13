@@ -1,3 +1,4 @@
+<% if false %>
 <body class="profile-show-page">
   <div class="profile-index-container">
   <h1 class="profile-h2-show">Activities</h1>
@@ -24,43 +25,48 @@
   <%= button_to 'Add new activity', new_activity_path, class: "card-button" %>
 </div>
 </body>
-
-
-<body class="activity-show-page">
-  <div class="activity-show-container">
+<% end %>
+<%# Navigation div containing back button and search bar %>
+<div class="navigation-container">
+  <div class="back-button">
     <%= link_to :back, class: 'back-button' do %>
     <i class="fa-solid fa-arrow-left-long"></i>
+<% end %>
+  </div>
+  <%# Search bar%>
+  <div class="input-field">
+    <%= form_with url: activities_path, method: :get, class: "search-form" do %>
+      <div class="input-wrapper">
+        <%= text_field_tag :query,
+              params[:query],
+              class: "search-input form-control",
+              placeholder: "Search here"
+          %>
+        <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
     <% end %>
-          <h1><%= @activity.name %></h1>
-          <h5>By <%= @activity.organiser %></h5>
   </div>
-
-
-
-
-          <h4><%= @activity.date %></h4>
-          <h4><%= @activity.address %></h4>
-          <h5><%= @activity.location %></h5>
+    <%# Reccomended Activities p%>
+    <h2>Reccomended activities</h2>
+</div>
+<%# Curved div container to store activities card%>
+<div class="container-activites-index">
+  <%# <div class="activity-index-card"> %>
+    <div class="activity-index-information">
+    <% @activities.each do |activity| %>
+  <div class="col-md-4 mb-4">
+    <div class="activity-index-cards">
+      <div class="card-body">
+        <p class="activity-h2-show"><%= link_to activity.name, activity %></p>
+        <p class="activity-h2-show"><i class="fas fa-users"></i> Spaces available: <%= activity.spaces %></p>
+        <%= link_to 'Attend', activity_path(activity), class: "card-button-index" %>
+      </div>
+      <div class="activity-index-photo">
+        <%= cl_image_tag activity.photo.key, crop: :fill, width: 200, height: 200 %>
         </div>
-        <%= render partial: "/shared/attendee_counter" %>
-        <%= render partial: "/shared/button_attend_event", locals: { attend_text:
-        "Attend to this event" }, class: 'attend-btn'%>
-        <%= link_to 'Edit', edit_activity_path(@activity), class: 'edit-btn' %>
-        <%= link_to 'Delete', activity_path(@activity),
-                    method: :delete,
-                    data: { confirm: 'Are you sure you want to delete this activity?' },
-                    class: 'delete-btn' %>
     </div>
-          <% if @activity.reviews.any? %>
-            <% @activity.reviews.each do |r| %>
-              <p><%= r.rating %></p>
-              <p><%= r.description %></p>
-              <p>Created by: <%= r.user.first_name %></p>
-              <p>On: <%= r.created_at.strftime("%B %d, %Y") %></p>
-            <% end %>
-          <% else %>
-            <p>No reviews</p>
-          <% end %>
-    <%= link_to 'Add a review', new_activity_review_path(activity_id: @activity.id), class: "card-button" %>
   </div>
-</body>
+<% end %>
+    </div>
+<%# </div> %>
+<div>
