@@ -19,12 +19,15 @@
                 data: { confirm: 'Are you sure you want to delete this activity?' },
                 class: 'delete-btn' %>
 </div>
-
-      <% @activity.reviews.each do |r| %>
-        <p><%= r.rating %></p>
-        <p><%= r.description %></p>
-        <p>Created by: <%= @review.user.name %></p>
-        <p>On: <%= @review.created_at.strftime("%B %d, %Y") %></p>
+      <% if @activity.reviews.any? %>
+        <% @activity.reviews.each do |r| %>
+          <p><%= r.rating %></p>
+          <p><%= r.description %></p>
+          <p>Created by: <%= r.user.first_name %></p>
+          <p>On: <%= r.created_at.strftime("%B %d, %Y") %></p>
+        <% end %>
+      <% else %>
+        <p>No reviews</p>
       <% end %>
 <%= link_to 'Add a review', new_activity_review_path(activity_id: @activity.id), class: "card-button" %>
 

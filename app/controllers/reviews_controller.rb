@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
   def create
     @review = @activity.reviews.build(review_params.merge(user: current_user))
       if @review.save
-        redirect_to activity_reviews_path(@activity), notice: "Review was successfully created!"
+        redirect_to activity_path(@activity), notice: "Review was successfully created!"
       else
         render :new
       end
