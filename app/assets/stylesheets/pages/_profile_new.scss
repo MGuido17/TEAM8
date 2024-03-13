@@ -1,53 +1,54 @@
 .profile-form {
-  max-width: 600px; /* Set a max width for the form */
-  margin: 40px auto; /* Center the form with automatic margins */
-  padding: 40px; /* Add some padding inside the form container */
-  background-color: #f8f8f8; /* Light background color for the form area */
-  border-radius: 8px; /* Slightly rounded corners for the form container */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
 }
 
 .profile-form h1, .profile-form h2, .profile-form h3 {
-  color: #333; /* Dark text for headings */
+  color: #333;
 }
 
 .profile-form div {
-  margin-bottom: 15px; /* Space between form elements */
+  margin-bottom: 15px;
 }
 
 .profile-form label {
-  display: block; /* Make labels block-level for better layout */
-  margin-bottom: 5px; /* Space below labels */
-  color: #666; /* Slightly lighter text color for labels */
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
 }
 
 .profile-form input[type="text"],
 .profile-form select,
 .profile-form input[type="file"] {
-  width: 100%; /* Full width for text inputs and selects */
-  padding: 8px; /* Comfortable padding inside inputs */
-  border: 1px solid #ccc; /* Subtle border around inputs */
-  border-radius: 4px; /* Slightly rounded corners for inputs */
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .profile-form .form-actions {
-  text-align: right; /* Align the submit button to the right */
+  text-align: right;
 }
 
 
 
-/* Adjustments for smaller screens */
+
 @media (max-width: 576px) {
   .profile-form {
-    margin: 10px; /* Smaller margin on small screens */
-    padding: 10px; /* Smaller padding on small screens */
+    margin: 10px;
+    padding: 10px;
   }
-
   .profile-form .form-actions {
-    text-align: center; /* Center the submit button on small screens */
+    text-align: center;
   }
 }
 
 .form-step.active-step {
-  display: block; /* Only the active step is displayed */
+  display: block;
 }

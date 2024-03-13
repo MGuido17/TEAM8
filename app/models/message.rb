@@ -1,4 +1,4 @@
-class Messages < ApplicationRecord
-  belongs_to :match_users
-  belongs_to :user
+class Message < ApplicationRecord
+  belongs_to :match
+  belongs_to :sender, class_name: 'User'
 end

@@ -77,4 +77,9 @@ gem 'font-awesome-sass'
 gem "pundit"
 gem "cloudinary"
 gem "pg"
+
 gem "geocoder"
+
+gem 'webpacker'
+
+
