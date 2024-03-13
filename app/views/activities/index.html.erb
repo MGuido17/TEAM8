@@ -13,6 +13,7 @@
         <p class="activity-h2-show"><i class="fas fa-map-marker-alt"></i> Address: <%= activity.address %></p>
         <p class="activity-h2-show"><i class="fas fa-location-arrow"></i> Location: <%= activity.location %></p>
         <p class="activity-h2-show"><i class="fas fa-users"></i> Spaces available: <%= activity.spaces %></p>
+        <%= cl_image_tag activity.photo.key, crop: :fill, width: 200, height: 200 %>
         <%= link_to 'Reserve a space', activity_path(activity), class: "card-button-index" %>
         <%= link_to 'Bookmark this event', activity_bookmarks_path(activity_id: activity.id), data: { turbo_method: :post }, class: "card-button-index" %>
       </div>
