@@ -1,9 +1,27 @@
+<% if false %>
 <body class="profile-show-page">
   <div class="profile-index-container">
   <h1 class="profile-h2-show">Find your TEAM8 today</h1>
-  <p class="profile-h2-show">TEAM8 algorithms have worked hard to find profiles that match your interests<br><br>Start swiping to find your perfect TEAM8 and book your first activity together </p>
-  <div class="container-lhs-curve">
-  <div class="row">
+@@ -19,3 +20,32 @@
+  </div>
+</div>
+</body>
+<%end%>
+
+<div class="navigation-container">
+  <div class="back-button">
+    <%= link_to :back, class: 'back-button' do %>
+    <i class="fa-solid fa-arrow-left-long"></i>
+<% end %>
+  </div>
+
+    <%# Reccomended Activities p%>
+    <h2>Find your next TEAM8</h2>
+</div>
+<%# Curved div container to store activities card%>
+<div class="container-activites-index">
+  <%# <div class="activity-index-card"> %>
+    <div class="activity-index-information">
     <% @users.each do |user| %>
       <div class="col-md-4 mb-4">
         <div class="profile-show-activity-card">
@@ -16,6 +34,4 @@
       </div>
     <% end %>
     </div>
-  </div>
 </div>
-</body>
