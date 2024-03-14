@@ -34,7 +34,9 @@
         <%= link_to 'Attend', activity_path(activity), class: "card-button-index" %>
       </div>
       <div class="activity-index-photo">
+      <% if activity.photo.attached? %>
         <%= cl_image_tag activity.photo.key, crop: :fill, width: 200, height: 200 %>
+      <% end %>
         </div>
     </div>
   </div>
