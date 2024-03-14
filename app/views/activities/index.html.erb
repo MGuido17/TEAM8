@@ -1,26 +1,44 @@
-<body class="profile-show-page">
-  <div class="profile-index-container">
-  <h1 class="profile-h2-show">Activities</h1>
-  <p class="profile-h2-show">Browse your comprehensive list of available activites, or press <%= link_to "here", bookmarks_path%> for bookmarks</p>
+<%# Navigation div containing back button and search bar %>
+<div class="navigation-container">
+  <div class="back-button">
+    <%= link_to :back, class: 'back-button' do %>
+    <i class="fa-solid fa-arrow-left-long"></i>
+<% end %>
+  </div>
+  <%# Search bar%>
+  <div class="input-field">
+    <%= form_with url: activities_path, method: :get, class: "search-form" do %>
+      <div class="input-wrapper">
+        <%= text_field_tag :query,
+              params[:query],
+              class: "search-input form-control",
+              placeholder: "Search here"
+          %>
+        <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    <% end %>
+  </div>
+    <%# Reccomended Activities p%>
+    <h2>Reccomended activities</h2>
 </div>
-<div class="container-lhs-curve">
-  <div class="row">
+<%# Curved div container to store activities card%>
+<div class="container-activites-index">
+  <%# <div class="activity-index-card"> %>
+    <div class="activity-index-information">
     <% @activities.each do |activity| %>
   <div class="col-md-4 mb-4">
-    <div class="profile-show-activity-card">
+    <div class="activity-index-cards">
       <div class="card-body">
         <p class="activity-h2-show"><%= link_to activity.name, activity %></p>
-        <p class="activity-h2-show"><i class="fas fa-map-marker-alt"></i> Address: <%= activity.address %></p>
-        <p class="activity-h2-show"><i class="fas fa-location-arrow"></i> Location: <%= activity.location %></p>
         <p class="activity-h2-show"><i class="fas fa-users"></i> Spaces available: <%= activity.spaces %></p>
-        <%= cl_image_tag activity.photo.key, crop: :fill, width: 200, height: 200 %>
-        <%= link_to 'Reserve a space', activity_path(activity), class: "card-button-index" %>
-        <%= link_to 'Bookmark this event', activity_bookmarks_path(activity_id: activity.id), data: { turbo_method: :post }, class: "card-button-index" %>
+        <%= link_to 'Attend', activity_path(activity), class: "card-button-index" %>
       </div>
+      <div class="activity-index-photo">
+        <%= cl_image_tag activity.photo.key, crop: :fill, width: 200, height: 200 %>
+        </div>
     </div>
   </div>
 <% end %>
-  </div>
-  <%= button_to 'Add new activity', new_activity_path, class: "card-button" %>
-</div>
-</body>
+    </div>
+<%# </div> %>
+<div>
