@@ -26,7 +26,6 @@
     </button>
   <% end %>
 </div>
-
 <body class="profile-show-page">
   <div class="profile-index-container">
     <h1 class="profile-h2-show">Welcome TEAM8</h1>
@@ -34,6 +33,7 @@
       <p class="profile-h2-show"><%= @profile.user.first_name %> <%= @profile.user.last_name %>, we've selected<br>these activities just for you!</p>
     <% end %>
   </div>
+
 
   <div class="input-field">
     <%= form_with url: activities_path, method: :get, class: "search-form" do %>
@@ -64,13 +64,12 @@
       <% end %>
     </div>
   <% else %>
-
     <p>No activities found. Configure your preferences so we know which activities to match you with!</p>
   <% end %>
   </div>
 </body>
+</body>
 <% end %>
-
 <%# Navigation div containing back button and search bar %>
 <div class="navigation-container">
 <div class="profile-show-information">

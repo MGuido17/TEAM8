@@ -1,31 +1,3 @@
-<% if false %>
-<body class="profile-show-page">
-  <div class="profile-index-container">
-  <h1 class="profile-h2-show">Activities</h1>
-  <p class="profile-h2-show">Browse your comprehensive list of available activites, or press <%= link_to "here", bookmarks_path%> for bookmarks</p>
-</div>
-<div class="container-lhs-curve">
-  <div class="row">
-    <% @activities.each do |activity| %>
-  <div class="col-md-4 mb-4">
-    <div class="profile-show-activity-card">
-      <div class="card-body">
-        <p class="activity-h2-show"><%= link_to activity.name, activity %></p>
-        <p class="activity-h2-show"><i class="fas fa-map-marker-alt"></i> Address: <%= activity.address %></p>
-        <p class="activity-h2-show"><i class="fas fa-location-arrow"></i> Location: <%= activity.location %></p>
-        <p class="activity-h2-show"><i class="fas fa-users"></i> Spaces available: <%= activity.spaces %></p>
-        <%= cl_image_tag activity.photo.key, crop: :fill, width: 200, height: 200 %>
-        <%= link_to 'Reserve a space', activity_path(activity), class: "card-button-index" %>
-        <%= link_to 'Bookmark this event', activity_bookmarks_path(activity_id: activity.id), data: { turbo_method: :post }, class: "card-button-index" %>
-      </div>
-    </div>
-  </div>
-<% end %>
-  </div>
-  <%= button_to 'Add new activity', new_activity_path, class: "card-button" %>
-</div>
-</body>
-<% end %>
 <%# Navigation div containing back button and search bar %>
 <div class="navigation-container">
   
