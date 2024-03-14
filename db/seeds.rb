@@ -1,6 +1,7 @@
 require 'open-uri'
 
 puts "Cleaning database..."
+Message.destroy_all
 Invite.destroy_all
 Attendee.destroy_all
 Bookmark.destroy_all
