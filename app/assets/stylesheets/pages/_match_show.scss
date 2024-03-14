@@ -1,0 +1,80 @@
+.background-page {
+  background: linear-gradient(44.46deg, #0047ab, #00ba88);
+}
+
+// Message content
+.message-card.current-user-message {
+  background-color: #007AFF;
+  margin-right: 10px;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 20px;
+  text-align: right;
+}
+
+.message-card.other-user-message {
+  background-color: #D3D3D3;
+  margin-left: 10px;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 20px;
+  text-align: left;
+}
+
+.current-user-message {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.other-user-message {
+  display: flex;
+  justify-content: flex-start;
+}
+
+p {
+  margin-bottom: 0px !important;
+}
+
+.message-user {
+  margin-bottom: 2px;
+}
+
+
+.card-body {
+  padding: 10px;
+}
+
+// Top Bar
+
+.top-section {
+  padding: 20px;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.user-info {
+  text-align: center;
+  font-size: 30px;
+  // flex-grow: 1;
+}
+
+.go-back-link {
+  margin-right: 20px;
+}
+
+// messages, input text bar
+
+.messages {
+  margin-top: 90px;
+  margin-bottom: 10px;
+}
+
+.bottom-section {
+  margin-bottom: 105px;
+  // position: sticky;
+}

@@ -1,19 +1,36 @@
-<h1>Your Matches</h1>
-
-<% @matches_with_users.each do |match_with_users| %>
-  <% @match_user_one = match_with_users[:match_user_one].first_name %>
-  <% @match_user_two = match_with_users[:match_user_two].first_name %>
-  <% @matches.each do |match| %>
-    <% match.messages.each do |message| %>
-      <hr>
-      <a href="<%= match_path(match) %>">
-      <%= @match_user_two %>
-      <% if @match_user_one %>
-        <li><strong>You:</strong> <%= message.content %></li>
-      <% else %>
-        <li><strong><%= @match_user_two.first_name %>:</strong> <%= message.content %></li>
-      <% end %>
-    </a>
-    <% end %>
-  <% end %>
-<% end %>
+<div class="matches-messages">
+  <div class="navigation">
+    <div class="match-page-title">Your Team-8’s
+    </div>
+  </div>
+  <div class="body-matches">
+    <div class="card-matches">
+      <div class="card-body-matches">
+        <% @matches.each do |match| %>
+          <% @match_user_one = match.match_users.find_by(user_id: current_user.id) %>
+          <% @match_user_two = match.match_users.where.not(user_id: current_user.id).first %>
+          <div class="chat-item">
+            <a href="<%= match_path(match) %>" class="no-link-style">
+              <div class="chat-user">
+                <%= @match_user_two.user.first_name %> <%= @match_user_two.user.last_name %>
+              </div>
+              <% if match.messages.any? %>
+                <% latest_message = match.messages.last %>
+                <div class="message">
+                  <% if current_user == latest_message.user %>
+                    <strong>You:</strong>
+                  <% else %>
+                    <strong><%= @match_user_two.user.first_name %>:</strong>
+                  <% end %>
+                  <span><%= latest_message.content %></span>
+                </div>
+              <% else %>
+                <p>No messages yet</p>
+              <% end %>
+            </a>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
