@@ -3,7 +3,6 @@
   <div style="margin-bottom: 20px";>
   </div>
 
-<
 
 <div class="form_container container">
   <%= simple_form_for [@activity, @review] do |f| %>
@@ -24,12 +23,12 @@
 
 
 <div class="navigation-container">
-<h1>Add a review for <br><%= @activity.name %></h1>
+<h1 class="activity-show-title">Add a review for <br><%= @activity.name %></h1>
 </div>
 <div class="container-activites-index">
 <div class="new-review-form">
 <%= simple_form_for [@activity, @review] do |f| %>
-    <div class="field">
+    <div class="field-1">
       <%= f.label :rating %>
       <%= f.select :rating, options_for_select(1..5), {}, {class: "select-class"} %>
     </div>

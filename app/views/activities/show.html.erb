@@ -33,9 +33,10 @@
 
 <%#New CODE%>
 <div class="navigation-container">
-    <h1 class="activity-title"><%= @activity.name %></h1>
+    <h1 class="activity-show-title"><%= @activity.name %></h1>
 </div>
 <div class="activity-index-information">
+<div class="container-activites-index">
 <div class="col-md-4 mb-4">
 <div class="activity-date">
 <p class="activity-h2-show"><i class="fa-regular fa-calendar-check"></i>
@@ -68,6 +69,7 @@
 <% end %>
 
 <%= link_to 'Add a review', new_activity_review_path(activity_id: @activity.id), class: "card-button-index-review" %>
+</div>
 </div>
 </div>
 </div>

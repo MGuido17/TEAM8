@@ -8,8 +8,8 @@
             <%= link_to "#{invite.user_one.first_name}", profile_path(invite.user_one.profile) %><p>wants to be your TEAM8</p>
           </div>
           <div class="button-row" style="display: flex; justify-content: space-between;">
-            <%= button_to "Reject", reject_invite_path(invite, status: false), method: :patch, data: { turbo: false }, class: "btn btn-danger" %>
-            <%= button_to "Accept", accept_invite_path(invite, status: true), method: :patch, data: { turbo: false }, class: "btn btn-success" %>
+            <%= button_to "Reject", reject_invite_path(invite, status: false), method: :patch, data: { turbo: false }, class: "button-dislike" %>
+            <%= button_to "Accept", accept_invite_path(invite, status: true), method: :patch, data: { turbo: false }, class: "button-like" %>
           </div>
         </div>
       </div>
@@ -71,29 +71,28 @@
 </body>
 <% end %>
 <%# Navigation div containing back button and search bar %>
-<div class="navigation-container">
+<div class="navigation-container-user-show">
 <div class="profile-show-information">
-<h1 class="profile-h2-show">Welcome TEAM8</h1>
-   <% if @profile.user == current_user %>
-  <p class="profile-h2-show">Hey <%= @profile.user.first_name %>! TEAM8 algorithms handpick activities best suited for you and your <%= @profile.medical_condition.to_sentence(last_word_connector: ', and ') %>. Browse our comprehensive list of activities, book a session, and find someone to train with using our unified platform.</p>
-<% end %>
+<h1 class="profile-h2-show">Welcome <%= @profile.user.first_name %></h1>
   </div>
   <h2 >Reccomended activities</h2>
-</div>
-
-<%# Carousel for matches%>
+  <%# Carousel for matches%>
 <div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
     <% @invites.each_with_index do |invite, index| %>
       <div class="carousel-item <%= 'active' if index.zero? %>">
-        <div class="user-card text-center" style="width: 18rem; margin: 0 auto 20px;">
+        <div class="user-card text-center">
           <div class="card-body">
             <%= link_to "#{invite.user_one.first_name}", profile_path(invite.user_one.profile) %><p>wants to be your TEAM8</p>
           </div>
-          <div class="button-row" style="display: flex; justify-content: space-between;">
-            <%= button_to "Reject", reject_invite_path(invite, status: false), method: :patch, data: { turbo: false }, class: "btn btn-danger" %>
-            <%= button_to "Accept", accept_invite_path(invite, status: true), method: :patch, data: { turbo: false }, class: "btn btn-success" %>
-          </div>
+          <div class="button-row">
+  <%= button_to reject_invite_path(invite, status: false), method: :patch, data: { turbo: false }, class: "button-dislike" do %>
+    <i class="fa fa-times"></i>
+  <% end %>
+  <%= button_to accept_invite_path(invite, status: true), method: :patch, data: { turbo: false }, class: "button-like" do %>
+   <i class="fa-solid fa-heart"></i>
+  <% end %>
+</div>
         </div>
       </div>
     <% end %>
@@ -108,6 +107,7 @@
       <span class="visually-hidden">Next</span>
     </button>
   <% end %>
+</div>
 </div>
 <%# Curved div container to store activities card%>
 <div class="container-activites-index">
