@@ -1,0 +1,57 @@
+.activity-show-page{
+  background-image: linear-gradient(90deg, $brand-05 0%, $brand-06 35%, $brand-07 100%);
+}
+
+.activity-show-container {
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 20px;
+  height: 32px;
+  padding: 62px 16px 68px;
+}
+
+.activity-title{
+  width: 202px;
+  position: relative;
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: 600;
+  font-family: Montserrat;
+  color: #fff;
+  display: inline-block;
+  height: 32px;
+}
+
+.activity-subtitle{
+  position: relative;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: Montserrat;
+  color: #fff;
+  text-align: center;
+}
+
+.container-lhs-curve1{
+  background-color: #D6E7FF;
+  border-radius: 55px 0px 0px 0px;
+  margin-top: 150px;
+  padding: 10px;
+  box-shadow:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background: linear-gradient(#fff, #fff), #0f0f0f;
+  height: 100vh;
+}
+
+.profile-h2-show{
+  color: white;
+  margin-left: 0;
+  font-family: Montserrat;
+  text-decoration: none;
+}
+
+// .bckgr-white-curve{
+//   background-color: #D6E7FF;
+//   border-radius: 55px 0px 0px 0px;
+//   padding: 10px;
+//   box-shadow:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+//   background: linear-gradient(#fff, #fff), #0f0f0f;
+// }

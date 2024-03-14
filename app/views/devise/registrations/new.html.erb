@@ -1,43 +1,63 @@
-<body class="profile-home-page">
-  <div class="main-container-home">
-<h2>Create your account</h2>
-<p>Tell us a bit about yourself</p>
+<div class="new-registration">
+  <div class="navigation">
+    <div class="top-section">
+      <div class="left-action-icon">
+        <%= link_to :back, class: 'arrow-left-icon' do %>
+          <i class="fa-solid fa-arrow-left"></i>
+        <% end %>
+      </div>
+      <div class="progress-bar">
+        <div class="indicator">
+        </div>
+      </div>
+      <div class="right-action">
+        <div class="button"><p class="skip-action">Skip</p></div>
+      </div>
+    </div>
+    <div class="lower-section">
+      <div class="large-title-grp">
+        <div class="page-title">Create your account</div>
+      </div>
+    </div>
+  </div>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :first_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "first name" }%>
-    <%= f.input :last_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "last name" }%>
-    <%= f.input :age,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "age" }%>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+  <div class="form-sign-in">
+    <div class="form">
+      <%= f.input :first_name,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "first name" }%>
+      <%= f.input :last_name,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "last name" }%>
+      <%= f.input :age,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "age" }%>
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+      <%= f.input :password,
+                  required: true,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up", class: "card-button" %>
+        <%= "Already have an account? " %>
+        <%= link_to "Log in", new_user_session_path %>
+      </div>
+    <% end %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up", class: "card-button" %>
-  </div>
-<% end %>
-<%= "Already have an account? " %>
-<%= link_to "Log in", new_user_session_path %>
 </div>
-</body>
+
+
 <%# REDIRECT TO USER FORM -- USER PROFILE %>

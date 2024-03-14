@@ -1,12 +1,14 @@
+require 'open-uri'
+
 puts "Cleaning database..."
 Invite.destroy_all
-User.destroy_all
 Attendee.destroy_all
 Bookmark.destroy_all
 MatchUser.destroy_all
 Profile.destroy_all
 Review.destroy_all
 Activity.destroy_all
+User.destroy_all
 puts "Creating users..."
 
 # Create users arrays
@@ -79,7 +81,7 @@ medical_conditions = [
 
 neutral_conditions = medical_conditions - ["Rheumatoid Arthritis", "Cancer", "Chronic Fatigue Syndrome", "Cardiovascular Disease", "Arthritis", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Chronic Kidney Disease", "Schizophrenia", "Fibromyalgia", "Epilepsy", "Obesity"]
 
-Activity.create!(
+activity1 = Activity.create!(
    name: "Crossfit",
    recommended_conditions: ["Obesity"],
    not_recommended_conditions: ["Rheumatoid Arthritis", "Cancer", "Chronic Fatigue Syndrome", "Cardiovascular Disease", "Arthritis", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Chronic Kidney Disease", "Schizophrenia", "Fibromyalgia", "Epilepsy"],
@@ -92,9 +94,11 @@ Activity.create!(
    spaces: 20
 )
 
+activity1.photo.attach(io: File.open('app/assets/images/crossfit.png'), filename: 'crossift.png', content_type: 'image/png')
+
 neutral_conditions = medical_conditions - ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"]
 
-Activity.create!(
+activity2 = Activity.create!(
   name: "Box",
   recommended_conditions: [],
   not_recommended_conditions: ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"],
@@ -107,9 +111,12 @@ Activity.create!(
   spaces: 15
 )
 
+activity2.photo.attach(io: File.open("app/assets/images/boxing.png"), filename: "attachment_2", content_type: "image/png")
+
+
 neutral_conditions = medical_conditions - ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"]
 
-Activity.create!(
+activity3 = Activity.create!(
   name: "Football",
   recommended_conditions: [],
   not_recommended_conditions: ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"],
@@ -122,9 +129,12 @@ Activity.create!(
   spaces: 22
 )
 
+activity3.photo.attach(io: File.open("app/assets/images/football.png"), filename: "attachment_3", content_type: "image/png")
+
+
 neutral_conditions = medical_conditions - ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"]
 
-Activity.create!(
+activity4 = Activity.create!(
   name: "Basketball",
   recommended_conditions: [],
   not_recommended_conditions: ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"],
@@ -137,9 +147,12 @@ Activity.create!(
   spaces: 20
 )
 
+activity4.photo.attach(io: File.open("app/assets/images/basketball.png"), filename: "attachment_4", content_type: "image/png")
+
+
 neutral_conditions = medical_conditions - ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"]
 
-Activity.create!(
+activity5 = Activity.create!(
   name: "Wrestling",
   recommended_conditions: [],
   not_recommended_conditions: ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"],
@@ -152,9 +165,12 @@ Activity.create!(
   spaces: 15
 )
 
+activity5.photo.attach(io: File.open("app/assets/images/wrestling.png"), filename: "attachment_5", content_type: "image/png")
+
+
 neutral_conditions = medical_conditions - ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"]
 
-Activity.create!(
+activity6 = Activity.create!(
   name: "Martial Arts",
   recommended_conditions: [],
   not_recommended_conditions: ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"],
@@ -167,9 +183,12 @@ Activity.create!(
   spaces: 20
 )
 
+activity6.photo.attach(io: File.open("app/assets/images/martial_arts.png"), filename: "attachment_6", content_type: "image/png")
+
+
 neutral_conditions = medical_conditions - ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"]
 
-Activity.create!(
+activity7 = Activity.create!(
   name: "Rugby",
   recommended_conditions: [],
   not_recommended_conditions: ["Cardiovascular Disease", "Cancer", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "Hypertension (High Blood Pressure)", "Osteoporosis", "Rheumatoid Arthritis", "Arthritis", "Osteoporosis", "Fibromyalgia", "Multiple Sclerosis", "Parkinson's Disease", "Schizophrenia", "Epilepsy"],
@@ -182,9 +201,12 @@ Activity.create!(
   spaces: 30
 )
 
+activity7.photo.attach(io: File.open("app/assets/images/rugby.png"), filename: "attachment_7", content_type: "image/png")
+
+
 neutral_conditions = medical_conditions - ["COPD (Chronic Obstructive Pulmonary Disease)", "Multiple Sclerosis", "Chronic Kidney Disease", "Rheumatoid Arthritis", "Crohn's Disease", "Ulcerative Colitis", "Chronic Pain Syndromes", "Fibromyalgia", "Diabetes", "Obesity", "Parkinson's Disease", "Hyperthyroidism", "Hypothyroidism", "Cancer", "Anxiety Disorders", "Bipolar Disorder", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Alzheimer's Disease", "Insomnia"]
 
-Activity.create!(
+activity8 = Activity.create!(
   name: "Rowing",
   recommended_conditions: ["COPD (Chronic Obstructive Pulmonary Disease)", "Multiple Sclerosis", "Chronic Kidney Disease", "Rheumatoid Arthritis", "Crohn's Disease", "Ulcerative Colitis", "Chronic Pain Syndromes", "Fibromyalgia", "Diabetes", "Obesity", "Parkinson's Disease", "Hyperthyroidism", "Hypothyroidism", "Cancer", "Anxiety Disorders", "Bipolar Disorder", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Alzheimer's Disease", "Insomnia", "Cancer"],
   neutral_conditions: neutral_conditions,
@@ -197,9 +219,12 @@ Activity.create!(
   spaces: 20
 )
 
+activity8.photo.attach(io: File.open("app/assets/images/rowing.png"), filename: "attachment_8", content_type: "image/png")
+
+
 neutral_conditions = medical_conditions - ["COPD (Chronic Obstructive Pulmonary Disease)", "Multiple Sclerosis", "Chronic Kidney Disease", "Rheumatoid Arthritis", "Crohn's Disease", "Ulcerative Colitis", "Chronic Pain Syndromes", "Fibromyalgia", "Diabetes", "Obesity", "Parkinson's Disease", "Hyperthyroidism", "Hypothyroidism", "Cancer", "Anxiety Disorders", "Bipolar Disorder", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Alzheimer's Disease", "Insomnia"]
 
-Activity.create!(
+activity9 = Activity.create!(
   name: "Elliptical Training",
   recommended_conditions: ["COPD (Chronic Obstructive Pulmonary Disease)", "Multiple Sclerosis", "Chronic Kidney Disease", "Rheumatoid Arthritis", "Crohn's Disease", "Ulcerative Colitis", "Chronic Pain Syndromes", "Fibromyalgia", "Diabetes", "Obesity", "Parkinson's Disease", "Hyperthyroidism", "Hypothyroidism", "Cancer", "Anxiety Disorders", "Bipolar Disorder", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Alzheimer's Disease", "Insomnia"],
   neutral_conditions: neutral_conditions,
@@ -212,9 +237,12 @@ Activity.create!(
   spaces: 15
 )
 
+activity9.photo.attach(io: File.open("app/assets/images/elliptical_training.png"), filename: "attachment_9", content_type: "image/png")
+
+
 neutral_conditions = medical_conditions - ["Cardiovascular Disease", "Osteoporosis", "Asthma", "Chronic Pain Syndromes", "COPD (Chronic Obstructive Pulmonary Disease)", "Fibromyalgia", "Hypertension (High Blood Pressure)", "Schizophrenia", "Alzheimer's Disease", "Epilepsy", "Chronic Kidney Disease", "Chronic Fatigue Syndrome", "Crohn's Disease", "Ulcerative Colitis", "Insomnia", "Cancer"]
 
-Activity.create!(
+activity10 = Activity.create!(
   name: "Walking",
   recommended_conditions: ["Cardiovascular Disease", "Osteoporosis", "Asthma", "Chronic Pain Syndromes", "COPD (Chronic Obstructive Pulmonary Disease)", "Fibromyalgia", "Hypertension (High Blood Pressure)", "Schizophrenia", "Alzheimer's Disease", "Epilepsy", "Chronic Kidney Disease", "Chronic Fatigue Syndrome", "Crohn's Disease", "Ulcerative Colitis", "Insomnia", "Cancer"],
   neutral_conditions: neutral_conditions,
@@ -227,9 +255,12 @@ Activity.create!(
   spaces: 20
 )
 
+activity10.photo.attach(io: File.open("app/assets/images/walking.png"), filename: "attachment_10", content_type: "image/png")
+
+
 neutral_conditions = medical_conditions - ["Osteoporosis", "Depression", "Osteoporosis", "Diabetes", "Obesity", "Parkinson's Disease", "Hyperthyroidism", "Hypothyroidism", "Cancer", "Anxiety Disorders", "Bipolar Disorder", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Alzheimer's Disease", "Insomnia"]
 
-Activity.create!(
+activity11 = Activity.create!(
   name: "Dancing",
   recommended_conditions: ["Osteoporosis", "Depression", "Osteoporosis", "Diabetes", "Obesity", "Parkinson's Disease", "Hyperthyroidism", "Hypothyroidism", "Cancer", "Anxiety Disorders", "Bipolar Disorder", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Alzheimer's Disease", "Insomnia"],
   neutral_conditions: neutral_conditions,
@@ -242,9 +273,12 @@ Activity.create!(
   spaces: 20
 )
 
+
+activity11.photo.attach(io: File.open("app/assets/images/dancing.png"), filename: "attachment_11", content_type: "image/png")
+
 neutral_conditions = medical_conditions - ["Diabetes", "Obesity", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Cardiovascular Disease", "Cancer", "Bipolar Disorder", "Arthritis", "Asthma", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"]
 
-Activity.create!(
+activity12 = Activity.create!(
   name: "Aerobic Classes",
   recommended_conditions: ["Diabetes", "Obesity", "Parkinson's Disease", "Hyperthyroidism", "Hypothyroidism", "Cancer", "Anxiety Disorders", "Bipolar Disorder", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Alzheimer's Disease", "Insomnia"],
   neutral_conditions: neutral_conditions,
@@ -257,9 +291,12 @@ Activity.create!(
   spaces: 15
 )
 
+activity12.photo.attach(io: File.open("app/assets/images/aerobic.png"), filename: "attachment_12", content_type: "image/png")
+
+
 neutral_conditions = medical_conditions - ["Diabetes", "Obesity", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Cardiovascular Disease", "Cancer", "Bipolar Disorder", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Epilepsy", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"]
 
-Activity.create!(
+activity13 = Activity.create!(
   name: "Hiking",
   recommended_conditions: ["Diabetes", "Obesity", "Parkinson's Disease", "Hyperthyroidism", "Hypothyroidism", "Cancer", "Anxiety Disorders", "Bipolar Disorder", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Alzheimer's Disease", "Insomnia"],
   neutral_conditions: neutral_conditions,
@@ -272,9 +309,12 @@ Activity.create!(
   spaces: 20
 )
 
+activity13.photo.attach(io: File.open("app/assets/images/hiking.png"), filename: "attachment_13", content_type: "image/png")
+
+
 neutral_conditions = medical_conditions - ["Diabetes", "Obesity", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Cardiovascular Disease", "Cancer", "Bipolar Disorder", "Arthritis", "Asthma", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"]
 
-Activity.create!(
+activity14 = Activity.create!(
   name: "Swimming",
   recommended_conditions: ["Diabetes", "Obesity", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Cardiovascular Disease", "Cancer", "Bipolar Disorder", "Arthritis", "Asthma", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"],
   neutral_conditions: neutral_conditions,
@@ -287,9 +327,11 @@ Activity.create!(
   spaces: 15
 )
 
+activity14.photo.attach(io: File.open("app/assets/images/swimming.png"), filename: "attachment_14", content_type: "image/png")
+
 neutral_conditions = medical_conditions - ["Diabetes", "Obesity", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Cardiovascular Disease", "Cancer", "Bipolar Disorder", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Epilepsy", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"]
 
-Activity.create!(
+activity15 = Activity.create!(
   name: "Jogging",
   recommended_conditions: ["Diabetes", "Obesity", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Cardiovascular Disease", "Cancer", "Bipolar Disorder", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Epilepsy", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"],
   neutral_conditions: neutral_conditions,
@@ -302,9 +344,12 @@ Activity.create!(
   spaces: 20
 )
 
+activity15.photo.attach(io: File.open("app/assets/images/jogging.png"), filename: "attachment_15", content_type: "image/png")
+
+
 neutral_conditions = medical_conditions - ["Diabetes", "Arthritis", "Depression", "Chronic Kidney Disease", "Obesity", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Cardiovascular Disease", "Cancer", "Bipolar Disorder", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Epilepsy", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"]
 
-Activity.create!(
+activity16 = Activity.create!(
   name: "Cycling",
   recommended_conditions: ["Diabetes", "Arthritis", "Depression", "Chronic Kidney Disease", "Obesity", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Cardiovascular Disease", "Cancer", "Bipolar Disorder", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Epilepsy", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"],
   neutral_conditions: neutral_conditions,
@@ -317,9 +362,12 @@ Activity.create!(
   spaces: 15
 )
 
+activity16.photo.attach(io: File.open("app/assets/images/cycling.png"), filename: "attachment_16", content_type: "image/png")
+
+
 neutral_conditions = medical_conditions - ["Diabetes", "Depression", "Chronic Kidney Disease", "Obesity", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Cardiovascular Disease", "Cancer", "Bipolar Disorder", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Epilepsy", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"] - ["Arthritis", "Rheumatoid Arthritis"]
 
-Activity.create!(
+activity17 = Activity.create!(
   name: "Running",
   recommended_conditions: ["Diabetes", "Depression", "Chronic Kidney Disease", "Obesity", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Cardiovascular Disease", "Cancer", "Bipolar Disorder", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Epilepsy", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"],
   not_recommended_conditions: ["Arthritis", "Rheumatoid Arthritis"],
@@ -332,9 +380,12 @@ Activity.create!(
   spaces: 20
 )
 
+activity17.photo.attach(io: File.open("app/assets/images/running.png"), filename: "attachment_17", content_type: "image/png")
+
+
 neutral_conditions = medical_conditions - ["Depression", "Bipolar Disorder", "Anxiety Disorders", "Post-Traumatic Stress Disorder (PTSD)", "Epilepsy", "Insomnia", "Rheumatoid Arthritis", "Fibromyalgia", "Chronic Pain Syndromes", "Parkinson's Disease", "Multiple Sclerosis", "Alzheimer's Disease", "Depression", "Anxiety Disorders", "Post-Traumatic Stress Disorder (PTSD)", "Chronic Pain Syndromes", "Stroke", "Chronic Kidney Disease", "Hypothyroidism"] - ["Arthritis", "Rheumatoid Arthritis", "Osteoporosis", "Schizophrenia", "Cardiovascular Disease", "Hypertension (High Blood Pressure)", "Chronic Fatigue Syndrome", "Epilepsy"]
 
-Activity.create!(
+activity18 = Activity.create!(
   name: "Climbing",
   recommended_conditions:["Depression", "Bipolar Disorder", "Anxiety Disorders", "Post-Traumatic Stress Disorder (PTSD)", "Epilepsy", "Insomnia", "Rheumatoid Arthritis", "Fibromyalgia", "Chronic Pain Syndromes", "Parkinson's Disease", "Multiple Sclerosis", "Alzheimer's Disease", "Depression", "Anxiety Disorders", "Post-Traumatic Stress Disorder (PTSD)", "Chronic Pain Syndromes", "Stroke", "Chronic Kidney Disease", "Hypothyroidism"],
   not_recommended_conditions: ["Arthritis", "Rheumatoid Arthritis", "Osteoporosis", "Schizophrenia", "Cardiovascular Disease", "Hypertension (High Blood Pressure)", "Chronic Fatigue Syndrome", "Epilepsy"],
@@ -347,9 +398,12 @@ Activity.create!(
   spaces: 15
 )
 
+activity18.photo.attach(io: File.open("app/assets/images/climbing.png"), filename: "attachment_18", content_type: "image/png")
+
+
 neutral_conditions = medical_conditions - ["Diabetes", "Depression", "Hypothyroidism", "Hyperthyroidism", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Post-Traumatic Stress Disorder (PTSD)", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"] - ["Arthritis", "Rheumatoid Arthritis", "Osteoporosis"] - ["Arthritis", "Rheumatoid Arthritis", "Osteoporosis"]
 
-Activity.create!(
+activity19 = Activity.create!(
   name: "Tenis",
   recommended_conditions: ["Diabetes", "Depression", "Hypothyroidism", "Hyperthyroidism", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Post-Traumatic Stress Disorder (PTSD)", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"],
   not_recommended_conditions: ["Arthritis", "Rheumatoid Arthritis", "Osteoporosis"],
@@ -362,9 +416,12 @@ Activity.create!(
   spaces: 8
 )
 
+activity19.photo.attach(io: File.open("app/assets/images/tenis.png"), filename: "attachment_19", content_type: "image/png")
+
+
 neutral_conditions = medical_conditions - ["Diabetes", "Depression", "Hypothyroidism", "Hyperthyroidism", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Post-Traumatic Stress Disorder (PTSD)", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"] - ["Arthritis", "Rheumatoid Arthritis", "Osteoporosis"]
 
-Activity.create!(
+activity20 = Activity.create!(
   name: "Padel",
   recommended_conditions: ["Diabetes", "Depression", "Hypothyroidism", "Hyperthyroidism", "Fibromyalgia", "Hypertension (High Blood Pressure)",  "Anxiety Disorders", "Post-Traumatic Stress Disorder (PTSD)", "Crohn's Disease", "Chronic Pain Syndromes", "Insomnia"],
   not_recommended_conditions: ["Arthritis", "Rheumatoid Arthritis", "Osteoporosis"],
@@ -377,9 +434,12 @@ Activity.create!(
   spaces: 4
 )
 
+activity20.photo.attach(io: File.open("app/assets/images/padel.png"), filename: "attachment_20", content_type: "image/png")
+
+
 neutral_conditions = medical_conditions - ["Diabetes", "Osteoporosis", "Chronic Pain Syndrome", "Obesity", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Cancer", "Alzheimer's Disease", "Rheumatoid Arthritis"] - ["Epilepsy"]
 
-Activity.create!(
+activity21 = Activity.create!(
   name: "Gym Session",
   recommended_conditions: ["Diabetes", "Osteoporosis", "Chronic Pain Syndrome", "Obesity", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Cancer", "Alzheimer's Disease", "Rheumatoid Arthritis"],
   not_recommended_conditions: ["Epilepsy"],
@@ -392,9 +452,12 @@ Activity.create!(
   spaces: 10
 )
 
+
+activity21.photo.attach(io: File.open("app/assets/images/gym.png"), filename: "attachment_21", content_type: "image/png")
+
 neutral_conditions = medical_conditions - ["Obesity", "Hypertension (High Blood Pressure)", "Epilepsy", "Osteoporosis", "Diabetes", "Asthma", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Anxiety Disorders", "Bipolar Disorder",  "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Alzheimer's Disease", "Stroke", "Chronic Pain Syndrome", "Chronic Kidney Disease", "Rheumatoid Arthritis", "Chronic Fatigue Syndrome", "Crohn's Disease", "Ulcerative Colitis", "Fibromyalgia", "Chronic Fatigue Syndrome"]
 
-Activity.create!(
+activity22 = Activity.create!(
   name: "High Intensity Interval Training (HIIT)",
   recommended_conditions: ["Obesity", "Hypertension (High Blood Pressure)"],
   not_recommended_conditions: ["Epilepsy", "Osteoporosis", "Diabetes", "Asthma", "Parkinson's Disease", "Hypothyroidism", "Hyperthyroidism", "Anxiety Disorders", "Bipolar Disorder",  "Schizophrenia", "Post-Traumatic Stress Disorder (PTSD)", "Alzheimer's Disease", "Stroke", "Chronic Pain Syndrome", "Chronic Kidney Disease", "Rheumatoid Arthritis", "Chronic Fatigue Syndrome", "Crohn's Disease", "Ulcerative Colitis", "Fibromyalgia", "Chronic Fatigue Syndrome"],
@@ -407,9 +470,12 @@ Activity.create!(
   spaces: 10
 )
 
+activity22.photo.attach(io: File.open("app/assets/images/hiit.png"), filename: "attachment_22", content_type: "image/png")
+
+
 neutral_conditions = medical_conditions - ["Depression", "Fibromyalgia", "Anxiety Disorders", "Bipolar Disorder", "Post-Traumatic Stress Disorder (PTSD)", "Chronic Fatigue Syndrome", "Ulcerative Colitis", "Insonmia"]
 
-Activity.create!(
+activity23 = Activity.create!(
   name: "Yoga",
   recommended_conditions: ["Depression", "Fibromyalgia", "Anxiety Disorders", "Bipolar Disorder", "Post-Traumatic Stress Disorder (PTSD)", "Chronic Fatigue Syndrome", "Ulcerative Colitis", "Insonmia"],
   neutral_conditions: neutral_conditions,
@@ -422,9 +488,11 @@ Activity.create!(
   spaces: 15
 )
 
+activity23.photo.attach(io: File.open("app/assets/images/yoga.png"), filename: "attachment_23", content_type: "image/png")
+
 neutral_conditions = medical_conditions - ["Depression", "Fibromyalgia", "Anxiety Disorders", "Bipolar Disorder", "Post-Traumatic Stress Disorder (PTSD)", "Chronic Fatigue Syndrome", "Ulcerative Colitis", "Insonmia"]
 
-Activity.create!(
+activity24 = Activity.create!(
   name: "Taichi",
   recommended_conditions: ["Depression", "Fibromyalgia", "Anxiety Disorders", "Bipolar Disorder", "Post-Traumatic Stress Disorder (PTSD)", "Chronic Fatigue Syndrome", "Ulcerative Colitis", "Insonmia"],
   neutral_conditions: neutral_conditions,
@@ -437,4 +505,7 @@ Activity.create!(
   spaces: 15
 )
 
-  puts "Created #{Activity.count} activities"
+activity24.photo.attach(io: File.open("app/assets/images/taichi.png"), filename: "attachment_24", content_type: "image/png")
+
+
+puts "Created #{Activity.count} activities"
