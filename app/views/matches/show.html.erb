@@ -1,18 +1,20 @@
 <body class="background-page">
   <div class="top-section">
-    <div class="go-back-link">
-      <%= link_to "Go back", :back %>
-    </div>
+      <div class="left-action-icon">
+        <%= link_to :back, class: 'arrow-left-icon' do %>
+          <i class="fa-solid fa-arrow-left"></i>
+        <% end %>
+      </div>
     <div class="user-info">
       <small><strong><%= current_user.first_name %></strong></small>
     </div>
   </div>
 
 
-  <div class="chatroom" data-controller="match-subscription" data-match-subscription-match-id-value="<%= @match.id %>">
+  <div class="chatroom" data-controller="match-subscription" data-match-subscription-user-id-value="<%= current_user.id %>" data-match-subscription-match-id-value="<%= @match.id %>">
     <div class="messages" data-match-subscription-target="messages">
       <% @match.messages.each do |message| %>
-        <% css_class = (message.user == current_user) ? 'current-user-message' : '' %>
+        <% css_class = (message.user == current_user) ? 'current-user-message' : 'other-user-message' %>
         <%= render "messages/message", message: message, css_class: css_class %>
       <% end %>
     </div>

@@ -1,10 +1,7 @@
-<div id="message-<%= message.id %>">
-  <% css_class = (message.user == current_user) ? 'current-user-message' : 'other-user-message' %>
-  <div class="message-user <%= css_class %>">
-    <div class="message-card <%= css_class %>">
-      <div class="card-body">
-        <p><%= message.content %><i><%= message.created_at.strftime("%l:%M %p") %></i></p>
-      </div>
+<div class="message-user <%= css_class %>">
+  <div class="message-card <%= css_class %>">
+    <div class="card-body">
+      <p><%= message.content %><i><%= message.created_at.strftime("%l:%M %p") %></i></p>
     </div>
   </div>
 </div>
