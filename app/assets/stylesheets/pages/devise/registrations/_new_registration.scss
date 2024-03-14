@@ -1,6 +1,7 @@
 // Navigation
 .new-registration {
   width: 100%;
+  margin-top: 47px;
   position: fixed; /* Cambiado a posicionamiento fijo */
   top: 0; /* Fija el contenedor en la parte superior */
   left: 0; /* Fija el contenedor a la izquierda */
@@ -75,6 +76,7 @@
   align-self: stretch;
   backdrop-filter: blur(4px);
   height: 60px;
+  top: 47px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -123,7 +125,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   // margin: 47px 0px 0px;
-  padding: 47px 0px 0px;
+  // padding: 47px 0px 0px;
   box-sizing: border-box;
   text-align: left;
   font-size: 14px;
@@ -144,9 +146,9 @@
   font-family: Montserrat;
 }
 .form {
-  position: absolute;
+  // position: absolute;
   top: 0px;
-  width: 100%;
+  // width: 100%;
   // left: calc(50% - 171px);
   padding: 0px 44px;
   display: flex;

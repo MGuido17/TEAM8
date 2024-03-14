@@ -1,0 +1,38 @@
+.user-sign-in {
+  width: 100%;
+  position: fixed; /* Cambiado a posicionamiento fijo */
+  top: 0; /* Fija el contenedor en la parte superior */
+  left: 0; /* Fija el contenedor a la izquierda */
+  height: 100vh; /* Establece la altura al 100% de la ventana visible */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  font-size: 16px;
+  color: #fff;
+  font-family: Montserrat;
+  background-color: linear-gradient(180deg, #f0f6fe, rgba(241, 247, 255, 0.13) 50%, #f0f6fe);
+}
+.sign-in-form {
+  width: 100%;
+  max-width: 430px;
+  padding: 0 24px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0px 4px 4px #d6e7ff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  font-size: 16px;
+  color: #999;
+  font-family: Montserrat;
+}
