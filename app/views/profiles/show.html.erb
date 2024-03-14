@@ -74,10 +74,11 @@
 <div class="navigation-container">
 <div class="profile-show-information">
 <h1 class="profile-h2-show">Welcome TEAM8</h1>
-    <% if @profile.user == current_user %>
-      <p class="profile-h2-show"><%= @profile.user.first_name %> <%= @profile.user.last_name %>, we've selected<br>these activities just for you!</p>
-    <% end %>
+   <% if @profile.user == current_user %>
+  <p class="profile-h2-show">Hey <%= @profile.user.first_name %>! TEAM8 algorithms handpick activities best suited for you and your <%= @profile.medical_condition.to_sentence(last_word_connector: ', and ') %>. Browse our comprehensive list of activities, book a session, and find someone to train with using our unified platform.</p>
+<% end %>
   </div>
+  <h2 >Reccomended activities</h2>
 </div>
 
 <%# Carousel for matches%>
