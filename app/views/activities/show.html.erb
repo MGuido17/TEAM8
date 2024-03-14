@@ -1,3 +1,4 @@
+<% if false %>
 <body class="activity-show-page">
 
   <div class="activity-show-container">
@@ -28,3 +29,47 @@
     </div>
   </div>
 </body>
+<% end %>
+
+<%#New CODE%>
+<div class="navigation-container">
+    <h1 class="activity-show-title"><%= @activity.name %></h1>
+</div>
+<div class="activity-index-information">
+<div class="container-activites-index">
+<div class="col-md-4 mb-4">
+<div class="activity-date">
+<p class="activity-h2-show"><i class="fa-regular fa-calendar-check"></i>
+ <%= @activity.date %></p>
+</div>
+<div class="activity-location">
+<p class="activity-h2-show"><i class="fa-solid fa-location-dot"></i>
+<%= "#{@activity.address}, #{@activity.location}" %>
+<div class="activity-attendees">
+<%= render partial: "/shared/attendee_counter" %>
+<div class= "activity-attendees-btn">
+<%= render partial: "/shared/button_attend_event", locals: { attend_text: "Attend to this event" }, class: 'card-button-index' %>
+</div>
+</div>
+</div>
+<div class="activity-show-review">
+<% if @activity.reviews.any? %>
+  <h5>TEAM8 reviews</h5>   <i class="fa-regular fa-pen-to-square"></i>
+
+  <% @activity.reviews.each do |r| %>
+    <div class="review-instance">
+      <p><strong>Rating:</strong> <%= r.rating %></p>
+      <p><strong>Review:</strong> <%= r.description %></p>
+      <p><strong>Created by:</strong> <%= r.user.first_name %></p>
+      <p><strong>On:</strong> <%= r.created_at.strftime("%B %d, %Y") %></p>
+    </div> <!-- Ensure this div closes within the loop -->
+  <% end %>
+<% else %>
+  <p>No reviews yet.</p>
+<% end %>
+
+<%= link_to 'Add a review', new_activity_review_path(activity_id: @activity.id), class: "card-button-index-review" %>
+</div>
+</div>
+</div>
+</div>

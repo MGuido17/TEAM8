@@ -1,0 +1,24 @@
+.new-review-form{
+  padding: 30px;
+}
+
+.field-1 {
+  flex-grow: 1;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  align-items: center; /* Centers items vertically */
+  justify-content: space-between; /* Puts max space between label and input */
+  width: 100%;
+  margin-left: 48px;
+}
+
+.field-1 input,
+.field-1 textarea,
+.field-1 select {
+  background-color: white; /* White background */
+  // border: 2px solid #007BFF; /* Bluish border, adjust the color as you like */
+  border-radius: 15px; /* Rounded borders */
+  padding: 10px; /* Padding inside the input fields */
+  font-size: 16px; /* Adjust the font size according to your design */
+  color: #141414;
+}

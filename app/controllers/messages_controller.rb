@@ -7,7 +7,9 @@ class MessagesController < ApplicationController
     if @message.save
       MatchChannel.broadcast_to(
         @match,
-        render_to_string(partial: "message", locals: { message: @message })
+        message: @message.content,
+        created_at: @message.created_at.strftime("%l:%M %p"),
+        user: @message.user.id
       )
       head :ok
     else

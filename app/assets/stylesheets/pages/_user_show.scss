@@ -16,6 +16,9 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   width: calc(50% - 20px);
   box-sizing: border-box;
+  width: 18rem;
+  margin: 0 auto 20px;
+  margin-bottom: 200px;
 }
 
 
@@ -66,4 +69,69 @@ body {
   border: none;
   cursor: pointer;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Match the navbar item font */
+}
+
+.navigation-container-user-show{
+  width: 100%;
+  position: relative;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(200px);
+  height: 369px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 25px;
+  box-sizing: border-box;
+  gap: 8px 0px;
+  text-align: left;
+  font-size: 14px;
+  color: #fff;
+  font-family: Montserrat;
+  background: linear-gradient(44.46deg, $brand-04 0%, $brand-07 35%, $brand-08 100%);
+  z-index: 1;
+  margin-top: -20px;
+  }
+
+.button-row {
+    display: flex;
+    justify-content: space-between; /* You can change this to 'center' for less space */
+    gap: 10px; /* Reduce the gap between buttons */
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+
+ /* Base button styling */
+.button-like, .button-dislike {
+  border: none;
+  cursor: pointer;
+  width: 60px; /* Adjust size as needed */
+  height: 60px; /* Adjust size as needed */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px; /* Adjust icon size as needed */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Like button specific styling */
+.button-like {
+  background-color: #4CAF50; /* Tinder-like green */
+  color: white; /* Icon color */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Dislike button specific styling */
+.button-dislike {
+  background-color: #F44336; /* Tinder-like red */
+  color: white; /* Icon color */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effect for tactile feedback */
+.button-like:hover, .button-dislike:hover {
+  transform: scale(1.1);
 }

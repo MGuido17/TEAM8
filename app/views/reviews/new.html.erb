@@ -1,8 +1,8 @@
+<% if false %>
 <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 50vh; padding: 10%">
   <div style="margin-bottom: 20px";>
   </div>
 
-<h1>Add a review for: <br><%= @activity.name %></h1>
 
 <div class="form_container container">
   <%= simple_form_for [@activity, @review] do |f| %>
@@ -18,4 +18,26 @@
     <%= f.submit class: "btn base-btn" %>
     <% end %>
   <%= link_to 'Back to Activity', activity_path(@activity), class: 'btn back-btn' %>
+</div>
+<%end%>
+
+
+<div class="navigation-container">
+<h1 class="activity-show-title">Add a review for <br><%= @activity.name %></h1>
+</div>
+<div class="container-activites-index">
+<div class="new-review-form">
+<%= simple_form_for [@activity, @review] do |f| %>
+    <div class="field-1">
+      <%= f.label :rating %>
+      <%= f.select :rating, options_for_select(1..5), {}, {class: "select-class"} %>
+    </div>
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+    <%= f.submit class: "btn base-btn" %>
+    <% end %>
+    </div>
+  <%= link_to 'Back to Activity', activity_path(@activity), class: 'card-index-button-home' %>
 </div>

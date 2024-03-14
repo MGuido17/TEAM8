@@ -1,3 +1,4 @@
+<% if false %>
 <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 10%">
   <div style="margin-bottom: 20px;">
   </div>
@@ -59,3 +60,76 @@
       </div>
     <% end %>
 </div>
+<% end %>
+
+<%# </div> %>
+<div class="navigation-container">
+  <div class= title-activity>
+    <h1>Create activity</h1>
+  </div>
+</div>
+
+<div class="activity-index-information">
+  <div class="activity-activites-index">
+    <div class="activity-index-form">
+      <%= simple_form_for(@activity) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="field">
+          <%= f.input :name, label: 'Name', input_html: { id: :activity_name } %>
+        </div>
+
+        <div class="field">
+          <%= f.input :description, label: 'Description', as: :string, input_html: { id: :activity_description } %>
+        </div>
+
+        <div class="field">
+          <%= f.input :address, label: 'Address', as: :string, input_html: { id: :activity_address } %>
+        </div>
+
+        <div class="field">
+          <%= f.input :location, label: 'Location Detail', as: :string, input_html: { id: :activity_location } %>
+        </div>
+
+        <div class="field">
+          <%= f.input :date, label: 'Date', as: :string, input_html: { data: { controller: "datepicker"} }%>
+        </div>
+
+        <div class="field">
+          <%= f.input :spaces, label: 'Spaces available', input_html: { id: :activity_spaces } %>
+        </div>
+
+      <% medical_conditions = ["All", "Alzheimer's Disease", "Anxiety Disorders", "Arthritis", "Asthma", "Bipolar Disorder", "Cancer", "Cardiovascular Disease", "Chronic Fatigue Syndrome", "Chronic Kidney Disease", "Chronic Pain Syndromes", "COPD (Chronic Obstructive Pulmonary Disease)", "Crohn's Disease", "Depression", "Diabetes", "Epilepsy", "Fibromyalgia", "Hypertension (High Blood Pressure)", "Hyperthyroidism", "Hypothyroidism", "Insomnia", "Multiple Sclerosis", "Obesity", "Osteoporosis", "Parkinson's Disease", "Post-Traumatic Stress Disorder (PTSD)", "Rheumatoid Arthritis", "Schizophrenia", "Stroke", "Ulcerative Colitis"] %>
+
+      <div class="field">
+        <%= f.input :recommended_conditions,
+                    label: 'Recommended Conditions',
+                    as: :select,
+                    collection: medical_conditions,
+                    input_html: { multiple: true, size: 10, 'data-controller': 'select-all', 'data-select-all-target': 'select', 'data-action': 'change->select-all#selectAll change->select-all#deselectAll' },
+                    include_blank: false %>
+      </div>
+
+      <div class="field">
+        <%= f.input :not_recommended_conditions,
+                    label: 'Not Recommended Conditions',
+                    as: :select,
+                    collection: medical_conditions,
+                    input_html: { multiple: true, size: 10, 'data-controller': 'select-all', 'data-select-all-target': 'select', 'data-action': 'change->select-all#selectAll change->select-all#deselectAll' },
+                    include_blank: false %>
+      </div>
+
+        <div class="field-private-qs">
+          <%= f.input :private, label: 'Is this activity private?', as: :boolean, boolean_style: :inline %>
+        </div>
+
+          <div class="btn-create-activity">
+            <%= f.button :submit, "Create Activity" %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+
+<%# card-button-index %>
