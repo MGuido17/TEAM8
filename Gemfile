@@ -79,4 +79,3 @@ gem "cloudinary"
 gem "pg"
 gem "redis"
 gem "geocoder"
-gem 'webpacker'
