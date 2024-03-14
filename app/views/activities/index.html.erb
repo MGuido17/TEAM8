@@ -1,6 +1,5 @@
 <%# Navigation div containing back button and search bar %>
 <div class="navigation-container">
-  
   <%# Search bar%>
   <div class="input-field">
     <%= form_with url: activities_path, method: :get, class: "search-form" do %>
@@ -30,7 +29,9 @@
         <%= link_to 'Attend', activity_path(activity), class: "card-button-index" %>
       </div>
       <div class="activity-index-photo">
+      <% if activity.photo.attached? %>
         <%= cl_image_tag activity.photo.key, crop: :fill, width: 200, height: 200 %>
+      <% end %>
         </div>
     </div>
   </div>
