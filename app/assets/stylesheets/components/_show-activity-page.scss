@@ -11,19 +11,24 @@
 }
 
 .activity-title{
-  padding: 75px;
+  width: 202px;
   position: relative;
+  font-size: 26px;
   line-height: 32px;
   font-weight: 600;
+  font-family: Montserrat;
+  color: #fff;
   display: inline-block;
   height: 32px;
-  flex-shrink: 0;
 }
 
 .activity-subtitle{
   position: relative;
   font-size: 16px;
   line-height: 24px;
+  font-family: Montserrat;
+  color: #fff;
+  text-align: center;
 }
 
 .container-lhs-curve1{
