@@ -6,7 +6,7 @@ class InvitesController < ApplicationController
       redirect_to profiles_path
       return
     end
-    invite = Invite.new()
+    invite = Invite.new
     invite.user_one = current_user
     invite.user_two = User.find(params[:user_two_id])
     invite.status = false
