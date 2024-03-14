@@ -1,10 +1,6 @@
 <%# Navigation div containing back button and search bar %>
 <div class="navigation-container">
-  <div class="back-button">
-    <%= link_to :back, class: 'back-button' do %>
-    <i class="fa-solid fa-arrow-left-long"></i>
-<% end %>
-  </div>
+  
   <%# Search bar%>
   <div class="input-field">
     <%= form_with url: activities_path, method: :get, class: "search-form" do %>
@@ -19,7 +15,7 @@
     <% end %>
   </div>
     <%# Reccomended Activities p%>
-    <h2>Reccomended activities</h2>
+    <p class="activity-show">Browse our comprehensive list of activities. Our suggestions our doctor verified, we only suggest activities that are suited to your needs.</p>
 </div>
 <%# Curved div container to store activities card%>
 <div class="container-activites-index">

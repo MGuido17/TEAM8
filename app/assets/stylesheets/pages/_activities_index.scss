@@ -13,4 +13,112 @@
   padding: 20px;
   margin-bottom: 5px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  color: white;
+}
+
+.activity-index-photo{
+  text-align: right;
+}
+
+.container-activites-index{
+  border-radius: 55px 0px 0px 0px;
+  background-color: red;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #f0f6fe;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 2; /* This will overlap the navigation container */
+  margin-top: -100px;
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+margin-bottom: 50px;
+}
+
+.back-button {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    color: white;
+}
+
+.input-field{
+  align-self: stretch;
+border-radius: 100px;
+background-color: #fff;
+box-sizing: border-box;
+height: 49.5px;
+overflow: hidden;
+flex-shrink: 0;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+padding: 12px 16px;
+gap: 0px 8px;
+align-self: stretch;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+padding: 8px;
+box-sizing: border-box;
+margin-bottom: 25px;
+}
+
+.navigation-container{
+width: 100%;
+position: relative;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+backdrop-filter: blur(200px);
+height: 272px;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+padding: 45px;
+box-sizing: border-box;
+gap: 8px 0px;
+text-align: left;
+font-size: 14px;
+color: #fff;
+font-family: Montserrat;
+background: linear-gradient(44.46deg, $brand-04 0%, $brand-07 35%, $brand-08 100%);
+z-index: 1;
+margin-bottom: 50px;
+margin-top: -20px;
+}
+.stack-top{
+  z-index: 9;
+  margin: 20px; /* for demo purpose  */
+}
+
+.activity-index-cards{
+  text-align: left;
+  font-family: Montserrat;
+  border-radius: 15px ;
+  background-color: #F2F2F2 ;
+  margin-top: 30px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  margin: 25px;
+}
+
+.activity-index-information{
+  margin-bottom: 50px;
+
+}
+
+.activity-show{
+  font-size: 15px;
 }
