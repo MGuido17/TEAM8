@@ -23,21 +23,21 @@ export default class extends Controller {
     this.channel.unsubscribe()
   }
 
-  #insertMessageAndScrollDown(data) {
-    this.messagesTarget.insertAdjacentHTML("beforeend", data.html)
-    window.scrollTo(0, this.messagesTarget.scrollHeight)
-    const messageUser = document.querySelector(".message-user")
-    const messageCard = document.querySelector(".message-card")
-    if (this.userIdValue == data.user) {
-      messageUser.classList.add("current-user-message")
-      messageCard.classList.add("current-user-message")
-      console.log(messageUser)
-    } else {
-      messageUser.classList.add("other-user-message")
-      messageCard.classList.add("other-user-message")
-    }
-    console.log(this.userIdValue == data.user)
-  }
+  // #insertMessageAndScrollDown(data) {
+  //   this.messagesTarget.insertAdjacentHTML("beforeend", data.html)
+  //   window.scrollTo(0, this.messagesTarget.scrollHeight)
+  //   const messageUser = document.querySelector(".message-user")
+  //   const messageCard = document.querySelector(".message-card")
+  //   if (this.userIdValue == data.user) {
+  //     messageUser.classList.add("current-user-message")
+  //     messageCard.classList.add("current-user-message")
+  //     console.log(messageUser)
+  //   } else {
+  //     messageUser.classList.add("other-user-message")
+  //     messageCard.classList.add("other-user-message")
+  //   }
+  //   console.log(this.userIdValue == data.user)
+  // }
 
   resetForm(event) {
     event.target.reset()

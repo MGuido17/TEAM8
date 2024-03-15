@@ -1,4 +1,4 @@
-<body class="background-page">
+<body class="background-page" data-controller="match-subscription" data-match-subscription-user-id-value="<%= current_user.id %>" data-match-subscription-match-id-value="<%= @match.id %>">
   <div class="top-section-match">
       <div class="left-action-icon">
         <%= link_to :back, class: 'arrow-left-icon' do %>
@@ -10,7 +10,7 @@
     </div>
   </div>
 
-  <div class="chatroom" data-controller="match-subscription" data-match-subscription-user-id-value="<%= current_user.id %>" data-match-subscription-match-id-value="<%= @match.id %>">
+  <div class="chatroom">
     <div class="messages" data-match-subscription-target="messages">
       <% @match.messages.each do |message| %>
         <% css_class = (message.user == current_user) ? 'current-user-message' : 'other-user-message' %>
