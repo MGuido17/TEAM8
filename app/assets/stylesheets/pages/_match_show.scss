@@ -30,12 +30,14 @@
 .current-user-message {
   display: flex;
   justify-content: flex-end;
+  color: white;
 
 }
 
 .other-user-message {
   display: flex;
   justify-content: flex-start;
+  color: white;
 }
 
 p {
@@ -103,7 +105,7 @@ p {
   // position: sticky;
   width: 100%;
   background-color: transparent;
-  top: 70%;
+  top: 75%;
   position: fixed;
 }
 
