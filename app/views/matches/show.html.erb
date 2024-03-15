@@ -1,5 +1,5 @@
 <body class="background-page">
-  <div class="top-section">
+  <div class="top-section-match">
       <div class="left-action-icon">
         <%= link_to :back, class: 'arrow-left-icon' do %>
           <i class="fa-solid fa-arrow-left"></i>
@@ -10,7 +10,6 @@
     </div>
   </div>
 
-
   <div class="chatroom" data-controller="match-subscription" data-match-subscription-user-id-value="<%= current_user.id %>" data-match-subscription-match-id-value="<%= @match.id %>">
     <div class="messages" data-match-subscription-target="messages">
       <% @match.messages.each do |message| %>
@@ -18,12 +17,13 @@
         <%= render "messages/message", message: message, css_class: css_class %>
       <% end %>
     </div>
+  </div>
 
-    <div class="bottom-section">
+
+    <div class="bottom-section custom-form">
       <%= simple_form_for [@match, @message], html: { data: { action: "turbo:submit-end->match-subscription#resetForm" }, class: "d-flex"} do |f| %>
-        <%= f.input :content, label: false, placeholder: "Message ##{@match_user_two.first_name}", wrapper_html: {class: "flex-grow-1"} %>
-        <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+        <%= f.input :content, label: false, placeholder: "Message ##{@match_user_two.first_name}" , wrapper_html: {class: "custom-input"} %>
+        <%= f.submit "Send", class: "btn btn-primary mb-3 custom-submit" %>
       <% end %>
     </div>
-  </div>
 </body>
