@@ -34,7 +34,7 @@
       <div class="col-md-4 mb-4">
         <div class="profile-show-activity-card">
           <div class="card-body">
-            <h5 class="activity-h2-show"><%= user.first_name %> <%= user.last_name %></h5>
+            <h5 class="activity-h2-profile-index"><%= user.first_name %> <%= user.last_name %></h5>
             <p class="activity-h2-show">Age: <%= user.age %></p>
             <p class="activity-h2-show">Looking for support for <%= user.profile.medical_condition.join(", ") %></p>
             <%= link_to "Match", invites_path(user_two_id: user.id), data: { turbo_method: :post }, class: "card-button-index-like" %> <!-- Add match button with appropriate styling -->
