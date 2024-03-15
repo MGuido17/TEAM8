@@ -46,6 +46,7 @@
               <div class="card-body">
                 <p class="activity-h2-show"><i class="fa-solid fa-location-dot"></i> <%= "#{@activity.address}, #{@activity.location}" %></p>
                 <p class="activity-h2-show"><i class="fa-regular fa-calendar-check"></i> <%=  @activity.date %></p>
+
               </div>
               <div class="activity-index-photo">
               <% if @activity.photo.attached? %>
@@ -54,8 +55,6 @@
                 </div>
             </div>
           </div>
-
-
         <div class="activity-location">
           <div class="activity-h2-show2">
             <%= render partial: "/shared/attendee_counter" %>
