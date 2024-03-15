@@ -53,7 +53,7 @@ export default class extends Controller {
   </div>
   `
   this.messagesTarget.insertAdjacentHTML("beforeend", html)
-  window.scrollTo(0, this.messagesTarget.scrollHeight)
+  window.scrollTo(0, this.messagesTarget.scrollHeight - 300)
   }
 
   otherUser(message, created_at) {
@@ -66,6 +66,6 @@ export default class extends Controller {
   </div>
   `
   this.messagesTarget.insertAdjacentHTML("beforeend", html)
-  window.scrollTo(0, this.messagesTarget.scrollHeight)
+  window.scrollTo(0, this.messagesTarget.scrollHeight - 300)
   }
 }
