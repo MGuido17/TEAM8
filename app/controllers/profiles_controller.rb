@@ -1,7 +1,15 @@
 class ProfilesController < ApplicationController
-
   def index
-    @users = User.all
+    user_ids_with_invites = Invite.where(user_one: current_user)
+    .or(Invite.where(user_two: current_user))
+    .pluck(:user_one_id, :user_two_id)
+    .flatten.uniq
+
+    # Exclude the current user's ID from the list
+    user_ids_with_invites.delete(current_user.id)
+
+    # Fetch all users who have a profile and are not in the list of users with invites
+    @users = User.includes(:profile).where.not(id: user_ids_with_invites).select { |user| user.profile.present? }
   end
 
   def new
@@ -14,18 +22,19 @@ class ProfilesController < ApplicationController
     @profile.user = @user # Associate the profile with the user
 
     if @profile.save
-      redirect_to profile_path(@profile), notice: 'Profile was successfully created.'  # Use the profile_path helper
+      redirect_to profile_path(@profile), notice: 'Profile was successfully created.' # Use the profile_path helper
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def show
+    if current_user.profile.nil?
+      redirect_to new_profile_path
+    end
     @profile = Profile.find(params[:id])
-    @profile.user = current_user
     @activities = filter_activities_by_conditions
     @invites = Invite.where(user_two: current_user)
-
   end
 
   def edit

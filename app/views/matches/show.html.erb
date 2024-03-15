@@ -1,29 +1,29 @@
-<body class="background-page">
-  <div class="top-section">
+<body class="background-page" data-controller="match-subscription" data-match-subscription-user-id-value="<%= current_user.id %>" data-match-subscription-match-id-value="<%= @match.id %>">
+  <div class="top-section-match">
       <div class="left-action-icon">
         <%= link_to :back, class: 'arrow-left-icon' do %>
           <i class="fa-solid fa-arrow-left"></i>
         <% end %>
       </div>
     <div class="user-info">
-      <small><strong><%= current_user.first_name %></strong></small>
+      <small><strong><%= @match_user_two.first_name %></strong></small>
     </div>
   </div>
 
-
-  <div class="chatroom" data-controller="match-subscription" data-match-subscription-user-id-value="<%= current_user.id %>" data-match-subscription-match-id-value="<%= @match.id %>">
+  <div class="chatroom">
     <div class="messages" data-match-subscription-target="messages">
       <% @match.messages.each do |message| %>
         <% css_class = (message.user == current_user) ? 'current-user-message' : 'other-user-message' %>
         <%= render "messages/message", message: message, css_class: css_class %>
       <% end %>
     </div>
+  </div>
 
-    <div class="bottom-section">
+
+    <div class="bottom-section custom-form">
       <%= simple_form_for [@match, @message], html: { data: { action: "turbo:submit-end->match-subscription#resetForm" }, class: "d-flex"} do |f| %>
-        <%= f.input :content, label: false, placeholder: "Message ##{@match_user_two.first_name}", wrapper_html: {class: "flex-grow-1"} %>
-        <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+        <%= f.input :content, label: false, placeholder: "Message ##{@match_user_two.first_name}" , wrapper_html: {class: "custom-input"} %>
+        <%= f.submit "Send", class: "btn btn-primary mb-3 custom-submit" %>
       <% end %>
     </div>
-  </div>
 </body>

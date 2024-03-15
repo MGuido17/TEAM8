@@ -69,8 +69,7 @@
   border-radius: 100px;
   background: linear-gradient(44.46deg, #0047ab, #3388ff);
   height: 40px;
-  overflow: hidden;
-  flex-shrink: 0;
+  text-align: center;
 }
 .fa-comment {
   width: 18px;
@@ -140,4 +139,8 @@
 
 .sign-out-button{
   color:#0047ab;
+}
+
+.no-link-style {
+  margin-top: 0px;
 }
