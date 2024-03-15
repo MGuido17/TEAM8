@@ -45,14 +45,23 @@ p {
   padding: 10px;
 }
 
+.card-body i {
+  font-size: 10px;
+}
+
+.card-body p {
+  font-size: 17px;
+}
+
 // Top Bar
 
-.top-section {
+.top-section-match {
   padding: 20px;
+  height: 55px;
   background-color: #f0f6fe;
   border-radius: 0px 0px 0px 55px;
-  position: fixed;
-  top: 0;
+  position: sticky;
+  top: 0px;
   width: 100%;
   z-index: 1;
   display: flex;
@@ -70,10 +79,12 @@ p {
 
 // messages, input text bar
 
+
 .messages {
-  margin-top: 90px;
-  margin-bottom: 10px;
-  min-height: 70vh;
+  margin-top: 10px;
+  margin-left: 21px;
+  margin-right: 21px;
+  margin-bottom: 105px;
 }
 
 .bottom-section {
@@ -83,5 +94,31 @@ p {
   background-color: transparent;
 }
 
-.chatroom {
+//input bar
+
+.custom-form {
+  padding-left: 24px;
+}
+
+.custom-form .custom-input textarea {
+  height: 49.5px;
+  width: 350px;
+  border-radius: 50px;
+  line-height: 35px;
+}
+
+.custom-form .custom-input {
+  height: 49.5px;
+  width: 300px;
+  border: #b7b7b7;
+}
+
+.custom-form .custom-submit {
+  width: 80px;
+  z-index: 1;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+}
+
+.custom-form .custom-input .form-control {
+  border: none;
 }
