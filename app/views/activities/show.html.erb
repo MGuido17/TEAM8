@@ -39,14 +39,23 @@
   <div class="container-activites-index">
     <div class="col-md-4 mb-4">
     <div class="box-container">
-      <div class="activity-date">
-      <p class="activity-h2-show1"><i class="fa-regular fa-calendar-check"></i>
-      <%= @activity.date %></p>
-      </div>
-        <div class="activity-location">
-        <p class="activity-h2-show1"><i class="fa-solid fa-location-dot"></i>
-        <%= "#{@activity.address}, #{@activity.location}" %></p>
-        </div>
+
+
+        <div class="col-md-4 mb-4">
+            <div class="activity-index-cards">
+              <div class="card-body">
+                <p class="activity-h2-show"><i class="fa-solid fa-location-dot"></i> <%= "#{@activity.address}, #{@activity.location}" %></p>
+                <p class="activity-h2-show"><i class="fa-regular fa-calendar-check"></i> <%=  @activity.date %></p>
+              </div>
+              <div class="activity-index-photo">
+              <% if @activity.photo.attached? %>
+                <%= cl_image_tag @activity.photo.key, crop: :fill, width: 200, height: 200 %>
+              <% end %>
+                </div>
+            </div>
+          </div>
+
+
         <div class="activity-location">
           <div class="activity-h2-show2">
             <%= render partial: "/shared/attendee_counter" %>
@@ -76,4 +85,3 @@
       </div>
     </div>
   </div>
-</div>
